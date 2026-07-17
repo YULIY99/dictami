@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>Dictami Updates</title>
+    <link>https://dictami.com/appcast.xml</link>
+    <description>Dictami version history</description>
+    <language>en</language>
+    <item>
+      <title>Dictami 1.0</title>
+      <sparkle:version>1</sparkle:version>
+      <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+      <sparkle:releaseNotesLink>https://dictami.com/release-notes.html</sparkle:releaseNotesLink>
+      <pubDate>Thu, 17 Jul 2026 12:00:00 +0000</pubDate>
+      <enclosure
+        url="https://dictami.com/releases/Dictami-1.0.dmg"
+        sparkle:edSignature="REPLACE_WITH_EDDSA_SIGNATURE"
+        length="0"
+        type="application/octet-stream"/>
+    </item>
+  </channel>
+</rss>

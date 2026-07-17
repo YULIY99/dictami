@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dictami — Dictate Anywhere on Your Mac</title>
+<meta name="description" content="On-device AI dictation for Mac. Press a hotkey, speak, text appears instantly — with punctuation. No cloud, no subscription.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%230A0A14'/><circle cx='16' cy='13' r='5' fill='none' stroke='%233B82F6' stroke-width='2'/><line x1='16' y1='18' x2='16' y2='22' stroke='%233B82F6' stroke-width='2' stroke-linecap='round'/><line x1='12' y1='22' x2='20' y2='22' stroke='%233B82F6' stroke-width='2' stroke-linecap='round'/></svg>">
+<style>
+  :root {
+    --bg: #08080F;
+    --surface: #111118;
+    --card: rgba(255,255,255,0.04);
+    --card-border: rgba(255,255,255,0.08);
+    --text: #F0F0F8;
+    --muted: #7878A0;
+    --accent: #3B82F6;
+    --accent-glow: rgba(59,130,246,0.18);
+    --accent-dim: rgba(59,130,246,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 32px;
+    height: 56px;
+    background: rgba(8,8,15,0.82);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 600; font-size: 17px; letter-spacing: -0.3px;
+    color: var(--text); text-decoration: none;
+  }
+
+  .nav-logo svg { width: 24px; height: 24px; }
+
+  nav a { color: var(--muted); text-decoration: none; font-size: 14px; }
+  nav a:hover { color: var(--text); }
+
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 20px; border-radius: 10px;
+    font-size: 14px; font-weight: 500; text-decoration: none;
+    cursor: pointer; border: none; transition: all 0.15s ease;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(59,130,246,0.35);
+  }
+  .btn-primary:hover {
+    background: #2563EB;
+    box-shadow: 0 0 28px rgba(59,130,246,0.5);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--card-border);
+  }
+  .btn-ghost:hover {
+    background: rgba(255,255,255,0.07);
+    transform: translateY(-1px);
+  }
+
+  /* HERO */
+  .hero {
+    padding: 140px 24px 100px;
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 60px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 400px;
+    background: radial-gradient(ellipse at center, rgba(59,130,246,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 5px 14px; border-radius: 999px;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.3px;
+    background: var(--accent-dim);
+    border: 1px solid rgba(59,130,246,0.25);
+    color: #93C5FD;
+    margin-bottom: 28px;
+  }
+
+  .badge::before {
+    content: '';
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+    animation: pulse 2s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  h1 {
+    font-size: clamp(38px, 6vw, 62px);
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    line-height: 1.08;
+    margin-bottom: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  }
+
+  h1 span { color: var(--accent); }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 56px;
+  }
+
+  .hero-actions .btn { font-size: 15px; padding: 12px 26px; border-radius: 12px; }
+
+  .pill-demo {
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 14px 22px;
+    background: rgba(0,0,0,0.62);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 999px;
+    backdrop-filter: blur(24px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+    font-size: 15px;
+    color: var(--text);
+    margin: 0 auto;
+  }
+
+  .pill-dot {
+    width: 18px; height: 18px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .pill-dot::before {
+    content: '';
+    position: absolute;
+    width: 18px; height: 18px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.22);
+  }
+  .pill-dot::after {
+    content: '';
+    width: 8px; height: 8px; border-radius: 2px;
+    background: #F24444;
+  }
+
+  .pill-words { display: flex; gap: 4px; }
+  .pill-word { opacity: 1; }
+  .pill-word.ghost { opacity: 0.38; }
+
+  .pill-cursor {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+    flex-shrink: 0;
+    animation: blink 1.1s ease infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
+
+  /* LOGOS */
+  .social-proof {
+    text-align: center;
+    padding: 60px 24px 0;
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .social-proof p { margin-bottom: 20px; }
+  .compat-row {
+    display: flex; gap: 32px; justify-content: center; align-items: center;
+    flex-wrap: wrap;
+  }
+  .compat-badge {
+    display: flex; align-items: center; gap: 8px;
+    color: rgba(255,255,255,0.35);
+    font-size: 13px; font-weight: 500;
+  }
+  .compat-badge svg { opacity: 0.5; }
+
+  /* SECTION */
+  section { padding: 100px 24px; }
+
+  .section-inner { max-width: 1080px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 12px; font-weight: 600; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700; letter-spacing: -0.8px; line-height: 1.15;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 17px; color: var(--muted); max-width: 520px; line-height: 1.6;
+    margin-bottom: 56px;
+  }
+
+  /* FEATURES GRID */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  .feature-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 28px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .feature-card:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.14);
+  }
+
+  .feature-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--accent-dim);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
+
+  .feature-card h3 {
+    font-size: 16px; font-weight: 600; margin-bottom: 8px;
+    letter-spacing: -0.2px;
+  }
+
+  .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+  /* HOW IT WORKS */
+  .steps { display: flex; flex-direction: column; gap: 0; max-width: 560px; }
+
+  .step {
+    display: flex; gap: 24px; align-items: flex-start;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+  }
+  .step:last-child { border-bottom: none; }
+
+  .step-num {
+    width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+    background: var(--accent-dim);
+    border: 1px solid rgba(59,130,246,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .step h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .step p { font-size: 14px; color: var(--muted); line-height: 1.55; }
+
+  kbd {
+    display: inline-block;
+    padding: 1px 7px; border-radius: 5px;
+    font-size: 12px; font-family: inherit;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    max-width: 700px;
+  }
+
+  .price-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 32px;
+  }
+
+  .price-card.featured {
+    background: rgba(59,130,246,0.08);
+    border-color: rgba(59,130,246,0.35);
+    position: relative;
+  }
+
+  .price-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--accent); color: #fff;
+    font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+    padding: 3px 12px; border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .price-plan { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 12px; }
+  .price-amount { font-size: 44px; font-weight: 700; letter-spacing: -1px; font-variant-numeric: tabular-nums; line-height: 1; }
+  .price-amount sup { font-size: 22px; vertical-align: super; margin-right: 2px; }
+  .price-note { font-size: 13px; color: var(--muted); margin-top: 6px; margin-bottom: 24px; }
+
+  .price-features { list-style: none; margin-bottom: 28px; }
+  .price-features li {
+    font-size: 14px; color: var(--muted); padding: 7px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .price-features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .price-features li:last-child { border-bottom: none; }
+
+  .price-card .btn { width: 100%; justify-content: center; }
+
+  /* FAQ */
+  .faq { max-width: 640px; }
+
+  details {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  summary {
+    list-style: none; cursor: pointer;
+    padding: 20px 0; font-size: 15px; font-weight: 500;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: '+'; font-size: 20px; font-weight: 300;
+    color: var(--muted); transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  details[open] summary::after { transform: rotate(45deg); }
+
+  details p {
+    font-size: 14px; color: var(--muted); padding-bottom: 20px;
+    line-height: 1.65;
+  }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 40px 24px;
+  }
+
+  .footer-inner {
+    max-width: 1080px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+
+  .footer-logo { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; }
+
+  footer p { font-size: 13px; color: var(--muted); }
+  footer a { color: var(--muted); text-decoration: none; font-size: 13px; }
+  footer a:hover { color: var(--text); }
+  .footer-links { display: flex; gap: 20px; }
+
+  /* UTILS */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  @media (max-width: 700px) {
+    .split { grid-template-columns: 1fr; gap: 40px; }
+    nav { padding: 0 16px; }
+    .nav-links { gap: 16px; }
+    .hero { padding: 120px 16px 80px; }
+    .pill-demo { flex-wrap: wrap; font-size: 13px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="/">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="10" r="4" stroke="#3B82F6" stroke-width="1.6"/>
+      <path d="M7 10a5 5 0 0 0 10 0" stroke="#3B82F6" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="12" y1="15" x2="12" y2="18" stroke="#3B82F6" stroke-width="1.6" stroke-linecap="round"/>
+      <line x1="9" y1="18" x2="15" y2="18" stroke="#3B82F6" stroke-width="1.6" stroke-linecap="round"/>
+    </svg>
+    Dictami
+  </a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://gum.co/dictami" class="btn btn-primary" style="padding:7px 16px;font-size:13px;">Download</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">macOS · On-device AI · No subscription</div>
+
+  <h1>Dictate anywhere<br>on your <span>Mac</span></h1>
+
+  <p class="hero-sub">
+    Press a hotkey, speak naturally — Dictami transcribes your voice instantly with punctuation, directly into any app. Powered by Whisper AI, 100% on-device.
+  </p>
+
+  <div class="hero-actions">
+    <a href="https://gum.co/dictami" class="btn btn-primary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3v13M5 10l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 21h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Download Free Trial
+    </a>
+    <a href="#features" class="btn btn-ghost">See how it works</a>
+  </div>
+
+  <!-- Pill mockup -->
+  <div class="pill-demo">
+    <div class="pill-dot"></div>
+    <div class="pill-words">
+      <span class="pill-word">Meeting</span>&nbsp;
+      <span class="pill-word">is</span>&nbsp;
+      <span class="pill-word">at</span>&nbsp;
+      <span class="pill-word">3&nbsp;PM,</span>&nbsp;
+      <span class="pill-word">don't</span>&nbsp;
+      <span class="pill-word">forget</span>&nbsp;
+      <span class="pill-word ghost">to</span>&nbsp;
+      <span class="pill-word ghost">bring</span>
+    </div>
+    <div class="pill-cursor"></div>
+  </div>
+</div>
+
+<!-- COMPAT -->
+<div class="social-proof">
+  <p>Works with every app on macOS</p>
+  <div class="compat-row">
+    <div class="compat-badge">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 1.6c4.639 0 8.4 3.761 8.4 8.4 0 4.639-3.761 8.4-8.4 8.4-4.639 0-8.4-3.761-8.4-8.4 0-4.639 3.761-8.4 8.4-8.4zM8 9l1.5 6 2.5-4 2.5 4L16 9"/></svg>
+      Safari
+    </div>
+    <div class="compat-badge">Mail</div>
+    <div class="compat-badge">Notion</div>
+    <div class="compat-badge">Slack</div>
+    <div class="compat-badge">VS Code</div>
+    <div class="compat-badge">Telegram</div>
+    <div class="compat-badge">+ any app</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-inner">
+    <div class="section-label">Features</div>
+    <h2>Dictation the way it<br>should work</h2>
+    <p class="section-sub">No cloud upload. No monthly fee. No lag waiting for a server. Just your voice, instantly as text.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Fully On-Device</h3>
+        <p>Audio never leaves your Mac. Whisper AI runs locally — works offline, no privacy concerns, no API keys needed.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✏️</div>
+        <h3>Real Punctuation</h3>
+        <p>Commas, periods, question marks — all appear automatically. No more shouting "comma" or editing a wall of text.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3>Instant Live Preview</h3>
+        <p>See words appear in real-time as you speak, right in a sleek floating pill. Text lands in your app the moment you stop.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3>50+ Languages</h3>
+        <p>Whisper handles English, Russian, Spanish, French, German, Japanese, and dozens more with the same quality.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⌨️</div>
+        <h3>Global Hotkey</h3>
+        <p>Assign any key combo. Double-press to start, single press to send — or classic press-and-hold mode like a walkie-talkie.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>AI Refinement</h3>
+        <p>Optional Ollama integration polishes grammar and style using a local LLM — fully private, no internet required.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="padding-top:0">
+  <div class="section-inner">
+    <div class="split">
+      <div>
+        <div class="section-label">How it works</div>
+        <h2>Three seconds<br>from thought to text</h2>
+        <p class="section-sub" style="margin-bottom:0">No friction. Dictami sits quietly in your menu bar until you need it.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Press your hotkey</h3>
+            <p>Double-press <kbd>⌥ Space</kbd> (or any combo you choose). A slim pill appears — Dictami is listening.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Speak naturally</h3>
+            <p>Words appear in the pill with punctuation as you talk. Whisper AI transcribes locally — no internet needed.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Press once to send</h3>
+            <p>Single press inserts the final text into whatever app was in focus — cursor, email, chat, code editor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background: rgba(255,255,255,0.015); border-top:1px solid rgba(255,255,255,0.05); border-bottom:1px solid rgba(255,255,255,0.05);">
+  <div class="section-inner">
+    <div class="section-label">Pricing</div>
+    <h2>Pay once.<br>Own it forever.</h2>
+    <p class="section-sub">No subscription. One purchase, all future updates included.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-plan">Free Trial</div>
+        <div class="price-amount"><sup>$</sup>0</div>
+        <div class="price-note">14-day trial, no card required</div>
+        <ul class="price-features">
+          <li>Full feature access</li>
+          <li>All languages</li>
+          <li>Download base model</li>
+          <li>Expires after 14 days</li>
+        </ul>
+        <a href="https://gum.co/dictami" class="btn btn-ghost">Download Free</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">BEST VALUE</div>
+        <div class="price-plan">Lifetime</div>
+        <div class="price-amount"><sup>$</sup>29</div>
+        <div class="price-note">One-time · no subscription</div>
+        <ul class="price-features">
+          <li>Unlimited dictation</li>
+          <li>All current &amp; future models</li>
+          <li>AI Refinement (Ollama)</li>
+          <li>All future updates</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://gum.co/dictami" class="btn btn-primary">Buy Lifetime — $29</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-label">FAQ</div>
+    <h2>Questions</h2>
+    <div class="faq">
+      <details open>
+        <summary>Is my audio sent to any server?</summary>
+        <p>Never. Dictami uses OpenAI's Whisper model running entirely on your Mac. Audio is processed locally and deleted immediately after transcription. No account, no API key, no cloud.</p>
+      </details>
+      <details>
+        <summary>What Mac do I need?</summary>
+        <p>macOS 13 Ventura or later. Apple Silicon (M1/M2/M3/M4) is recommended for the best speed. Intel Macs are supported but transcription may take a second or two longer.</p>
+      </details>
+      <details>
+        <summary>Which languages does it support?</summary>
+        <p>Whisper supports 50+ languages including English, Russian, Spanish, French, German, Portuguese, Italian, Japanese, Korean, Chinese, Arabic, and many more. Just select your language in Settings.</p>
+      </details>
+      <details>
+        <summary>Does it work when offline?</summary>
+        <p>Yes — once the Whisper model is downloaded (a one-time step in Settings), Dictami works with no internet connection at all.</p>
+      </details>
+      <details>
+        <summary>How is this different from Apple Dictation?</summary>
+        <p>Apple Dictation sends audio to Apple's servers (unless you enable Enhanced Dictation, which is limited). Dictami is 100% local, adds punctuation automatically, works in more languages, and inserts text into any app via clipboard or Accessibility API — not just where the system cursor is.</p>
+      </details>
+      <details>
+        <summary>Can I get a refund?</summary>
+        <p>Yes — within 14 days of purchase, no questions asked. Email support and you'll get a full refund.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="10" r="4" stroke="#3B82F6" stroke-width="1.6"/>
+          <path d="M7 10a5 5 0 0 0 10 0" stroke="#3B82F6" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="12" y1="15" x2="12" y2="18" stroke="#3B82F6" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="9" y1="18" x2="15" y2="18" stroke="#3B82F6" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        Dictami
+      </div>
+      <p style="margin-top:6px">© 2026 Dictami. Made with ♥ for Mac users.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="mailto:support@dictami.com">Support</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
