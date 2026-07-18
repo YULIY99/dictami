@@ -329,6 +329,54 @@
   }
   .hero-trust span::before { content:'✓'; color:#c4b5ff; font-weight:700; margin-right:8px; font-size:11px; }
 
+  /* HERO MIC */
+  .hero-mic-wrap {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: 48px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-mic-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 0 40px rgba(77,124,255,0.5));
+    animation: mic-float 4s ease-in-out infinite;
+  }
+
+  @keyframes mic-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .hero-mic-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(77,124,255,0.3);
+    animation: mic-pulse 3s ease-out infinite;
+  }
+
+  .hero-mic-ring-1 { width: 220px; height: 220px; animation-delay: 0s; }
+  .hero-mic-ring-2 { width: 260px; height: 260px; animation-delay: 0.8s; border-color: rgba(77,124,255,0.18); }
+  .hero-mic-ring-3 { width: 300px; height: 300px; animation-delay: 1.6s; border-color: rgba(77,124,255,0.08); }
+
+  @keyframes mic-pulse {
+    0% { transform: scale(0.9); opacity: 0.8; }
+    100% { transform: scale(1.15); opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-mic-img { animation: none; }
+    .hero-mic-ring { animation: none; opacity: 0.2; }
+  }
+
   /* LOGOS */
   .social-proof {
     text-align: center;
@@ -686,6 +734,14 @@
 
   <div class="hero-trust">
     <span>7-day free trial</span><span>No account required</span><span>Works offline</span>
+  </div>
+
+  <!-- Hero mic visual -->
+  <div class="hero-mic-wrap">
+    <div class="hero-mic-ring hero-mic-ring-1"></div>
+    <div class="hero-mic-ring hero-mic-ring-2"></div>
+    <div class="hero-mic-ring hero-mic-ring-3"></div>
+    <img src="mic-hero.png" alt="Dictami microphone" class="hero-mic-img">
   </div>
 </div>
 
