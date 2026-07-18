@@ -304,8 +304,16 @@
   .stage-wave i:nth-child(4) { height:14px; animation-delay:.36s; }
   @keyframes wave { 50% { transform:scaleY(.5); opacity:.58; } }
 
-  .hero-trust { display:flex; flex-wrap:wrap; gap:8px 18px; justify-content:center; margin:24px auto 0; color:rgba(217,213,244,.66); font-size:12px; }
-  .hero-trust span::before { content:'✓'; color:#9f8aff; font-weight:700; margin-right:7px; }
+  .hero-trust { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:26px auto 0; font-size:12px; }
+  .hero-trust span {
+    display:inline-flex; align-items:center;
+    min-height:34px; padding:7px 13px; border-radius:999px;
+    color:rgba(240,238,255,.92); font-weight:600; letter-spacing:.01em;
+    background:linear-gradient(145deg, rgba(121,98,255,.18), rgba(54,127,255,.10));
+    border:1px solid rgba(161,150,255,.27);
+    box-shadow:0 8px 22px rgba(20,20,70,.20), inset 0 1px 0 rgba(255,255,255,.10);
+  }
+  .hero-trust span::before { content:'✓'; color:#a995ff; font-weight:800; margin-right:7px; font-size:13px; }
 
   /* LOGOS */
   .social-proof {
