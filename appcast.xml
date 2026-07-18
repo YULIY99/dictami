@@ -1,21 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
-  <channel>
-    <title>Dictami Updates</title>
-    <link>https://dictami.com/appcast.xml</link>
-    <description>Dictami version history</description>
-    <language>en</language>
-    <item>
-      <title>Dictami 1.0</title>
-      <sparkle:version>1</sparkle:version>
-      <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
-      <sparkle:releaseNotesLink>https://dictami.com/release-notes.html</sparkle:releaseNotesLink>
-      <pubDate>Thu, 17 Jul 2026 12:00:00 +0000</pubDate>
-      <enclosure
-        url="https://dictami.com/releases/Dictami-1.0.dmg"
-        sparkle:edSignature="REPLACE_WITH_EDDSA_SIGNATURE"
-        length="0"
-        type="application/octet-stream"/>
-    </item>
-  </channel>
+<?xml version="1.0" standalone="yes"?>
+<!-- sparkle-sign-warning:
+IMPORTANT: This file was signed by Sparkle. Any modifications to this file requires re-signing this file with generate_appcast or sign_update! The signed signature will be embedded at the end of this file.
+-->
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>VoxLocal</title>
+        <item>
+            <title>1.1.0</title>
+            <pubDate>Thu, 16 Jul 2026 17:50:28 +0300</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <enclosure url="https://dictami.com/Dictami-1.1.0.zip" length="4472416" type="application/octet-stream" sparkle:edSignature="haJ2FaMTlvryhLpKyn2nYw/Z1z5HGmE9nfY8pm1I8XWSuZPLIuEBFDKIeKav3HXNuSqsHynB/VdCgObrSik7AA=="/>
+        </item>
+    </channel>
 </rss>
+<!-- sparkle-signatures:
+edSignature: /ojkkOIYGRVN5gFSnkpdeCmZSK4IsjhZclctBoegx9nKn1hP8iR91gUnx7kMRNUAmHoTyV/nWMby3oc2r4WyAw==
+length: 1069
+-->
