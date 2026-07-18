@@ -4,19 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dictami — Dictate Anywhere on Your Mac</title>
-<meta name="description" content="On-device AI dictation for Mac. Press a hotkey, speak, text appears instantly — with punctuation. No cloud, no subscription.">
+<meta name="description" content="Private, on-device AI dictation for Mac. Press a hotkey, speak, and text appears instantly in any app.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%230A0A14'/><circle cx='16' cy='13' r='5' fill='none' stroke='%233B82F6' stroke-width='2'/><line x1='16' y1='18' x2='16' y2='22' stroke='%233B82F6' stroke-width='2' stroke-linecap='round'/><line x1='12' y1='22' x2='20' y2='22' stroke='%233B82F6' stroke-width='2' stroke-linecap='round'/></svg>">
 <style>
   :root {
-    --bg: #08080F;
-    --surface: #111118;
-    --card: rgba(255,255,255,0.04);
-    --card-border: rgba(255,255,255,0.08);
-    --text: #F0F0F8;
-    --muted: #7878A0;
-    --accent: #3B82F6;
-    --accent-glow: rgba(59,130,246,0.18);
-    --accent-dim: rgba(59,130,246,0.12);
+    --bg: #070711;
+    --surface: #10101c;
+    --card: rgba(255,255,255,0.045);
+    --card-border: rgba(173,153,255,0.15);
+    --text: #F5F4FF;
+    --muted: #9995bb;
+    --accent: #4d7cff;
+    --accent-violet: #a675ff;
+    --accent-glow: rgba(103,101,255,0.25);
+    --accent-dim: rgba(91,111,255,0.13);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -25,7 +26,10 @@
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
-    background: var(--bg);
+    background:
+      radial-gradient(900px 560px at 50% -170px, rgba(86, 72, 216, 0.22), transparent 65%),
+      radial-gradient(620px 520px at 102% 22%, rgba(31, 117, 255, 0.09), transparent 67%),
+      var(--bg);
     color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -37,10 +41,10 @@
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 32px;
     height: 56px;
-    background: rgba(8,8,15,0.82);
+    background: rgba(7,7,17,0.72);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(184,173,255,0.10);
   }
 
   .nav-logo {
@@ -64,18 +68,18 @@
   }
 
   .btn-primary {
-    background: var(--accent);
+    background: linear-gradient(135deg, #7a5cff 0%, #397dff 100%);
     color: #fff;
-    box-shadow: 0 0 20px rgba(59,130,246,0.35);
+    box-shadow: 0 10px 30px rgba(54,92,255,0.28), inset 0 1px 0 rgba(255,255,255,0.22);
   }
   .btn-primary:hover {
-    background: #2563EB;
-    box-shadow: 0 0 28px rgba(59,130,246,0.5);
+    background: linear-gradient(135deg, #886bff 0%, #4a89ff 100%);
+    box-shadow: 0 14px 34px rgba(68,94,255,0.40), inset 0 1px 0 rgba(255,255,255,0.25);
     transform: translateY(-1px);
   }
 
   .btn-ghost {
-    background: var(--card);
+    background: linear-gradient(155deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
     color: var(--text);
     border: 1px solid var(--card-border);
   }
@@ -86,9 +90,9 @@
 
   /* HERO */
   .hero {
-    padding: 140px 24px 100px;
+    padding: 154px 24px 82px;
     text-align: center;
-    max-width: 780px;
+    max-width: 880px;
     margin: 0 auto;
     position: relative;
   }
@@ -97,8 +101,8 @@
     content: '';
     position: absolute;
     top: 60px; left: 50%; transform: translateX(-50%);
-    width: 600px; height: 400px;
-    background: radial-gradient(ellipse at center, rgba(59,130,246,0.12) 0%, transparent 70%);
+    width: 800px; height: 520px;
+    background: radial-gradient(ellipse at center, rgba(113,82,255,0.21) 0%, rgba(46,114,255,0.11) 34%, transparent 70%);
     pointer-events: none;
   }
 
@@ -126,21 +130,25 @@
   }
 
   h1 {
-    font-size: clamp(38px, 6vw, 62px);
-    font-weight: 700;
-    letter-spacing: -1.5px;
-    line-height: 1.08;
-    margin-bottom: 20px;
+    font-size: clamp(42px, 6vw, 68px);
+    font-weight: 750;
+    letter-spacing: -2.4px;
+    line-height: 1.04;
+    margin-bottom: 22px;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
   }
 
-  h1 span { color: var(--accent); }
+  h1 span {
+    color: #9c86ff;
+    background: linear-gradient(105deg, #b398ff 0%, #5ca4ff 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
 
   .hero-sub {
     font-size: 18px;
     color: var(--muted);
     max-width: 520px;
-    margin: 0 auto 40px;
+    margin: 0 auto 36px;
     line-height: 1.65;
   }
 
@@ -154,14 +162,15 @@
   .pill-demo {
     display: inline-flex; align-items: center; gap: 14px;
     padding: 14px 22px;
-    background: rgba(0,0,0,0.62);
-    border: 1px solid rgba(255,255,255,0.10);
+    background: rgba(5,5,14,0.78);
+    border: 1px solid rgba(185,170,255,0.24);
     border-radius: 999px;
     backdrop-filter: blur(24px);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+    box-shadow: 0 18px 48px rgba(0,0,0,0.48), 0 0 52px rgba(90,80,255,0.10), inset 0 1px 0 rgba(255,255,255,0.08);
     font-size: 15px;
     color: var(--text);
     margin: 0 auto;
+    position: relative; z-index: 1;
   }
 
   .pill-dot {
@@ -187,17 +196,57 @@
 
   .pill-cursor {
     width: 10px; height: 10px; border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 10px var(--accent);
+    background: #8a71ff;
+    box-shadow: 0 0 13px #8a71ff;
     flex-shrink: 0;
     animation: blink 1.1s ease infinite;
   }
   @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
 
+  .hero-stage {
+    width: min(690px, 100%);
+    min-height: 238px;
+    margin: 42px auto 0;
+    padding: 14px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    text-align: left;
+    background: linear-gradient(145deg, rgba(26,25,49,0.94), rgba(9,10,22,0.98));
+    border: 1px solid rgba(174,159,255,0.22);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.42), 0 0 80px rgba(87,74,255,0.13), inset 0 1px 0 rgba(255,255,255,0.09);
+  }
+  .hero-stage::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(400px 180px at 79% 100%, rgba(48,126,255,0.18), transparent 70%), radial-gradient(320px 180px at 18% 24%, rgba(159,95,255,0.14), transparent 72%);
+    pointer-events: none;
+  }
+  .stage-bar { height: 28px; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:1; padding:0 5px 8px; color:rgba(237,234,255,.48); font-size:11px; }
+  .stage-dots { display:flex; gap:5px; }
+  .stage-dots i { display:block; width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,.16); }
+  .stage-dots i:first-child { background:#e85b67; }
+  .stage-title { letter-spacing:.04em; }
+  .stage-content { position:relative; z-index:1; height:176px; border-radius:16px; padding:25px 30px; background:rgba(5,5,15,.42); border:1px solid rgba(255,255,255,.055); }
+  .stage-listening { display:flex; align-items:center; gap:11px; color:#c4b8ff; font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
+  .stage-record { width:9px; height:9px; border-radius:50%; background:#fa6272; box-shadow:0 0 0 5px rgba(250,98,114,.13), 0 0 18px rgba(250,98,114,.8); }
+  .stage-copy { max-width:470px; margin:19px 0 13px; font-size:clamp(19px, 3vw, 26px); font-weight:600; letter-spacing:-.7px; line-height:1.35; color:rgba(248,247,255,.9); }
+  .stage-copy em { color:#817dff; font-style:normal; }
+  .stage-wave { display:flex; align-items:center; gap:4px; height:22px; }
+  .stage-wave i { display:block; width:3px; border-radius:6px; background:linear-gradient(#b27dff,#4689ff); box-shadow:0 0 8px rgba(110,117,255,.7); animation: wave 1.2s ease-in-out infinite; }
+  .stage-wave i:nth-child(1), .stage-wave i:nth-child(7) { height:8px; }
+  .stage-wave i:nth-child(2), .stage-wave i:nth-child(6) { height:15px; animation-delay:.12s; }
+  .stage-wave i:nth-child(3), .stage-wave i:nth-child(5) { height:22px; animation-delay:.24s; }
+  .stage-wave i:nth-child(4) { height:14px; animation-delay:.36s; }
+  @keyframes wave { 50% { transform:scaleY(.5); opacity:.58; } }
+
+  .hero-trust { display:flex; flex-wrap:wrap; gap:8px 18px; justify-content:center; margin:24px auto 0; color:rgba(217,213,244,.66); font-size:12px; }
+  .hero-trust span::before { content:'✓'; color:#9f8aff; font-weight:700; margin-right:7px; }
+
   /* LOGOS */
   .social-proof {
     text-align: center;
-    padding: 60px 24px 0;
+    padding: 38px 24px 0;
     color: var(--muted);
     font-size: 13px;
     letter-spacing: 0.5px;
@@ -205,13 +254,17 @@
   }
   .social-proof p { margin-bottom: 20px; }
   .compat-row {
-    display: flex; gap: 32px; justify-content: center; align-items: center;
+    display: flex; gap: 11px; justify-content: center; align-items: center;
     flex-wrap: wrap;
   }
   .compat-badge {
     display: flex; align-items: center; gap: 8px;
-    color: rgba(255,255,255,0.35);
-    font-size: 13px; font-weight: 500;
+    color: rgba(234,231,255,0.66);
+    font-size: 12px; font-weight: 550;
+    padding: 6px 10px;
+    background: rgba(255,255,255,0.028);
+    border: 1px solid rgba(179,169,255,0.10);
+    border-radius: 999px;
   }
   .compat-badge svg { opacity: 0.5; }
 
@@ -222,13 +275,13 @@
 
   .section-label {
     font-size: 12px; font-weight: 600; letter-spacing: 1.2px;
-    text-transform: uppercase; color: var(--accent);
+    text-transform: uppercase; color: #8daeff;
     margin-bottom: 12px;
   }
 
   h2 {
     font-size: clamp(28px, 4vw, 42px);
-    font-weight: 700; letter-spacing: -0.8px; line-height: 1.15;
+    font-weight: 750; letter-spacing: -1.15px; line-height: 1.1;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
     margin-bottom: 16px;
   }
@@ -246,21 +299,24 @@
   }
 
   .feature-card {
-    background: var(--card);
+    background: linear-gradient(145deg, rgba(255,255,255,0.062), rgba(255,255,255,0.025));
     border: 1px solid var(--card-border);
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 28px;
-    transition: border-color 0.2s, background 0.2s;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s ease;
   }
 
   .feature-card:hover {
-    background: rgba(255,255,255,0.06);
-    border-color: rgba(255,255,255,0.14);
+    background: linear-gradient(145deg, rgba(117,98,255,0.16), rgba(52,121,255,0.07));
+    border-color: rgba(164,151,255,0.36);
+    transform: translateY(-3px);
   }
 
   .feature-icon {
     width: 44px; height: 44px; border-radius: 12px;
-    background: var(--accent-dim);
+    background: linear-gradient(135deg, rgba(158,116,255,0.27), rgba(58,126,255,0.18));
+    border: 1px solid rgba(169,145,255,0.17);
+    color: #baa8ff;
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 16px;
     font-size: 20px;
@@ -286,8 +342,8 @@
 
   .step-num {
     width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
-    background: var(--accent-dim);
-    border: 1px solid rgba(59,130,246,0.3);
+    background: linear-gradient(135deg, rgba(136,103,255,0.23), rgba(50,122,255,0.15));
+    border: 1px solid rgba(147,139,255,0.35);
     display: flex; align-items: center; justify-content: center;
     font-size: 13px; font-weight: 700; color: var(--accent);
     font-variant-numeric: tabular-nums;
@@ -315,24 +371,25 @@
   }
 
   .price-card {
-    background: var(--card);
+    background: linear-gradient(155deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
     border: 1px solid var(--card-border);
     border-radius: 20px;
     padding: 32px;
     display: flex;
     flex-direction: column;
-    border-color: rgba(59,130,246,0.35);
+    border-color: rgba(151,141,255,0.30);
   }
 
   .price-card.featured {
-    background: rgba(59,130,246,0.08);
-    border-color: rgba(59,130,246,0.35);
+    background: linear-gradient(155deg, rgba(112,91,255,0.20), rgba(45,119,255,0.08));
+    border-color: rgba(133,137,255,0.62);
+    box-shadow: 0 20px 48px rgba(37,52,161,0.18), inset 0 1px 0 rgba(255,255,255,0.10);
     position: relative;
   }
 
   .price-badge {
     position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-    background: var(--accent); color: #fff;
+    background: linear-gradient(135deg, #956dff, #487fff); color: #fff;
     font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
     padding: 3px 12px; border-radius: 999px;
     white-space: nowrap;
@@ -412,6 +469,8 @@
     .nav-links { gap: 16px; }
     .hero { padding: 120px 16px 80px; }
     .pill-demo { flex-wrap: wrap; font-size: 13px; }
+    .compat-row { gap: 8px; }
+    .compat-badge { padding: 5px 8px; }
     .footer-inner { flex-direction: column; align-items: flex-start; }
   }
 </style>
@@ -439,7 +498,7 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="badge">macOS · On-device AI · No subscription</div>
+  <div class="badge">macOS · On-device AI · Private by default</div>
 
   <h1>Dictate anywhere<br>on your <span>Mac</span></h1>
 
@@ -450,7 +509,7 @@
   <div class="hero-actions">
     <a href="https://highroller5.gumroad.com/l/mjwvomp" class="btn btn-primary">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3v13M5 10l7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 21h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      Download Free Trial
+      Get Dictami for Mac
     </a>
     <a href="#features" class="btn btn-ghost">See how it works</a>
   </div>
@@ -469,6 +528,23 @@
       <span class="pill-word ghost">bring</span>
     </div>
     <div class="pill-cursor"></div>
+  </div>
+
+  <div class="hero-stage" aria-hidden="true">
+    <div class="stage-bar">
+      <div class="stage-dots"><i></i><i></i><i></i></div>
+      <span class="stage-title">Dictami · Live transcription</span>
+      <span>⌥ Space</span>
+    </div>
+    <div class="stage-content">
+      <div class="stage-listening"><span class="stage-record"></span> Listening</div>
+      <div class="stage-copy">Write a clear reply to the client and <em>send it before noon.</em></div>
+      <div class="stage-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+
+  <div class="hero-trust">
+    <span>7-day free trial</span><span>No account required</span><span>Works offline</span>
   </div>
 </div>
 
@@ -492,36 +568,36 @@
   <div class="section-inner">
     <div class="section-label">Features</div>
     <h2>Dictation the way it<br>should work</h2>
-    <p class="section-sub">No cloud upload. No monthly fee. No lag waiting for a server. Just your voice, instantly as text.</p>
+    <p class="section-sub">No cloud upload. No lag waiting for a server. Just your voice, instantly as text.</p>
 
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon">🔒</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 5 6v5c0 4.7 2.9 8.3 7 10 4.1-1.7 7-5.3 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.8"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Fully On-Device</h3>
         <p>Audio never leaves your Mac. Whisper AI runs locally — works offline, no privacy concerns, no API keys needed.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">✏️</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m4 16.5-.5 4 4-.5L19 8.5 15.5 5 4 16.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m13.5 7 3.5 3.5" stroke="currentColor" stroke-width="1.8"/></svg></div>
         <h3>Real Punctuation</h3>
         <p>Commas, periods, question marks — all appear automatically. No more shouting "comma" or editing a wall of text.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">⚡</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7V2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
         <h3>Instant Live Preview</h3>
         <p>See words appear in real-time as you speak, right in a sleek floating pill. Text lands in your app the moment you stop.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🌍</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.8"/><path d="M3.8 12h16.4M12 3.5c2.1 2.3 3.2 5.1 3.2 8.5S14.1 18.2 12 20.5c-2.1-2.3-3.2-5.1-3.2-8.5S9.9 5.8 12 3.5Z" stroke="currentColor" stroke-width="1.5"/></svg></div>
         <h3>50+ Languages</h3>
         <p>Whisper handles English, Russian, Spanish, French, German, Japanese, and dozens more with the same quality.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">⌨️</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="6" width="17" height="12" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M7 10h.01M10 10h.01M13 10h.01M16 10h.01M8 14h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
         <h3>Global Hotkey</h3>
         <p>Assign any key combo. Double-press to start, single press to send — or classic press-and-hold mode like a walkie-talkie.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🤖</div>
+        <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 1.2 4.1L17 8.3l-3.8 1.2L12 14l-1.2-4.5L7 8.3l3.8-1.2L12 3ZM18.5 14l.6 2 1.9.6-1.9.6-.6 2-.6-2-1.9-.6 1.9-.6.6-2ZM6 15l.8 2.7 2.7.8-2.7.8L6 22l-.8-2.7-2.7-.8 2.7-.8L6 15Z" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/></svg></div>
         <h3>AI Refinement</h3>
         <p>Optional Ollama integration polishes grammar and style using a local LLM — fully private, no internet required.</p>
       </div>
@@ -570,7 +646,7 @@
   <div class="section-inner">
     <div class="section-label">Pricing</div>
     <h2>Start free.<br>Subscribe when ready.</h2>
-    <p class="section-sub">14-day free trial, no card required. Cancel anytime.</p>
+    <p class="section-sub">7-day free trial built into the app. Cancel anytime.</p>
 
     <div class="pricing-grid" style="max-width: 560px;">
       <div class="price-card">
@@ -602,7 +678,7 @@
     </div>
 
     <p style="margin-top:24px; font-size:13px; color:var(--muted);">
-      All plans include a 14-day free trial · Cancel anytime · On-device AI, no cloud
+      All plans include a 7-day free trial · Cancel anytime · On-device AI, no cloud
     </p>
   </div>
 </section>
