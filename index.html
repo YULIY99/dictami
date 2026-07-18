@@ -599,28 +599,37 @@
   }
 
   .feature-card {
-    background: linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02));
-    border: 1px solid rgba(163,148,255,0.14);
+    background: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(255,255,255,0.018));
+    border: 1px solid transparent;
+    background-clip: padding-box;
     border-radius: 20px;
     padding: 30px 28px;
     position: relative;
     overflow: hidden;
-    transition: border-color 0.25s, background 0.25s, transform 0.25s ease, box-shadow 0.25s;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.055);
+    transition: background 0.25s, transform 0.25s ease, box-shadow 0.25s;
   }
 
-  /* тонкая верхняя подсветка карточки */
+  /* градиентный волосок по всему контуру */
   .feature-card::before {
     content: '';
-    position: absolute; top: 0; left: 12%; right: 12%; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(186,168,255,0.45), transparent);
+    position: absolute; inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(160deg, rgba(212,202,255,0.40), rgba(120,150,255,0.12) 45%, rgba(195,185,255,0.22));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
     pointer-events: none;
+    opacity: 0.85;
+    transition: opacity 0.25s;
   }
+  .feature-card:hover::before { opacity: 1; }
 
   .feature-card:hover {
     background: linear-gradient(145deg, rgba(117,98,255,0.13), rgba(52,121,255,0.055));
-    border-color: rgba(164,151,255,0.34);
     transform: translateY(-4px);
-    box-shadow: 0 18px 44px rgba(10,10,40,0.45);
+    box-shadow: 0 22px 52px rgba(10,10,40,0.5), 0 0 44px rgba(104,84,255,0.10), inset 0 1px 0 rgba(255,255,255,0.08);
   }
 
   /* пятно света, следящее за курсором */
@@ -636,22 +645,35 @@
   .feature-card:hover::after { opacity: 1; }
 
   .feature-icon {
-    width: 46px; height: 46px; border-radius: 13px;
-    background: linear-gradient(135deg, rgba(158,116,255,0.28), rgba(58,126,255,0.16));
-    border: 1px solid rgba(169,145,255,0.22);
-    color: #c3b2ff;
+    width: 48px; height: 48px; border-radius: 14px;
+    background: linear-gradient(135deg, rgba(158,116,255,0.32), rgba(58,126,255,0.18));
+    border: 1px solid rgba(180,158,255,0.36);
+    color: #d2c4ff;
     display: flex; align-items: center; justify-content: center;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     font-size: 20px;
-    box-shadow: 0 6px 22px rgba(104,84,255,0.22), inset 0 1px 0 rgba(255,255,255,0.14);
+    box-shadow:
+      0 8px 26px rgba(104,84,255,0.30),
+      0 0 0 5px rgba(130,105,255,0.055),
+      inset 0 1px 0 rgba(255,255,255,0.20);
+    transition: transform 0.28s ease, box-shadow 0.28s;
+  }
+  .feature-card:hover .feature-icon {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow:
+      0 12px 32px rgba(104,84,255,0.45),
+      0 0 0 6px rgba(130,105,255,0.09),
+      inset 0 1px 0 rgba(255,255,255,0.24);
   }
 
   .feature-card h3 {
-    font-size: 16px; font-weight: 600; margin-bottom: 8px;
+    font-size: 16.5px; font-weight: 620; margin-bottom: 8px;
     letter-spacing: -0.2px;
+    background: linear-gradient(180deg, #ffffff 60%, rgba(226,222,255,0.85));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
   }
 
-  .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.55; }
+  .feature-card p { font-size: 14px; color: var(--muted); line-height: 1.58; }
 
   /* HOW IT WORKS */
   .steps { display: flex; flex-direction: column; gap: 0; max-width: 560px; }
