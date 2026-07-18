@@ -580,28 +580,58 @@
   }
 
   .price-card {
-    background: linear-gradient(155deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-    border: 1px solid rgba(151,141,255,0.22);
+    background: linear-gradient(155deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018));
     border-radius: 22px;
     padding: 34px 32px;
     display: flex;
     flex-direction: column;
     position: relative;
-    transition: border-color 0.25s, transform 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s;
+    border: 1px solid transparent;
+    /* glass border via background-clip */
+    background-clip: padding-box;
+    isolation: isolate;
   }
-  .price-card:hover { border-color: rgba(164,151,255,0.4); }
 
+  /* gradient border via ::before */
+  .price-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: 22px;
+    padding: 1px;
+    background: linear-gradient(160deg, rgba(200,190,255,0.22), rgba(100,140,255,0.10), rgba(200,190,255,0.08));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: opacity 0.25s;
+  }
+  .price-card:hover::before { opacity: 1.6; }
+  .price-card:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,0.35); }
+
+  /* YEARLY — фиолетовый glow */
   .price-card.featured {
-    background: linear-gradient(160deg, rgba(112,91,255,0.22), rgba(45,119,255,0.07) 60%, rgba(255,255,255,0.03));
-    border-color: rgba(148,140,255,0.72);
+    background: linear-gradient(160deg, rgba(112,91,255,0.24), rgba(45,119,255,0.08) 60%, rgba(255,255,255,0.03));
     box-shadow:
-      0 30px 70px rgba(43,48,170,0.30),
-      0 0 60px rgba(104,84,255,0.14),
-      inset 0 1px 0 rgba(255,255,255,0.13);
+      0 32px 72px rgba(43,48,170,0.32),
+      0 0 64px rgba(104,84,255,0.18),
+      inset 0 1px 0 rgba(255,255,255,0.14);
     transform: translateY(-10px) scale(1.02);
     z-index: 1;
   }
-  .price-card.featured:hover { transform: translateY(-12px) scale(1.02); }
+  .price-card.featured::before {
+    background: linear-gradient(160deg, rgba(180,150,255,0.9), rgba(80,130,255,0.5), rgba(160,120,255,0.7));
+  }
+  .price-card.featured:hover { transform: translateY(-13px) scale(1.02); box-shadow: 0 40px 80px rgba(43,48,170,0.40), 0 0 80px rgba(104,84,255,0.24), inset 0 1px 0 rgba(255,255,255,0.16); }
+
+  /* LIFETIME — золотая обводка */
+  .price-card.lifetime {
+    background: linear-gradient(160deg, rgba(255,210,100,0.07), rgba(255,180,50,0.03) 60%, rgba(255,255,255,0.015));
+  }
+  .price-card.lifetime::before {
+    background: linear-gradient(160deg, rgba(255,215,80,0.75), rgba(210,160,40,0.30), rgba(255,200,60,0.55));
+  }
+  .price-card.lifetime:hover { transform: translateY(-3px); box-shadow: 0 20px 50px rgba(0,0,0,0.35), 0 0 40px rgba(255,190,50,0.08); }
 
   .price-badge {
     position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
@@ -609,6 +639,7 @@
     font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
     padding: 3px 12px; border-radius: 999px;
     white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(100,80,255,0.45);
   }
 
   .price-plan { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 12px; }
@@ -1018,8 +1049,8 @@
         </ul>
         <a href="https://highroller5.gumroad.com/l/fhrqme?wanted=true" data-gumroad-overlay-checkout="true" class="btn btn-primary">Get started — $39/yr</a>
       </div>
-      <div class="price-card">
-        <div class="price-badge" style="background:linear-gradient(135deg,#2b6cb0,#4a9eff)">PAY ONCE</div>
+      <div class="price-card lifetime">
+        <div class="price-badge" style="background:linear-gradient(135deg,#b8860b,#f0c040);box-shadow:0 4px 14px rgba(200,160,30,0.45)">PAY ONCE</div>
         <div class="price-plan">Lifetime</div>
         <div class="price-amount"><sup>$</sup>69</div>
         <div class="price-note">one-time payment</div>
@@ -1034,9 +1065,20 @@
       </div>
     </div>
 
-    <p style="margin-top:24px; font-size:13px; color:var(--muted);">
-      7-day free trial · Cancel anytime · On-device AI, no cloud
-    </p>
+    <div style="margin-top:32px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+      <span style="display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:999px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);font-size:12px;color:rgba(240,238,255,0.6);">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 2v10l4 4" stroke="#a0e0a0" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="10" stroke="#a0e0a0" stroke-width="1.6"/></svg>
+        7-day free trial
+      </span>
+      <span style="display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:999px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);font-size:12px;color:rgba(240,238,255,0.6);">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="#f08080" stroke-width="2" stroke-linecap="round"/></svg>
+        No credit card required
+      </span>
+      <span style="display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:999px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);font-size:12px;color:rgba(240,238,255,0.6);">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 3 5 6v5c0 4.7 2.9 8.3 7 10 4.1-1.7 7-5.3 7-10V6l-7-3Z" stroke="#a0c4ff" stroke-width="1.8"/></svg>
+        100% on-device, no cloud
+      </span>
+    </div>
   </div>
 </section>
 
