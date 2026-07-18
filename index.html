@@ -170,12 +170,13 @@
   }
 
   h1 {
-    font-size: clamp(42px, 6vw, 68px);
-    font-weight: 750;
-    letter-spacing: -2.4px;
-    line-height: 1.04;
-    margin-bottom: 22px;
+    font-size: clamp(46px, 6.8vw, 80px);
+    font-weight: 780;
+    letter-spacing: -2.8px;
+    line-height: 1.02;
+    margin-bottom: 24px;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    text-wrap: balance;
   }
 
   h1 span {
@@ -354,26 +355,43 @@
   .compat-badge svg { opacity: 0.5; }
 
   /* SECTION */
-  section { padding: 100px 24px; }
+  section { padding: 130px 24px; position: relative; }
 
   .section-inner { max-width: 1080px; margin: 0 auto; }
 
   .section-label {
-    font-size: 12px; font-weight: 600; letter-spacing: 1.2px;
+    font-size: 11px; font-weight: 600; letter-spacing: 2.2px;
     text-transform: uppercase; color: #8daeff;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
 
   h2 {
-    font-size: clamp(28px, 4vw, 42px);
-    font-weight: 750; letter-spacing: -1.15px; line-height: 1.1;
+    font-size: clamp(32px, 4.6vw, 52px);
+    font-weight: 750; letter-spacing: -1.6px; line-height: 1.06;
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
+    text-wrap: balance;
   }
 
   .section-sub {
-    font-size: 17px; color: var(--muted); max-width: 520px; line-height: 1.6;
-    margin-bottom: 56px;
+    font-size: 17px; color: var(--muted); max-width: 60ch; line-height: 1.65;
+    margin-bottom: 64px;
+  }
+
+  /* Edge glows — страница дышит светом на стыках секций */
+  #features::before {
+    content: '';
+    position: absolute; top: -160px; left: 50%; transform: translateX(-50%);
+    width: min(980px, 90vw); height: 340px;
+    background: radial-gradient(ellipse at center, rgba(122,92,255,0.10) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  #pricing::after {
+    content: '';
+    position: absolute; bottom: -140px; left: 50%; transform: translateX(-50%);
+    width: min(860px, 85vw); height: 300px;
+    background: radial-gradient(ellipse at center, rgba(57,125,255,0.08) 0%, transparent 65%);
+    pointer-events: none;
   }
 
   /* FEATURES GRID */
@@ -384,27 +402,39 @@
   }
 
   .feature-card {
-    background: linear-gradient(145deg, rgba(255,255,255,0.062), rgba(255,255,255,0.025));
-    border: 1px solid var(--card-border);
+    background: linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02));
+    border: 1px solid rgba(163,148,255,0.14);
     border-radius: 20px;
-    padding: 28px;
-    transition: border-color 0.2s, background 0.2s, transform 0.2s ease;
+    padding: 30px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.25s, background 0.25s, transform 0.25s ease, box-shadow 0.25s;
+  }
+
+  /* тонкая верхняя подсветка карточки */
+  .feature-card::before {
+    content: '';
+    position: absolute; top: 0; left: 12%; right: 12%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(186,168,255,0.45), transparent);
+    pointer-events: none;
   }
 
   .feature-card:hover {
-    background: linear-gradient(145deg, rgba(117,98,255,0.16), rgba(52,121,255,0.07));
-    border-color: rgba(164,151,255,0.36);
-    transform: translateY(-3px);
+    background: linear-gradient(145deg, rgba(117,98,255,0.13), rgba(52,121,255,0.055));
+    border-color: rgba(164,151,255,0.34);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 44px rgba(10,10,40,0.45);
   }
 
   .feature-icon {
-    width: 44px; height: 44px; border-radius: 12px;
-    background: linear-gradient(135deg, rgba(158,116,255,0.27), rgba(58,126,255,0.18));
-    border: 1px solid rgba(169,145,255,0.17);
-    color: #baa8ff;
+    width: 46px; height: 46px; border-radius: 13px;
+    background: linear-gradient(135deg, rgba(158,116,255,0.28), rgba(58,126,255,0.16));
+    border: 1px solid rgba(169,145,255,0.22);
+    color: #c3b2ff;
     display: flex; align-items: center; justify-content: center;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     font-size: 20px;
+    box-shadow: 0 6px 22px rgba(104,84,255,0.22), inset 0 1px 0 rgba(255,255,255,0.14);
   }
 
   .feature-card h3 {
@@ -451,26 +481,42 @@
   .pricing-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    gap: 18px;
     max-width: 700px;
+  }
+  .pricing-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 900px;
+    align-items: stretch;
+  }
+  @media (max-width: 900px) and (min-width: 701px) {
+    .pricing-grid-3 { grid-template-columns: 1fr; max-width: 440px; }
+    .pricing-grid-3 .price-card.featured { transform: none; }
   }
 
   .price-card {
-    background: linear-gradient(155deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
-    border: 1px solid var(--card-border);
-    border-radius: 20px;
-    padding: 32px;
+    background: linear-gradient(155deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border: 1px solid rgba(151,141,255,0.22);
+    border-radius: 22px;
+    padding: 34px 32px;
     display: flex;
     flex-direction: column;
-    border-color: rgba(151,141,255,0.30);
+    position: relative;
+    transition: border-color 0.25s, transform 0.25s ease;
   }
+  .price-card:hover { border-color: rgba(164,151,255,0.4); }
 
   .price-card.featured {
-    background: linear-gradient(155deg, rgba(112,91,255,0.20), rgba(45,119,255,0.08));
-    border-color: rgba(133,137,255,0.62);
-    box-shadow: 0 20px 48px rgba(37,52,161,0.18), inset 0 1px 0 rgba(255,255,255,0.10);
-    position: relative;
+    background: linear-gradient(160deg, rgba(112,91,255,0.22), rgba(45,119,255,0.07) 60%, rgba(255,255,255,0.03));
+    border-color: rgba(148,140,255,0.72);
+    box-shadow:
+      0 30px 70px rgba(43,48,170,0.30),
+      0 0 60px rgba(104,84,255,0.14),
+      inset 0 1px 0 rgba(255,255,255,0.13);
+    transform: translateY(-10px) scale(1.02);
+    z-index: 1;
   }
+  .price-card.featured:hover { transform: translateY(-12px) scale(1.02); }
 
   .price-badge {
     position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
@@ -540,6 +586,21 @@
   footer a:hover { color: var(--text); }
   .footer-links { display: flex; gap: 20px; }
 
+  /* A11y + микро-детали */
+  :focus-visible {
+    outline: 2px solid rgba(140,150,255,0.85);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+  }
+
   /* UTILS */
   .split {
     display: grid;
@@ -549,6 +610,8 @@
   }
   @media (max-width: 700px) {
     .pricing-grid { grid-template-columns: 1fr; }
+    .price-card.featured, .price-card.featured:hover { transform: none; }
+    section { padding: 90px 16px; }
     .split { grid-template-columns: 1fr; gap: 40px; }
     nav { padding: 0 16px; }
     .nav-links { gap: 16px; }
@@ -727,7 +790,7 @@
     <h2>Start free.<br>Subscribe when ready.</h2>
     <p class="section-sub">7-day free trial built into the app. Cancel anytime.</p>
 
-    <div class="pricing-grid" style="max-width: 860px; grid-template-columns: repeat(3,1fr);">
+    <div class="pricing-grid pricing-grid-3">
       <div class="price-card">
         <div class="price-plan">Monthly</div>
         <div class="price-amount"><sup>$</sup>5</div>
