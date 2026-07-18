@@ -196,9 +196,11 @@
     position: relative;
     display: inline-flex; align-items: center; gap: 9px;
     padding: 7px 16px 7px 14px; border-radius: 999px;
-    font-size: 11.5px; font-weight: 500; letter-spacing: 0.6px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.018));
-    color: rgba(224,222,255,0.82);
+    font-size: 12.5px; font-weight: 600; letter-spacing: 0.9px;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    color: rgba(238,235,255,0.94);
+    text-shadow: 0 0 14px rgba(160,140,255,0.35);
     margin-bottom: 28px;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -265,16 +267,46 @@
 
   .pill-demo {
     display: inline-flex; align-items: center; gap: 14px;
-    padding: 14px 22px;
-    background: rgba(5,5,14,0.78);
-    border: 1px solid rgba(185,170,255,0.24);
+    padding: 16px 26px;
+    background: linear-gradient(180deg, rgba(22,21,44,0.88), rgba(8,8,20,0.94));
+    border: none;
     border-radius: 999px;
-    backdrop-filter: blur(24px);
-    box-shadow: 0 18px 48px rgba(0,0,0,0.48), 0 0 52px rgba(90,80,255,0.10), inset 0 1px 0 rgba(255,255,255,0.08);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    box-shadow:
+      0 26px 64px rgba(0,0,0,0.55),
+      0 0 80px rgba(96,84,255,0.17),
+      inset 0 1px 0 rgba(255,255,255,0.12),
+      inset 0 -14px 28px rgba(84,72,230,0.09);
     font-size: 15px;
-    color: var(--text);
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    color: #f2f0ff;
     margin: 0 auto;
     position: relative; z-index: 1;
+  }
+
+  /* градиентный волосок по контуру пилюли */
+  .pill-demo::before {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: 999px;
+    padding: 1px;
+    background: linear-gradient(115deg, rgba(198,178,255,0.65), rgba(120,150,255,0.20) 38%, rgba(255,255,255,0.06) 60%, rgba(150,120,255,0.5));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* лужа света под пилюлей */
+  .pill-demo::after {
+    content: '';
+    position: absolute; left: 10%; right: 10%; bottom: -30px;
+    height: 40px;
+    background: radial-gradient(55% 100% at 50% 0%, rgba(112,96,255,0.30), transparent 72%);
+    filter: blur(12px);
+    pointer-events: none;
   }
 
   .pill-dot {
@@ -286,12 +318,14 @@
     content: '';
     position: absolute;
     width: 18px; height: 18px; border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.30);
+    box-shadow: 0 0 12px rgba(255,90,90,0.25);
   }
   .pill-dot::after {
     content: '';
-    width: 8px; height: 8px; border-radius: 2px;
-    background: #F24444;
+    width: 8px; height: 8px; border-radius: 2.5px;
+    background: linear-gradient(145deg, #ff6b5e, #f03038);
+    box-shadow: 0 0 10px rgba(255,70,70,0.85);
   }
 
   .pill-words { display: flex; gap: 4px; }
@@ -684,7 +718,7 @@
   }
 
   .price-card {
-    background: linear-gradient(155deg, rgba(255,255,255,0.055), rgba(255,255,255,0.018));
+    background: linear-gradient(155deg, rgba(255,255,255,0.065), rgba(255,255,255,0.02));
     border-radius: 22px;
     padding: 34px 32px;
     display: flex;
@@ -692,9 +726,9 @@
     position: relative;
     transition: transform 0.25s ease, box-shadow 0.25s;
     border: 1px solid transparent;
-    /* glass border via background-clip */
     background-clip: padding-box;
     isolation: isolate;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.32), inset 0 1px 0 rgba(255,255,255,0.07);
   }
 
   /* gradient border via ::before */
@@ -703,7 +737,7 @@
     position: absolute; inset: 0;
     border-radius: 22px;
     padding: 1px;
-    background: linear-gradient(160deg, rgba(200,190,255,0.22), rgba(100,140,255,0.10), rgba(200,190,255,0.08));
+    background: linear-gradient(160deg, rgba(215,205,255,0.45), rgba(120,150,255,0.14) 45%, rgba(200,190,255,0.26));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -746,18 +780,39 @@
     box-shadow: 0 4px 14px rgba(100,80,255,0.45);
   }
 
-  .price-plan { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 12px; }
-  .price-amount { font-size: 44px; font-weight: 700; letter-spacing: -1px; font-variant-numeric: tabular-nums; line-height: 1; }
-  .price-amount sup { font-size: 22px; vertical-align: super; margin-right: 2px; }
-  .price-note { font-size: 13px; color: var(--muted); margin-top: 6px; margin-bottom: 24px; }
+  .price-plan {
+    font-size: 12px; font-weight: 650; text-transform: uppercase; letter-spacing: 1.6px;
+    background: linear-gradient(90deg, #b5a6ff, #7fa4ff);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 12px;
+  }
+  .price-amount {
+    font-size: 48px; font-weight: 750; letter-spacing: -1.4px;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+    font-variant-numeric: tabular-nums; line-height: 1;
+    background: linear-gradient(180deg, #ffffff 55%, rgba(216,210,255,0.82));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .price-amount sup { font-size: 24px; vertical-align: super; margin-right: 2px; }
+  .price-note { font-size: 13px; color: var(--muted); margin-top: 8px; margin-bottom: 26px; }
 
   .price-features { list-style: none; margin-bottom: 28px; }
   .price-features li {
-    font-size: 14px; color: var(--muted); padding: 7px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 14px; color: rgba(205,200,235,0.85); padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.045);
+    display: flex; gap: 11px; align-items: flex-start;
   }
-  .price-features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+  .price-features li::before {
+    content: '✓';
+    display: flex; align-items: center; justify-content: center;
+    width: 17px; height: 17px; border-radius: 50%;
+    font-size: 9.5px; font-weight: 700;
+    color: #d5c9ff;
+    background: linear-gradient(135deg, rgba(136,103,255,0.32), rgba(50,122,255,0.22));
+    border: 1px solid rgba(165,145,255,0.32);
+    flex-shrink: 0;
+    margin-top: 2.5px;
+  }
   .price-features li:last-child { border-bottom: none; }
 
   .price-card .btn { width: 100%; justify-content: center; margin-top: auto; }
