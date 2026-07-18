@@ -262,6 +262,30 @@
     background: radial-gradient(400px 180px at 79% 100%, rgba(48,126,255,0.18), transparent 70%), radial-gradient(320px 180px at 18% 24%, rgba(159,95,255,0.14), transparent 72%);
     pointer-events: none;
   }
+
+  .demo-film {
+    width: min(820px, 100%);
+    margin: 42px auto 0;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 26px;
+    background: linear-gradient(145deg, rgba(145,116,255,0.22), rgba(55,127,255,0.12) 42%, rgba(255,255,255,0.045));
+    border: 1px solid rgba(180,164,255,0.29);
+    box-shadow: 0 34px 90px rgba(0,0,0,0.48), 0 0 88px rgba(91,83,255,0.16), inset 0 1px 0 rgba(255,255,255,0.14);
+  }
+  .demo-film::before {
+    content: 'DICTAMI · LIVE DEMO';
+    position: absolute; z-index: 2; top: 24px; left: 26px;
+    padding: 5px 10px; border-radius: 999px;
+    color: rgba(238,235,255,0.92); background: rgba(5,6,18,0.58);
+    border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(10px);
+    font-size: 10px; font-weight: 700; letter-spacing: .1em;
+  }
+  .demo-film video {
+    display: block; width: 100%; height: auto;
+    border-radius: 18px; background: #020514;
+  }
   .stage-bar { height: 28px; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:1; padding:0 5px 8px; color:rgba(237,234,255,.48); font-size:11px; }
   .stage-dots { display:flex; gap:5px; }
   .stage-dots i { display:block; width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,.16); }
@@ -570,17 +594,10 @@
     <div class="pill-cursor"></div>
   </div>
 
-  <div class="hero-stage" aria-hidden="true">
-    <div class="stage-bar">
-      <div class="stage-dots"><i></i><i></i><i></i></div>
-      <span class="stage-title">Dictami · Live transcription</span>
-      <span>⌥ Space</span>
-    </div>
-    <div class="stage-content">
-      <div class="stage-listening"><span class="stage-record"></span> Listening</div>
-      <div class="stage-copy">Write a clear reply to the client and <em>send it before noon.</em></div>
-      <div class="stage-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    </div>
+  <div class="demo-film">
+    <video controls playsinline preload="metadata" poster="Dictami-gumroad-cover.png" aria-label="Dictami voice dictation demo">
+      <source src="dictami-demo.mp4" type="video/mp4">
+    </video>
   </div>
 
   <div class="hero-trust">
