@@ -27,11 +27,10 @@ export function Closing() {
 
             <a
               href={PRIMARY_CTA}
-              data-gumroad-overlay-checkout="true"
               className="mt-9 inline-flex items-center gap-2.5 rounded-full bg-card px-8 py-3.5 text-[15px] font-medium text-ink transition hover:bg-white/90"
             >
               <AppleMark />
-              Get Dictami for Mac
+              Download for Mac
             </a>
           </Reveal>
         </div>

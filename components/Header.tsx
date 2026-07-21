@@ -74,11 +74,10 @@ export function Header() {
 
           <a
             href={PRIMARY_CTA}
-            data-gumroad-overlay-checkout="true"
             className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-[15px] font-medium text-on-accent shadow-[0_8px_20px_-10px_rgba(59,143,240,0.8)] transition hover:bg-accent-deep"
           >
             <AppleMark />
-            Get Dictami
+            Download
           </a>
         </div>
       </div>
