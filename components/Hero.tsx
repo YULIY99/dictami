@@ -34,7 +34,7 @@ export function Hero() {
 
           <p className="mx-auto mt-6 max-w-xl text-[17px] leading-relaxed text-muted">
             Hold a key, talk, let go. Punctuated text lands in whatever app your
-            cursor is in — in about half a second, in 25 languages, without your
+            cursor is in — in about half a second, in 28 languages, without your
             voice leaving your Mac.
           </p>
 
