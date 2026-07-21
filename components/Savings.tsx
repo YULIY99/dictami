@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { Reveal } from "./Sections";
 
@@ -20,10 +21,18 @@ const SPEAKING_WPM = 150;
 /** Working days in a year, minus holidays. */
 const WORKING_DAYS = 250;
 
+/**
+ * Named after what people actually type into, in plain nouns.
+ *
+ * These were "A few messages", "Email all day" and "Writing is the job". Email
+ * is not where the words go any more, and "writing is the job" is an idiom that
+ * a non-native reader has to stop and decode — on a page whose buyers are
+ * mostly not native English speakers, that is a dead control.
+ */
 const PRESETS = [
-  { label: "A few messages", words: 200 },
-  { label: "Email all day", words: 800 },
-  { label: "Writing is the job", words: 2000 },
+  { label: "Messages", words: 200 },
+  { label: "ChatGPT", words: 900 },
+  { label: "Documents", words: 2000 },
 ];
 
 function useCountUp(value: number, duration = 650) {
@@ -69,8 +78,6 @@ export function Savings() {
   const minutesSpeaking = words / SPEAKING_WPM;
   const savedPerDay = minutesTyping - minutesSpeaking;
 
-  const day = useCountUp(savedPerDay);
-  const week = useCountUp(savedPerDay * 5);
   const year = useCountUp(savedPerDay * WORKING_DAYS);
   const shownWords = useCountUp(words, 320);
 
@@ -119,6 +126,14 @@ export function Savings() {
               value={words}
               onChange={(event) => setWords(Number(event.target.value))}
               className="mt-4 w-full"
+              // Filled to the left of the thumb, grey to the right. A track
+              // that is one gradient end to end shows no position, so the
+              // control reads as decoration rather than a value.
+              style={{
+                background: `linear-gradient(90deg, var(--color-accent) ${
+                  ((words - 100) / (3000 - 100)) * 100
+                }%, rgba(41,44,61,0.13) ${((words - 100) / (3000 - 100)) * 100}%)`,
+              }}
             />
 
             <div className="mt-4 flex flex-wrap gap-2">
@@ -138,20 +153,55 @@ export function Savings() {
               ))}
             </div>
 
-            <dl className="mt-10 grid gap-8 border-t border-line pt-9 sm:grid-cols-3">
+            {/* Two bars drawn to scale against each other. Three numbers in a
+                row stated the result; a short bar beside a long one lets the
+                reader see it before reading anything, which is the whole
+                argument of the section. */}
+            <div className="mt-10 space-y-5 border-t border-line pt-9">
               {[
-                { label: "Saved a day", value: `${Math.round(day)} min` },
-                { label: "Saved a week", value: `${Math.round(week)} min` },
-                { label: "Saved a year", value: `${formatHours(year)} hrs` },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <dt className="text-[13px] text-muted">{stat.label}</dt>
-                  <dd className="mt-1.5 font-display text-[clamp(2rem,4vw,2.75rem)] font-normal tabular-nums tracking-tight">
-                    {stat.value}
-                  </dd>
+                {
+                  label: "Typing",
+                  minutes: minutesTyping,
+                  width: 100,
+                  fill: "rgba(41,44,61,0.16)",
+                  ink: "text-muted",
+                },
+                {
+                  label: "Speaking",
+                  minutes: minutesSpeaking,
+                  width: (SPEAKING_WPM ? TYPING_WPM / SPEAKING_WPM : 1) * 100,
+                  fill: "var(--color-accent)",
+                  ink: "text-ink",
+                },
+              ].map((row) => (
+                <div key={row.label}>
+                  <div className="flex items-baseline justify-between text-[13.5px]">
+                    <span className={row.ink}>{row.label}</span>
+                    <span className={`tabular-nums ${row.ink}`}>
+                      {Math.round(row.minutes)} min a day
+                    </span>
+                  </div>
+                  <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-panel">
+                    <motion.div
+                      className="h-full rounded-full"
+                      style={{ background: row.fill }}
+                      initial={false}
+                      animate={{ width: `${row.width}%` }}
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    />
+                  </div>
                 </div>
               ))}
-            </dl>
+            </div>
+
+            {/* One figure, not three. A year is the only horizon where the
+                saving stops sounding like rounding error. */}
+            <div className="mt-9 flex flex-wrap items-baseline gap-x-4 gap-y-1 border-t border-line pt-9">
+              <span className="font-display text-[clamp(2.6rem,6vw,3.9rem)] font-normal leading-none tabular-nums tracking-[-0.03em] text-accent">
+                {formatHours(year)} hours
+              </span>
+              <span className="text-[15.5px] text-muted">back every year</span>
+            </div>
 
             <p className="mt-8 text-[12.5px] leading-relaxed text-muted">
               Counted at {TYPING_WPM} words a minute typed against{" "}
@@ -171,11 +221,6 @@ export function Savings() {
           appearance: none;
           height: 6px;
           border-radius: 999px;
-          background: linear-gradient(
-            90deg,
-            var(--color-wave-a),
-            var(--color-wave-b)
-          );
           outline: none;
         }
         input[type="range"]::-webkit-slider-thumb {
