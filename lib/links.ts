@@ -24,4 +24,4 @@ export const PRIMARY_CTA = DOWNLOAD;
  * API key must never reach a browser — which is exactly why a static site
  * cannot take crypto on its own.
  */
-export const LICENCE_API = "https://dictami-licences.highrollerboy.workers.dev";
+export const LICENCE_API = "https://api.dictami.com";
