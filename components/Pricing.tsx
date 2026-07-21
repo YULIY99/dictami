@@ -1,9 +1,26 @@
 "use client";
 
+import { useState } from "react";
 import { Reveal } from "./Sections";
-import { BUY } from "@/lib/links";
+import { BUY, LICENCE_API } from "@/lib/links";
 
-const PLANS = [
+/**
+ * Two payment rails, two different products — deliberately.
+ *
+ * Cards can charge again next month, so cards sell a subscription. Crypto
+ * cannot: there is nothing to charge, and a "monthly plan" paid in USDT is one
+ * payment that quietly dies. So crypto sells TIME, the way Mullvad does — buy
+ * days, top up whenever, days add to what is left. Pretending both rails can
+ * do the same thing is what leaves crypto buyers switched off a month later
+ * with no warning.
+ *
+ * Crypto is cheaper per day because it costs us less: no card processing, no
+ * chargebacks.
+ */
+
+type Rail = "card" | "crypto";
+
+const CARD_PLANS = [
   {
     name: "Monthly",
     price: "$5",
@@ -30,7 +47,99 @@ const PLANS = [
   },
 ];
 
+const CRYPTO_PLANS = [
+  {
+    id: "30d",
+    name: "30 days",
+    price: "$5",
+    note: "17¢ a day",
+    perks: ["Every language", "Every model", "Top up any time"],
+    featured: false,
+  },
+  {
+    id: "90d",
+    name: "90 days",
+    price: "$13",
+    note: "14¢ a day · saves 13%",
+    perks: ["Every language", "Every model", "Top up any time", "Priority support"],
+    featured: true,
+  },
+  {
+    id: "365d",
+    name: "1 year",
+    price: "$39",
+    note: "11¢ a day · saves 35%",
+    perks: ["Every language", "Every model", "Top up any time", "Priority support"],
+    featured: false,
+  },
+];
+
+function Card({
+  featured,
+  children,
+}: {
+  featured: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <div
+      className={`flex h-full flex-col rounded-2xl border p-7 ${
+        featured ? "border-deep bg-deep text-white" : "border-line bg-card"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
+
+function Perks({ perks, featured }: { perks: string[]; featured: boolean }) {
+  return (
+    <ul className="mt-7 flex flex-col gap-2.5">
+      {perks.map((perk) => (
+        <li
+          key={perk}
+          className={`flex items-start gap-2.5 text-[14px] ${
+            featured ? "text-white/80" : "text-muted"
+          }`}
+        >
+          <span
+            className={`mt-[7px] h-1 w-1 shrink-0 rounded-full ${
+              featured ? "bg-white/50" : "bg-accent"
+            }`}
+          />
+          {perk}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 export function Pricing() {
+  const [rail, setRail] = useState<Rail>("card");
+  const [busy, setBusy] = useState<string | null>(null);
+  const [failed, setFailed] = useState(false);
+
+  /** The API key lives on the server, so the invoice is opened there. */
+  async function payWithCrypto(plan: string) {
+    setBusy(plan);
+    setFailed(false);
+    try {
+      const response = await fetch(`${LICENCE_API}/checkout`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan }),
+      });
+      const data = await response.json();
+      if (!response.ok || !data?.url) throw new Error(data?.error || "no url");
+      window.location.href = data.url;
+    } catch {
+      setFailed(true);
+      setBusy(null);
+    }
+  }
+
+  const plans = rail === "card" ? CARD_PLANS : CRYPTO_PLANS;
+
   return (
     <section id="pricing" className="border-y border-line bg-panel py-24 sm:py-32">
       <div className="mx-auto max-w-6xl px-5">
@@ -44,18 +153,50 @@ export function Pricing() {
           <p className="mt-5 text-[15px] text-muted">
             The trial runs inside the app — no card, no account.
           </p>
-        </Reveal>
 
-        <div className="mt-14 grid gap-5 lg:grid-cols-3">
-          {PLANS.map((plan, i) => (
-            <Reveal key={plan.name} delay={i * 0.07}>
-              <div
-                className={`flex h-full flex-col rounded-2xl border p-7 ${
-                  plan.featured
-                    ? "border-deep bg-deep text-white"
-                    : "border-line bg-card"
+          {/* One switch rather than six buttons: the two rails sell different
+              things, and showing both at once invites the reader to compare a
+              subscription against a bundle of days. */}
+          <div
+            className="mx-auto mt-9 inline-flex rounded-full bg-card p-1"
+            style={{ boxShadow: "0 0 0 1px rgba(41,44,61,0.09)" }}
+            role="tablist"
+            aria-label="Payment method"
+          >
+            {(
+              [
+                ["card", "Card"],
+                ["crypto", "Crypto"],
+              ] as const
+            ).map(([value, label]) => (
+              <button
+                key={value}
+                type="button"
+                role="tab"
+                aria-selected={rail === value}
+                onClick={() => setRail(value)}
+                className={`rounded-full px-6 py-2 text-[14px] font-medium transition ${
+                  rail === value
+                    ? "bg-accent text-on-accent"
+                    : "text-muted hover:text-ink"
                 }`}
               >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          <p className="mt-4 text-[13px] text-muted">
+            {rail === "card"
+              ? "Renews automatically. Cancel whenever you like."
+              : "USDT, USDC and more. You buy days — pay again and they add on."}
+          </p>
+        </Reveal>
+
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          {plans.map((plan, i) => (
+            <Reveal key={`${rail}-${plan.name}`} delay={i * 0.07}>
+              <Card featured={plan.featured}>
                 <div className="flex items-center justify-between">
                   <h3 className="font-display text-[15px] font-medium tracking-tight">
                     {plan.name}
@@ -78,42 +219,50 @@ export function Pricing() {
                   {plan.note}
                 </p>
 
-                <ul className="mt-7 flex flex-col gap-2.5">
-                  {plan.perks.map((perk) => (
-                    <li
-                      key={perk}
-                      className={`flex items-start gap-2.5 text-[14px] ${
-                        plan.featured ? "text-white/80" : "text-muted"
-                      }`}
-                    >
-                      <span
-                        className={`mt-[7px] h-1 w-1 shrink-0 rounded-full ${
-                          plan.featured ? "bg-white/50" : "bg-accent"
-                        }`}
-                      />
-                      {perk}
-                    </li>
-                  ))}
-                </ul>
+                <Perks perks={plan.perks} featured={plan.featured} />
 
-                <a
-                  href={plan.href}
-                  data-gumroad-overlay-checkout="true"
-                  className={`mt-8 rounded-full px-5 py-3 text-center text-[14.5px] font-medium transition ${
-                    plan.featured
-                      ? "bg-card text-ink hover:bg-white/90"
-                      : "border border-line hover:border-ink/25"
-                  }`}
-                >
-                  Get {plan.name.toLowerCase()}
-                </a>
-              </div>
+                {"href" in plan ? (
+                  <a
+                    href={plan.href}
+                    data-gumroad-overlay-checkout="true"
+                    className={`mt-8 rounded-full px-5 py-3 text-center text-[14.5px] font-medium transition ${
+                      plan.featured
+                        ? "bg-card text-ink hover:bg-white/90"
+                        : "border border-line hover:border-ink/25"
+                    }`}
+                  >
+                    Pay by card
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    disabled={busy !== null}
+                    onClick={() => payWithCrypto(plan.id)}
+                    className={`mt-8 rounded-full px-5 py-3 text-center text-[14.5px] font-medium transition disabled:opacity-60 ${
+                      plan.featured
+                        ? "bg-card text-ink hover:bg-white/90"
+                        : "border border-line hover:border-ink/25"
+                    }`}
+                  >
+                    {busy === plan.id ? "Opening…" : "Pay with crypto"}
+                  </button>
+                )}
+              </Card>
             </Reveal>
           ))}
         </div>
 
+        {failed && (
+          <p className="mt-6 text-center text-[13.5px] text-red-600">
+            Could not open the payment page. Please try again, or write to us
+            and we will send an invoice.
+          </p>
+        )}
+
         <p className="mt-8 text-center text-[13px] text-muted">
-          Full refund within 14 days, no questions asked.
+          {rail === "card"
+            ? "Full refund within 14 days, no questions asked."
+            : "Crypto payments are final — there is no way to reverse them, so the 7-day trial is there to decide before you pay."}
         </p>
       </div>
     </section>
