@@ -1,22 +1,19 @@
-<?xml version="1.0" standalone="yes"?>
-<!-- sparkle-sign-warning:
+<?xml version="1.0" standalone="yes"?><!-- sparkle-sign-warning:
 IMPORTANT: This file was signed by Sparkle. Any modifications to this file requires re-signing this file with generate_appcast or sign_update! The signed signature will be embedded at the end of this file.
--->
-<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+--><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
     <channel>
-        <title>VoxLocal</title>
+        <title>Dictami</title>
         <item>
-            <title>1.1.0</title>
-            <pubDate>Thu, 16 Jul 2026 17:50:28 +0300</pubDate>
-            <sparkle:version>2</sparkle:version>
-            <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+            <title>1.2.0</title>
+            <pubDate>Tue, 21 Jul 2026 17:33:49 +0300</pubDate>
+            <sparkle:version>4</sparkle:version>
+            <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <enclosure url="https://dictami.com/Dictami-1.1.0.zip" length="4472416" type="application/octet-stream" sparkle:edSignature="haJ2FaMTlvryhLpKyn2nYw/Z1z5HGmE9nfY8pm1I8XWSuZPLIuEBFDKIeKav3HXNuSqsHynB/VdCgObrSik7AA=="/>
+            <enclosure url="https://dictami.com/Dictami-1.2.0.zip" length="13643519" type="application/octet-stream" sparkle:edSignature="vTPEt9zQxurT31v6eFxuaGt63HqVT6cS4ZASLox8reIec1xBPwpBlB5KyO9Ciz7ywVpADcnZuOp32ZLs61i+CA=="></enclosure>
         </item>
     </channel>
-</rss>
-<!-- sparkle-signatures:
-edSignature: /ojkkOIYGRVN5gFSnkpdeCmZSK4IsjhZclctBoegx9nKn1hP8iR91gUnx7kMRNUAmHoTyV/nWMby3oc2r4WyAw==
-length: 1069
+</rss><!-- sparkle-signatures:
+edSignature: lPHku318Wb/Oa3WYeIRqLYBLFgKn4xSd55d2/iuqCXwgo2SfXIshMuOu5jB7Qc3dp8BFWTIXJN4h1nZMnhcsAQ==
+length: 1077
 -->
