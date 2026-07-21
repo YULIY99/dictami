@@ -5,15 +5,15 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
         <title>Dictami</title>
         <item>
             <title>1.2.0</title>
-            <pubDate>Tue, 21 Jul 2026 23:59:14 +0300</pubDate>
-            <sparkle:version>7</sparkle:version>
+            <pubDate>Wed, 22 Jul 2026 00:08:20 +0300</pubDate>
+            <sparkle:version>9</sparkle:version>
             <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
             <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <enclosure url="https://dictami.com/Dictami-1.2.0.zip" length="13654231" type="application/octet-stream" sparkle:edSignature="047gRqGOhuR3fuLUB3FwwkS7PatS+WI44zLpd2Yv0q6M3zwLG480wP9s5JiMcFOBXW2+QZnABlRTfP140EydAA=="></enclosure>
+            <enclosure url="https://dictami.com/Dictami-1.2.0.zip" length="13658111" type="application/octet-stream" sparkle:edSignature="ZSHSh6q1KjTD+t4G5sTM3OXCljjx7QlEDeRB0u4MK1M+j3jwquAUrb7m2BRlnY7hwRtkeQRuwmPXA9li3ZhICw=="></enclosure>
         </item>
     </channel>
 </rss><!-- sparkle-signatures:
-edSignature: WtZySmMkgRunSUhas6MrLIAY5Ao4Ti4CCAicHjd01qcHvXO9AK5QgBeezNe4vRWthE6YdyQGziO0XOOAoWSHAg==
+edSignature: ZsOTR/+47WSdPh0h+yYUJYByJeHgsd9uiwR5QtqJ/upNlxZ/44f9ZC512GVptsEwuqpGAj8X2mQFrqUSoPWdDw==
 length: 1077
 -->
