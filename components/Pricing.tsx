@@ -47,28 +47,35 @@ const CARD_PLANS = [
   },
 ];
 
+/** A fifth off every card price. Crypto costs us no processing fee and cannot
+ *  be charged back, so the saving is real rather than a promotion. */
+const CRYPTO_DISCOUNT = "20%";
+
 const CRYPTO_PLANS = [
   {
     id: "30d",
     name: "30 days",
-    price: "$5",
-    note: "17¢ a day",
+    price: "$4",
+    was: "$5",
+    note: "13¢ a day",
     perks: ["Every language", "Every model", "Top up any time"],
     featured: false,
   },
   {
     id: "90d",
     name: "90 days",
-    price: "$13",
-    note: "14¢ a day · saves 13%",
+    price: "$10",
+    was: "$13",
+    note: "11¢ a day",
     perks: ["Every language", "Every model", "Top up any time", "Priority support"],
     featured: true,
   },
   {
     id: "365d",
     name: "1 year",
-    price: "$39",
-    note: "11¢ a day · saves 35%",
+    price: "$31",
+    was: "$39",
+    note: "8¢ a day · cheapest way to run it",
     perks: ["Every language", "Every model", "Top up any time", "Priority support"],
     featured: false,
   },
@@ -175,13 +182,26 @@ export function Pricing() {
                 role="tab"
                 aria-selected={rail === value}
                 onClick={() => setRail(value)}
-                className={`rounded-full px-6 py-2 text-[14px] font-medium transition ${
+                className={`flex items-center gap-2 rounded-full px-6 py-2 text-[14px] font-medium transition ${
                   rail === value
                     ? "bg-accent text-on-accent"
                     : "text-muted hover:text-ink"
                 }`}
               >
                 {label}
+                {/* The saving has to be visible before the tab is opened —
+                    nobody switches payment method out of curiosity. */}
+                {value === "crypto" && (
+                  <span
+                    className={`rounded-full px-2 py-0.5 font-mono text-[10.5px] tracking-wide ${
+                      rail === "crypto"
+                        ? "bg-white/20 text-on-accent"
+                        : "bg-accent/12 text-accent"
+                    }`}
+                  >
+                    −{CRYPTO_DISCOUNT}
+                  </span>
+                )}
               </button>
             ))}
           </div>
@@ -189,7 +209,7 @@ export function Pricing() {
           <p className="mt-4 text-[13px] text-muted">
             {rail === "card"
               ? "Renews automatically. Cancel whenever you like."
-              : "USDT, USDC and more. You buy days — pay again and they add on."}
+              : `${CRYPTO_DISCOUNT} off every price — card fees are ours, not yours. You buy days, and topping up adds to what is left.`}
           </p>
         </Reveal>
 
@@ -208,8 +228,19 @@ export function Pricing() {
                   )}
                 </div>
 
-                <p className="mt-6 font-display text-5xl font-normal tabular-nums tracking-tight">
+                <p className="mt-6 flex items-baseline gap-3 font-display text-5xl font-normal tabular-nums tracking-tight">
                   {plan.price}
+                  {/* The card price struck through, so the discount is a
+                      comparison the reader can see rather than a claim. */}
+                  {"was" in plan && (
+                    <span
+                      className={`text-[22px] line-through ${
+                        plan.featured ? "text-white/40" : "text-muted/60"
+                      }`}
+                    >
+                      {plan.was}
+                    </span>
+                  )}
                 </p>
                 <p
                   className={`mt-1.5 text-[13.5px] ${
