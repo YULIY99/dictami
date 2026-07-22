@@ -208,7 +208,7 @@ export function Pricing() {
           <p className="mt-4 text-[13px] text-muted">
             {rail === "card"
               ? "Renews automatically. Cancel whenever you like."
-              : `${CRYPTO_DISCOUNT} off every price — card fees are ours, not yours. You buy days, and topping up adds to what is left.`}
+              : `${CRYPTO_DISCOUNT} off every price — card fees are ours, not yours. You buy days, and topping up adds to what’s left.`}
           </p>
           {rail === "crypto" && (
             <p className="mt-2 text-[12.5px] text-muted">
@@ -297,7 +297,7 @@ export function Pricing() {
         <p className="mt-8 text-center text-[13px] text-muted">
           {rail === "card"
             ? "Full refund within 14 days, no questions asked."
-            : "Crypto payments are final — there is no way to reverse them, so the 7-day trial is there to decide before you pay."}
+            : "Crypto payments are final — there’s no way to reverse them, so the 7-day trial is there to decide before you pay."}
         </p>
       </div>
     </section>

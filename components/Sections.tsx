@@ -264,7 +264,7 @@ const REASONS = [
   },
   {
     title: "Speed is the product",
-    body: "The engine was rebuilt and the runtime picked by measurement to get there. It is the part you notice every time you use it.",
+    body: "The engine was rebuilt and the runtime picked by measurement to get there. It’s the part you notice every time you use it.",
   },
   {
     title: "A person answers",

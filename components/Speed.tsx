@@ -36,8 +36,8 @@ export function Speed() {
               Nothing is waiting on a server.
             </h2>
             <p className="mt-5 max-w-md text-[16.5px] leading-relaxed text-muted">
-              The model sits in memory on your Mac, so there is no upload, no
-              queue and no round trip. That is the whole reason it feels
+              The model sits in memory on your Mac, so there’s no upload, no
+              queue, and no round trip. That’s the whole reason it feels
               instant — and the reason it works the same on a plane as it does
               at your desk.
             </p>

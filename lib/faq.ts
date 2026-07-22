@@ -9,11 +9,11 @@
 export const QUESTIONS = [
   {
     q: "Does any audio leave my Mac?",
-    a: "No. Recognition runs on your machine, so there is nothing to upload and no server involved. The app keeps a history of your dictations, including the recordings, so you can play them back — that stays in a folder on your Mac and you can switch it off in Settings, which erases it.",
+    a: "No. Recognition runs on your machine, so there’s nothing to upload and no server involved. The app keeps a history of your dictations, including the recordings, so you can play them back — that stays in a folder on your Mac and you can switch it off in Settings, which erases it.",
   },
   {
     q: "What Mac do I need?",
-    a: "macOS 13 Ventura or later, on an Apple Silicon Mac — an M1 or newer. Intel Macs are not supported: the recognition engine ships as an Apple Silicon build, so the app will not start on them.",
+    a: "macOS 13 Ventura or later, on an Apple Silicon Mac — an M1 or newer. Intel Macs aren’t supported: the recognition engine ships as an Apple Silicon build, so the app won’t start on them.",
   },
   {
     q: "Which languages are fast?",
@@ -31,7 +31,7 @@ export const QUESTIONS = [
   },
   {
     q: "Do I need an account?",
-    a: "No. There is no sign-up and no login. You buy a license key, paste it once, and that’s the last time the app asks you for anything.",
+    a: "No. There’s no sign-up and no login. You buy a license key, paste it once, and that’s the last time the app asks you for anything.",
   },
   {
     q: "Can I get a refund?",
