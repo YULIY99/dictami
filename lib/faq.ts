@@ -13,11 +13,11 @@ export const QUESTIONS = [
   },
   {
     q: "What Mac do I need?",
-    a: "macOS 13 Ventura or later, on an Apple Silicon Mac — an M1 or anything newer. Intel Macs are not supported: the recognition engine ships as an Apple Silicon build, so the app will not start on them.",
+    a: "macOS 13 Ventura or later, on an Apple Silicon Mac — an M1 or newer. Intel Macs are not supported: the recognition engine ships as an Apple Silicon build, so the app will not start on them.",
   },
   {
     q: "Which languages are fast?",
-    a: "28, listed above, all handled on-device with punctuation and at the same speed. Languages outside that list fall back to Whisper, which is slower but far broader.",
+    a: "28, listed above, all handled on-device with punctuation and at the same speed. Languages outside that list use Whisper instead, which is slower but covers much more of the world.",
   },
   {
     q: "Does it work with no internet?",
@@ -35,6 +35,6 @@ export const QUESTIONS = [
   },
   {
     q: "Can I get a refund?",
-    a: "Within 14 days, for any reason. Email support and it is done.",
+    a: "Within 14 days, for any reason. Email support and we’ll take care of it.",
   },
 ];

@@ -63,7 +63,7 @@ export function Guide() {
               </h2>
               <p className="mt-5 max-w-sm text-[15.5px] leading-relaxed text-muted">
                 What it’s good for, how to get clean results, and what
-                makes it quick. Useful whether or not you buy anything.
+                makes it fast. Useful whether or not you buy anything.
               </p>
             </div>
           </Reveal>

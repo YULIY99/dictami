@@ -71,7 +71,10 @@ export function Speed() {
                 <div key={row.label} className="flex items-center gap-4">
                   <span className="w-[132px] shrink-0 text-[13px] text-muted">
                     {row.label}
-                    <span className="ml-1 tabular-nums text-ink/45">· {row.seconds}s</span>
+                    {/* A literal space, not a margin: the separator has to read
+                        as part of the sentence, and `ml-1` alone rendered it
+                        crowded against the label — "A short reply· 3s". */}
+                    <span className="tabular-nums text-ink/45">{" · "}{row.seconds}s</span>
                   </span>
                   <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-panel">
                     <motion.div

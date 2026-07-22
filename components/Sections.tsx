@@ -98,7 +98,7 @@ export function Apps() {
   return (
     <section id="apps" className="overflow-hidden border-y border-line bg-panel py-14">
       <p className="text-center text-[13px] text-muted">
-        Types into anything with a cursor
+        Works anywhere you can type
       </p>
 
       <div className="relative mt-7 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_10%,#000_90%,transparent)]">
