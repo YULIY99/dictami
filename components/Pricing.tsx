@@ -50,8 +50,6 @@ const CARD_PLANS = [
 /** A fifth off every card price. Crypto costs us no processing fee and cannot
  *  be charged back, so the saving is real rather than a promotion. */
 const CRYPTO_DISCOUNT = "20%";
-const CRYPTO_COINS = "USDT TRC20, USDC Solana, USDC BSC, SOL, TON, DOGE, BNB BSC";
-
 const CRYPTO_PLANS = [
   {
     id: "30d",
@@ -214,7 +212,7 @@ export function Pricing() {
           </p>
           {rail === "crypto" && (
             <p className="mt-2 text-[12.5px] text-muted">
-              Pay with {CRYPTO_COINS}.
+              Pay with USDT, USDC, ETH, SOL, TON, DOGE, and many more via NOWPayments.
             </p>
           )}
         </Reveal>
