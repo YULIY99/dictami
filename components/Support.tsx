@@ -9,6 +9,7 @@ declare global {
       hideWidget?: () => void;
       showWidget?: () => void;
       maximize?: () => void;
+      onBeforeLoad?: () => void;
       onLoad?: () => void;
       onChatMinimized?: () => void;
       onChatMaximized?: () => void;
@@ -33,6 +34,13 @@ export function Support() {
     // the default bubble paints for a moment before we can hide it.
     const api = (window.Tawk_API = window.Tawk_API || {});
     window.Tawk_LoadStart = new Date();
+
+    // onLoad fires only after Tawk has already painted its own green launcher,
+    // which flashed in the corner for about a second before it was hidden
+    // again. onBeforeLoad runs first, so the launcher never reaches the screen.
+    // Hiding it by CSS is not an option: Tawk gives its iframes randomly
+    // generated ids with no stable class to select.
+    api.onBeforeLoad = () => api.hideWidget?.();
 
     api.onLoad = () => {
       api.hideWidget?.();
