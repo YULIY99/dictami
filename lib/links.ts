@@ -14,7 +14,7 @@ export const BUY = {
  * nowhere to get the app from if the only copy sat behind a Gumroad purchase.
  * One file, updated by the release script, and Sparkle takes it from there.
  */
-export const DOWNLOAD = "/Dictami.zip";
+export const DOWNLOAD = "/Dictami.dmg";
 
 /** The button in the header and hero. */
 export const PRIMARY_CTA = DOWNLOAD;
