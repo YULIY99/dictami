@@ -157,7 +157,7 @@ export function Pricing() {
             Try it for a week. Then pick how you pay.
           </h2>
           <p className="mt-5 text-[15px] text-muted">
-            The trial runs inside the app — no card, no account.
+            The trial starts in the app — no card, no account.
           </p>
 
           {/* One switch rather than six buttons: the two rails sell different

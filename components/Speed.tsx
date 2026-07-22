@@ -17,7 +17,7 @@ import { motion } from "motion/react";
 const TIMINGS = [
   { label: "A short reply", seconds: 3, total: 0.27 },
   { label: "A few sentences", seconds: 6, total: 0.36 },
-  { label: "A long thought", seconds: 12, total: 0.58 },
+  { label: "A longer thought", seconds: 12, total: 0.58 },
   { label: "A full paragraph", seconds: 24, total: 1.03 },
 ];
 
@@ -50,7 +50,7 @@ export function Speed() {
                 </dd>
               </div>
               <div>
-                <dt className="text-[13px] text-muted">Uploaded per dictation</dt>
+                <dt className="text-[13px] text-muted">Data uploaded per dictation</dt>
                 <dd className="mt-1 font-display text-3xl font-normal tabular-nums tracking-tight">
                   0<span className="text-xl text-muted"> bytes</span>
                 </dd>
@@ -71,7 +71,7 @@ export function Speed() {
                 <div key={row.label} className="flex items-center gap-4">
                   <span className="w-[132px] shrink-0 text-[13px] text-muted">
                     {row.label}
-                    <span className="ml-1 tabular-nums text-ink/45">{row.seconds}s</span>
+                    <span className="ml-1 tabular-nums text-ink/45">· {row.seconds}s</span>
                   </span>
                   <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-panel">
                     <motion.div

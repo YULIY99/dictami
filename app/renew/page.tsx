@@ -31,7 +31,7 @@ export default function RenewPage() {
   async function topUp(plan: string) {
     const trimmed = key.trim().toUpperCase();
     if (!trimmed) {
-      setError("Enter the licence key you want to extend.");
+      setError("Enter the license key you want to extend.");
       return;
     }
     setBusy(plan);
@@ -44,7 +44,7 @@ export default function RenewPage() {
       });
       const data = await response.json();
       if (response.status === 404) {
-        setError("We do not recognise that key. Check it and try again.");
+        setError("We don’t recognize that key. Check it and try again.");
         setBusy(null);
         return;
       }
@@ -62,12 +62,12 @@ export default function RenewPage() {
         Add more time.
       </h1>
       <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-muted">
-        The days are added to whatever is left on your licence, so paying early
+        The days are added to whatever is left on your license, so paying early
         never costs you time. Same key, nothing to re-enter in the app.
       </p>
 
       <label htmlFor="key" className="mt-10 block text-[14px] text-muted">
-        Your licence key
+        Your license key
       </label>
       <input
         id="key"

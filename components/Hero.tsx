@@ -28,7 +28,7 @@ export function Hero() {
           {/* A statement, not a description of the product category. The thing
               worth selling is the feeling of it keeping up with you. */}
           <h1 className="mt-6 font-display text-[clamp(2.6rem,7.4vw,5rem)] font-normal leading-[1.02] tracking-[-0.035em] text-balance">
-            Speak. The text is
+            Speak. Your text is
             <br className="hidden sm:block" /> already there.
           </h1>
 

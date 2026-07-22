@@ -122,7 +122,7 @@ export function Savings() {
       <div className="mx-auto max-w-4xl px-5">
         <Reveal className="text-center">
           <p className="font-mono text-[11.5px] uppercase tracking-[0.16em] text-muted">
-            The maths
+            The math
           </p>
           <h2 className="mx-auto mt-5 max-w-2xl font-display text-[clamp(2.1rem,4.4vw,3.15rem)] font-normal leading-[1.06] tracking-[-0.03em] text-balance">
             You speak about three times faster than you type.

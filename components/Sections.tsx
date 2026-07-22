@@ -148,7 +148,7 @@ export function Apps() {
 const FEATURES = [
   {
     title: "Punctuation you never dictate",
-    body: "Commas, full stops and question marks arrive on their own, in the right places. You talk the way you talk.",
+    body: "Commas, periods, and question marks appear on their own, in the right places. You talk the way you talk.",
   },
   {
     title: "It lands where you were typing",
@@ -159,7 +159,7 @@ const FEATURES = [
     body: "Hold to talk like a walkie-talkie, or tap once to start and once to finish. Right ⌘ is captured cleanly, so no other app sees it.",
   },
   {
-    title: "One model, twenty-eight languages",
+    title: "One model, 28 languages",
     body: "Install it once and it handles every supported language. No picking a model each time you change language.",
   },
   {
@@ -167,8 +167,8 @@ const FEATURES = [
     body: "Every dictation is kept with its recording, so you can hear what you actually said. It stays on your Mac, and you can switch it off.",
   },
   {
-    title: "No account to make",
-    body: "No sign-up and no email. Your licence key is checked once, when you enter it, and never again.",
+    title: "No account required",
+    body: "No sign-up, no email. Your license key is checked once when you enter it, and never again.",
   },
 ];
 
@@ -179,7 +179,7 @@ export function Features() {
         <Reveal>
           <Eyebrow>What it does</Eyebrow>
           <h2 className="mt-5 max-w-2xl font-display text-[clamp(2.1rem,4.4vw,3.15rem)] font-normal leading-[1.06] tracking-[-0.03em] text-balance">
-            The parts you’d notice on day one.
+            What you notice on day one.
           </h2>
         </Reveal>
 
@@ -224,12 +224,12 @@ export function Languages() {
         <Reveal className="max-w-2xl">
           <Eyebrow>Languages</Eyebrow>
           <h2 className="mt-5 font-display text-[clamp(2.1rem,4.4vw,3.15rem)] font-normal leading-[1.06] tracking-[-0.03em] text-balance">
-            Twenty-eight languages at full speed.
+            28 languages at full speed.
           </h2>
           <p className="mt-5 text-[16.5px] leading-relaxed text-muted">
-            Every one of these is handled on your Mac, at the same speed, with
-            punctuation and capitals. Anything outside the list falls back to
-            Whisper, which is slower but covers most of the world.
+            Each of these runs on your Mac at the same speed, with punctuation
+            and capitalization. Languages outside this list use Whisper
+            instead, which is slower but covers much more of the world.
           </p>
         </Reveal>
 
@@ -260,15 +260,15 @@ export function Languages() {
 const REASONS = [
   {
     title: "Nothing to set up first",
-    body: "Notarised by Apple and installed by double-click. The model is one button in Settings, and there is nothing to configure after that.",
+    body: "Notarized by Apple and installed with a double-click. The model is a one-click download in Settings, and there’s nothing to configure after that.",
   },
   {
-    title: "The speed is the work",
+    title: "Speed is the product",
     body: "The engine was rebuilt and the runtime picked by measurement to get there. It is the part you notice every time you use it.",
   },
   {
     title: "A person answers",
-    body: "Write in and you get a reply from the one who wrote the app, not a queue. Refunds inside 14 days, no questions.",
+    body: "Email us and you’ll get a reply from the person who built the app, not a support queue. Refunds within 14 days, no questions asked.",
   },
 ];
 

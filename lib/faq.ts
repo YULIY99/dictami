@@ -17,7 +17,7 @@ export const QUESTIONS = [
   },
   {
     q: "Which languages are fast?",
-    a: "Twenty-eight, listed above, all handled on-device with punctuation and at the same speed. Languages outside that list fall back to Whisper, which is slower but far broader.",
+    a: "28, listed above, all handled on-device with punctuation and at the same speed. Languages outside that list fall back to Whisper, which is slower but far broader.",
   },
   {
     q: "Does it work with no internet?",
@@ -31,7 +31,7 @@ export const QUESTIONS = [
   },
   {
     q: "Do I need an account?",
-    a: "No. There is no sign-up and no login. You buy a licence key, paste it once, and that is the last time the app asks you for anything.",
+    a: "No. There is no sign-up and no login. You buy a license key, paste it once, and that’s the last time the app asks you for anything.",
   },
   {
     q: "Can I get a refund?",

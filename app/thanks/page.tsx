@@ -84,7 +84,7 @@ export default function ThanksPage() {
           </h1>
           <p className="mt-5 text-[16px] leading-relaxed text-muted">
             This usually takes under a minute. Leave this page open — your
-            licence key appears here as soon as the payment lands.
+            license key appears here as soon as the payment lands.
           </p>
           <p className="mt-6 font-mono text-[12.5px] uppercase tracking-widest text-muted">
             Status: {state.status}
@@ -95,7 +95,7 @@ export default function ThanksPage() {
       {state.phase === "done" && (
         <>
           <h1 className="font-display text-[clamp(2rem,4vw,2.8rem)] font-normal leading-tight tracking-[-0.03em]">
-            Paid. Here is your licence key.
+            Paid. Here is your license key.
           </h1>
           <p className="mt-5 text-[16px] leading-relaxed text-muted">
             Open Dictami, go to <strong className="text-ink">About → Activate key</strong>,
