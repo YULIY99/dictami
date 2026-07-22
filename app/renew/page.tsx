@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { LICENCE_API } from "@/lib/links";
+import { licenceFetch } from "@/lib/links";
 
 /**
  * Where the app's "Top up" button lands, with the licence key in the URL.
@@ -37,7 +37,7 @@ export default function RenewPage() {
     setBusy(plan);
     setError(null);
     try {
-      const response = await fetch(`${LICENCE_API}/checkout`, {
+      const response = await licenceFetch("/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ plan, key: trimmed }),

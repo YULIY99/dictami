@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Reveal } from "./Sections";
-import { BUY, LICENCE_API } from "@/lib/links";
+import { BUY, licenceFetch } from "@/lib/links";
 
 /**
  * Two payment rails, two different products — deliberately.
@@ -130,7 +130,7 @@ export function Pricing() {
     setBusy(plan);
     setFailed(false);
     try {
-      const response = await fetch(`${LICENCE_API}/checkout`, {
+      const response = await licenceFetch("/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ plan }),

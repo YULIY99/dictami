@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { LICENCE_API } from "@/lib/links";
+import { licenceFetch } from "@/lib/links";
 
 /**
  * Where NOWPayments sends the buyer after paying.
@@ -42,8 +42,8 @@ export default function ThanksPage() {
 
     async function poll() {
       try {
-        const response = await fetch(
-          `${LICENCE_API}/order?order=${encodeURIComponent(order!)}`,
+        const response = await licenceFetch(
+          `/order?order=${encodeURIComponent(order!)}`,
         );
         if (response.status === 404) {
           if (!stop) setState({ phase: "unknown" });

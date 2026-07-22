@@ -25,3 +25,31 @@ export const PRIMARY_CTA = DOWNLOAD;
  * cannot take crypto on its own.
  */
 export const LICENCE_API = "https://api.dictami.com";
+
+/**
+ * The same server under its Cloudflare-issued address.
+ *
+ * Not every resolver answers for `api.dictami.com`. A VPN's resolver was seen
+ * returning the site's own records happily and nothing at all for the `api`
+ * name, which leaves that buyer staring at "could not open the payment page"
+ * with no way to pay and no way to know why. Since the two addresses are
+ * different names in different zones, one usually works when the other does
+ * not.
+ */
+const LICENCE_API_FALLBACK = "https://dictami-licences.highrollerboy.workers.dev";
+
+/**
+ * Calls the licence server, retrying on the fallback address.
+ *
+ * Only a failure to reach the server at all is retried — a DNS miss or a
+ * dropped connection, which is what a hostile resolver produces. An answer
+ * from the server, including an error it chose to return, is passed straight
+ * back: retrying that would double-charge nothing but would hide real faults.
+ */
+export async function licenceFetch(path: string, init?: RequestInit): Promise<Response> {
+  try {
+    return await fetch(`${LICENCE_API}${path}`, init);
+  } catch {
+    return await fetch(`${LICENCE_API_FALLBACK}${path}`, init);
+  }
+}
