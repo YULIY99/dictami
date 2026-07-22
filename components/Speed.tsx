@@ -63,7 +63,7 @@ export function Speed() {
               How long you speak → how long you wait
             </p>
             <p className="mt-1 text-[12.5px] text-muted">
-              From letting go of the key to the text appearing.
+              Mac mini M1, from letting go of the key to the text appearing.
             </p>
 
             <div className="mt-7 flex flex-col gap-4">
