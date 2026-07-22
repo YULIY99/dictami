@@ -6,6 +6,19 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Dictami</title>
         <item>
+            <title>1.2.4</title>
+            <pubDate>Wed, 22 Jul 2026 11:48:15 +0300</pubDate>
+            <sparkle:version>15</sparkle:version>
+            <sparkle:shortVersionString>1.2.4</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <enclosure url="https://dictami.com/Dictami-1.2.4.zip" length="13613534" type="application/octet-stream" sparkle:edSignature="RsDNWR/4LTXcFCdkDo+qnuEh+VGxmXgOBPIlnLzKh3YVQA8TZuQVSI2bUsjjf8OVX6Zz+v/nUbwG59JmSQKQCw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://dictami.com/Dictami15-12.delta" sparkle:deltaFrom="12" length="336966" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977824" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="8VWBItoXJgFrW7ZmOexX9sI32ZjADM8gyXOwhF60LLU4DlACtYWoFyBUcNZ7txbjmroHsh37BWXOic0DeBUFDA=="/>
+                <enclosure url="https://dictami.com/Dictami15-11.delta" sparkle:deltaFrom="11" length="1568046" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977824" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="roa82oCVUL9McMmbCmFAQaDL1bNWEOJtQosrAf5GhEOZlIYFCwHorFtt+t9sfA41vrbYAO3Rh3r3W206fhVeBw=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.2.3</title>
             <pubDate>Wed, 22 Jul 2026 11:43:28 +0300</pubDate>
             <sparkle:version>14</sparkle:version>
@@ -42,6 +55,6 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: he5deDyPB0kORbY16PR9J4AJ0UJC/sdGe6GBwjJG/PQWutbh+pxEFVFZFcCfBhprbfOal+AyeMnU5L7axiwjDw==
-length: 3545
+edSignature: J092Kbu6/WUFU/8rwawARn8hbbqZGkW6tAodvA26mvkzdszhAN3PlvLHzgoyb6Lp/Lvc7nIwgTAKBv8EGstjAA==
+length: 4962
 -->
