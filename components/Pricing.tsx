@@ -50,6 +50,7 @@ const CARD_PLANS = [
 /** A fifth off every card price. Crypto costs us no processing fee and cannot
  *  be charged back, so the saving is real rather than a promotion. */
 const CRYPTO_DISCOUNT = "20%";
+const CRYPTO_COINS = "USDT TRC20, USDC Solana, USDC BSC, SOL, TON, DOGE, BNB BSC";
 
 const CRYPTO_PLANS = [
   {
@@ -211,6 +212,11 @@ export function Pricing() {
               ? "Renews automatically. Cancel whenever you like."
               : `${CRYPTO_DISCOUNT} off every price — card fees are ours, not yours. You buy days, and topping up adds to what is left.`}
           </p>
+          {rail === "crypto" && (
+            <p className="mt-2 text-[12.5px] text-muted">
+              Pay with {CRYPTO_COINS}.
+            </p>
+          )}
         </Reveal>
 
         <div className="mt-12 grid gap-5 lg:grid-cols-3">
