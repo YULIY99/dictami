@@ -80,7 +80,7 @@ const structuredData = {
     "Voice dictation for Mac that runs entirely on-device. Hold a key, speak, and punctuated text appears in any app in about half a second.",
   url: "https://dictami.com",
   featureList:
-    "On-device transcription, 25 fast languages, automatic punctuation, global hotkey, dictation history with playback",
+    "On-device transcription, 28 fast languages, automatic punctuation, global hotkey, dictation history with playback",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
