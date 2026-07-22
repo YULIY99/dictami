@@ -6,6 +6,19 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Dictami</title>
         <item>
+            <title>1.2.3</title>
+            <pubDate>Wed, 22 Jul 2026 11:43:28 +0300</pubDate>
+            <sparkle:version>14</sparkle:version>
+            <sparkle:shortVersionString>1.2.3</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <enclosure url="https://dictami.com/Dictami-1.2.3.zip" length="13613507" type="application/octet-stream" sparkle:edSignature="LNaBN4K885m19H1K7xTFaMuuhEHyutHdmeQYMsHNWlPpWVRdF7DUXaTmy7dWFxjiM68yfGGw10eAhZSZUIFRCA=="/>
+            <sparkle:deltas>
+                <enclosure url="https://dictami.com/Dictami14-12.delta" sparkle:deltaFrom="12" length="326894" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977824" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="xVgvf8qQW5Bsh9ZyCwgwd1aSeesBXq7MespkHXX9o97WN0An3762M1pdHtPGJEiM/7C9lzDMGysTp31Uy6DjCQ=="/>
+                <enclosure url="https://dictami.com/Dictami14-11.delta" sparkle:deltaFrom="11" length="1557630" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977824" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="IcbZuEt3oXUL83KXdDpGtOyeLi7gbuCADKt/FNxFMvnrP+Y24rhZuLDytGrJbSR1u9E7mNydFGXbIhIq3ngKCw=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.2.1</title>
             <pubDate>Wed, 22 Jul 2026 02:14:47 +0300</pubDate>
             <sparkle:version>12</sparkle:version>
@@ -29,6 +42,6 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: UVkzi9aGPC/XPtGpByKZqvTgfsje8Xdp0+t9tFbRNx8LSaNZuuad/xJn8V+kazefEfm7E7J+lEx83Y+E9KLHBA==
-length: 2128
+edSignature: he5deDyPB0kORbY16PR9J4AJ0UJC/sdGe6GBwjJG/PQWutbh+pxEFVFZFcCfBhprbfOal+AyeMnU5L7axiwjDw==
+length: 3545
 -->
