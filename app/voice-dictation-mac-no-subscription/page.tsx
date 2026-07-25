@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA } from "@/lib/links";
+import { GuideLinks } from "@/components/GuideLinks";
 
 export const metadata: Metadata = {
   title: "Voice Dictation for Mac Without a Subscription | Dictami",
@@ -103,6 +104,10 @@ export default function VoiceDictationMacNoSubscription() {
               that the app never needs the internet again.
             </p>
           </section>
+        </div>
+
+        <div className="mt-16 border-t border-line pt-10">
+          <GuideLinks current="/voice-dictation-mac-no-subscription" />
         </div>
 
         <div className="mt-14 border-t border-line pt-10">

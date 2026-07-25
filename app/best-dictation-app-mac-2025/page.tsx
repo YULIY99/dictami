@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA } from "@/lib/links";
+import { GuideLinks } from "@/components/GuideLinks";
 
 export const metadata: Metadata = {
   title: "Best Dictation App for Mac in 2025 | Dictami",
@@ -105,6 +106,10 @@ export default function BestDictationAppMac2025() {
               Settings and never needs updating manually.
             </p>
           </section>
+        </div>
+
+        <div className="mt-16 border-t border-line pt-10">
+          <GuideLinks current="/best-dictation-app-mac-2025" />
         </div>
 
         <div className="mt-14 border-t border-line pt-10">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA } from "@/lib/links";
+import { GuideLinks } from "@/components/GuideLinks";
 
 export const metadata: Metadata = {
   title: "Speech to Text for Mac | Dictami",
@@ -99,6 +100,10 @@ export default function SpeechToTextMac() {
               aren't supported. No account, no subscription required to try it.
             </p>
           </section>
+        </div>
+
+        <div className="mt-16 border-t border-line pt-10">
+          <GuideLinks current="/speech-to-text-mac" />
         </div>
 
         <div className="mt-14 border-t border-line pt-10">

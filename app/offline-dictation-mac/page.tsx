@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA } from "@/lib/links";
+import { GuideLinks } from "@/components/GuideLinks";
 
 export const metadata: Metadata = {
   title: "Offline Dictation for Mac | Dictami",
@@ -93,6 +94,10 @@ export default function OfflineDictationMac() {
               is ever needed again.
             </p>
           </section>
+        </div>
+
+        <div className="mt-16 border-t border-line pt-10">
+          <GuideLinks current="/offline-dictation-mac" />
         </div>
 
         <div className="mt-14 border-t border-line pt-10">

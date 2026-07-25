@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA } from "@/lib/links";
+import { GuideLinks } from "@/components/GuideLinks";
 
 export const metadata: Metadata = {
   title: "Voice Typing on Mac Without Internet | Dictami",
@@ -109,6 +110,10 @@ export default function VoiceTypingMacWithoutInternet() {
               no internet is ever needed. No account, no sign-up, no subscription required to try it.
             </p>
           </section>
+        </div>
+
+        <div className="mt-16 border-t border-line pt-10">
+          <GuideLinks current="/voice-typing-mac-without-internet" />
         </div>
 
         <div className="mt-14 border-t border-line pt-10">
