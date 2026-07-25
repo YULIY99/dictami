@@ -21,5 +21,6 @@ export const GUIDES: Guide[] = [
   { href: "/dictation-app-mac-apple-silicon", label: "Dictation on Apple Silicon" },
   { href: "/dictation-mac-without-siri", label: "Dictation without Siri" },
   { href: "/voice-dictation-mac-no-subscription", label: "Without a subscription" },
+  { href: "/whisper-dictation-mac-app", label: "Whisper on a Mac" },
   { href: "/best-dictation-app-mac-2025", label: "Choosing a dictation app" },
 ];
