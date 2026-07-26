@@ -16,6 +16,7 @@ export type Guide = { href: string; label: string };
 export const GUIDES: Guide[] = [
   { href: "/voice-dictation-mac", label: "Voice dictation for Mac" },
   { href: "/speech-to-text-mac", label: "Speech to text on Mac" },
+  { href: "/speech-to-text-mac-any-app", label: "Dictating into any app" },
   { href: "/offline-dictation-mac", label: "Offline dictation" },
   { href: "/voice-typing-mac-without-internet", label: "Voice typing without internet" },
   { href: "/dictation-app-mac-apple-silicon", label: "Dictation on Apple Silicon" },
