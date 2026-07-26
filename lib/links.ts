@@ -1,8 +1,8 @@
 /** Gumroad products, kept in one place so a price change is a one-line edit. */
 export const BUY = {
-  monthly: "https://highroller5.gumroad.com/l/mjwvomp?wanted=true",
-  yearly: "https://highroller5.gumroad.com/l/fhrqme?wanted=true",
-  lifetime: "https://highroller5.gumroad.com/l/qrqxml?wanted=true",
+  monthly: "https://dictami.gumroad.com/l/mjwvomp?wanted=true",
+  yearly: "https://dictami.gumroad.com/l/fhrqme?wanted=true",
+  lifetime: "https://dictami.gumroad.com/l/qrqxml?wanted=true",
 } as const;
 
 /**
