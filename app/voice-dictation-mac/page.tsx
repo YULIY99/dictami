@@ -6,8 +6,14 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Voice Dictation for Mac | Dictami",
   description:
-    "Fast voice dictation for Mac that runs entirely on your device. Hold a key, speak, and punctuated text appears in any app in about half a second. 28 languages, no account.",
+    "Fast voice dictation for Mac that runs on-device. Hold a key, speak, and punctuated text appears in any app in about half a second. 28 languages.",
   alternates: { canonical: "https://dictami.com/voice-dictation-mac" },
+  openGraph: {
+    title: "Voice Dictation for Mac | Dictami",
+    description:
+      "Fast voice dictation for Mac that runs on-device. Hold a key, speak, and punctuated text appears in any app in about half a second. 28 languages.",
+    url: "https://dictami.com/voice-dictation-mac",
+  },
 };
 
 export default function VoiceDictationMac() {

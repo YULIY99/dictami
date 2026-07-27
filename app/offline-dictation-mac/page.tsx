@@ -6,8 +6,14 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Offline Dictation for Mac | Dictami",
   description:
-    "Offline voice dictation for Mac. Recognition runs on your device — no internet required, no audio sent anywhere. 28 languages, automatic punctuation, no account.",
+    "Offline voice dictation for Mac with on-device recognition. No internet or account required, no audio sent anywhere, with punctuation in 28 languages.",
   alternates: { canonical: "https://dictami.com/offline-dictation-mac" },
+  openGraph: {
+    title: "Offline Dictation for Mac | Dictami",
+    description:
+      "Offline voice dictation for Mac with on-device recognition. No internet or account required, no audio sent anywhere, with punctuation in 28 languages.",
+    url: "https://dictami.com/offline-dictation-mac",
+  },
 };
 
 export default function OfflineDictationMac() {

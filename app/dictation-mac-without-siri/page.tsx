@@ -6,8 +6,14 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Dictation on Mac Without Siri | Dictami",
   description:
-    "Dictate on your Mac without Siri or Apple's built-in dictation. Dictami runs on-device, works in every app, adds punctuation automatically, and needs no account.",
+    "Dictate on Mac without Siri or Apple’s built-in dictation. Dictami works on-device in every app, adds punctuation automatically, and needs no account.",
   alternates: { canonical: "https://dictami.com/dictation-mac-without-siri" },
+  openGraph: {
+    title: "Dictation on Mac Without Siri | Dictami",
+    description:
+      "Dictate on Mac without Siri or Apple’s built-in dictation. Dictami works on-device in every app, adds punctuation automatically, and needs no account.",
+    url: "https://dictami.com/dictation-mac-without-siri",
+  },
 };
 
 export default function DictationMacWithoutSiri() {

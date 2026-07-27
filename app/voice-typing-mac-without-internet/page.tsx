@@ -6,8 +6,14 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Voice Typing on Mac Without Internet | Dictami",
   description:
-    "Voice type on your Mac with no internet connection. Dictami runs fully offline — recognition happens on your device, works on planes, in hotels, anywhere.",
+    "Voice typing on Mac without internet. Dictami runs fully offline, recognizes speech on your device, and works on planes, in hotels, or anywhere.",
   alternates: { canonical: "https://dictami.com/voice-typing-mac-without-internet" },
+  openGraph: {
+    title: "Voice Typing on Mac Without Internet | Dictami",
+    description:
+      "Voice typing on Mac without internet. Dictami runs fully offline, recognizes speech on your device, and works on planes, in hotels, or anywhere.",
+    url: "https://dictami.com/voice-typing-mac-without-internet",
+  },
 };
 
 export default function VoiceTypingMacWithoutInternet() {

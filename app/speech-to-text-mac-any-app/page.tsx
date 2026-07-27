@@ -6,8 +6,14 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Speech to Text in Any Mac App | Dictami",
   description:
-    "Dictate straight into Mail, Chrome, Slack, VS Code, Notes or Terminal. Dictami types the text where your cursor already is — no separate window, no copy and paste.",
+    "Use speech to text in any Mac app, including Mail, Chrome, Slack, VS Code, Notes, and Terminal. Dictami types wherever your cursor is — no copy and paste.",
   alternates: { canonical: "https://dictami.com/speech-to-text-mac-any-app" },
+  openGraph: {
+    title: "Speech to Text in Any Mac App | Dictami",
+    description:
+      "Use speech to text in any Mac app, including Mail, Chrome, Slack, VS Code, Notes, and Terminal. Dictami types wherever your cursor is — no copy and paste.",
+    url: "https://dictami.com/speech-to-text-mac-any-app",
+  },
 };
 
 export default function SpeechToTextMacAnyApp() {

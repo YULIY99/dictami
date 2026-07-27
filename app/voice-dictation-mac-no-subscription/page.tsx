@@ -6,8 +6,14 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Voice Dictation for Mac Without a Subscription | Dictami",
   description:
-    "Buy a dictation app for Mac once and keep it. Dictami offers a lifetime license alongside monthly and yearly plans — no account, no forced subscription, no cloud.",
+    "Buy a voice dictation app for Mac once and keep it. Dictami offers a lifetime license alongside optional monthly and yearly plans with no account or cloud.",
   alternates: { canonical: "https://dictami.com/voice-dictation-mac-no-subscription" },
+  openGraph: {
+    title: "Voice Dictation for Mac Without a Subscription | Dictami",
+    description:
+      "Buy a voice dictation app for Mac once and keep it. Dictami offers a lifetime license alongside optional monthly and yearly plans with no account or cloud.",
+    url: "https://dictami.com/voice-dictation-mac-no-subscription",
+  },
 };
 
 export default function VoiceDictationMacNoSubscription() {

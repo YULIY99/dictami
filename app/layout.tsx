@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { QUESTIONS } from "@/lib/faq";
 
 // Aqua Voice runs on PP Neue Montreal, which is licensed and cannot be used
 // here. Geist is the closest free relative: the same neo-grotesque family of
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
   // itself sells speed instead; the two jobs are different.
   title: "Dictami — Fast Offline Voice Dictation for Mac",
   description:
-    "Hold a key, speak, and the text is already in your app — in about half a second, with punctuation. Runs entirely on your Mac. 28 languages, no account, no subscription required.",
+    "Fast offline voice dictation for Mac. Hold a key, speak, and punctuated text appears in any app in about half a second. 28 languages, no account.",
   keywords: [
     "mac dictation app",
     "voice dictation mac",
@@ -53,21 +52,6 @@ export const metadata: Metadata = {
   other: { "google-site-verification": "4MFm0bxZWFTg8cYRF78lWRhiiLCajG_PO1S1iB14HXc" },
 };
 
-// Real questions with real answers, taken from the same array the page
-// renders. This is the one schema type on a page like this that can win extra
-// space in results; a rating or a review count would need to be invented, and
-// inventing them is both against Google's rules and a good way to lose the
-// listing altogether.
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: QUESTIONS.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
-};
-
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
@@ -97,10 +81,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </head>
       <body>{children}</body>

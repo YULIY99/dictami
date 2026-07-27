@@ -4,10 +4,16 @@ import { PRIMARY_CTA } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
 
 export const metadata: Metadata = {
-  title: "Best Dictation App for Mac in 2025 | Dictami",
+  title: "Best Dictation App for Mac in 2026 | Dictami",
   description:
-    "Looking for the best dictation app for Mac in 2025? Dictami runs fully on-device, works offline, supports 28 languages, and types into any app in about half a second.",
+    "Looking for the best dictation app for Mac in 2026? Dictami runs on-device, works offline, supports 28 languages, and types into any Mac app fast.",
   alternates: { canonical: "https://dictami.com/best-dictation-app-mac-2025" },
+  openGraph: {
+    title: "Best Dictation App for Mac in 2026 | Dictami",
+    description:
+      "Looking for the best dictation app for Mac in 2026? Dictami runs on-device, works offline, supports 28 languages, and types into any Mac app fast.",
+    url: "https://dictami.com/best-dictation-app-mac-2025",
+  },
 };
 
 export default function BestDictationAppMac2025() {
@@ -19,7 +25,7 @@ export default function BestDictationAppMac2025() {
         </Link>
 
         <h1 className="mt-8 font-display text-[clamp(2rem,5vw,3rem)] font-normal leading-[1.06] tracking-[-0.03em] text-balance">
-          What makes a dictation app actually good in 2025.
+          What makes a dictation app actually good in 2026.
         </h1>
 
         <p className="mt-5 text-[17px] leading-relaxed text-muted">

@@ -6,8 +6,14 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Whisper Dictation App for Mac | Dictami",
   description:
-    "A Whisper-based dictation app for Mac that runs locally. Dictami uses faster specialist models where they exist and falls back to Whisper everywhere else.",
+    "Whisper dictation for Mac that runs locally. Dictami uses faster specialist models when available and falls back to Whisper for other languages.",
   alternates: { canonical: "https://dictami.com/whisper-dictation-mac-app" },
+  openGraph: {
+    title: "Whisper Dictation App for Mac | Dictami",
+    description:
+      "Whisper dictation for Mac that runs locally. Dictami uses faster specialist models when available and falls back to Whisper for other languages.",
+    url: "https://dictami.com/whisper-dictation-mac-app",
+  },
 };
 
 export default function WhisperDictationMacApp() {

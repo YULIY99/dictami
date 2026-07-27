@@ -6,8 +6,14 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Best Dictation App for Mac Apple Silicon | Dictami",
   description:
-    "Dictami is built specifically for Apple Silicon. On-device recognition runs at full speed on M1, M2, M3, and M4 chips — no cloud, no lag, no account required.",
+    "Dictami is a dictation app built for Apple Silicon. On-device recognition runs at full speed on M1–M4 Macs, with no cloud, lag, or account required.",
   alternates: { canonical: "https://dictami.com/dictation-app-mac-apple-silicon" },
+  openGraph: {
+    title: "Best Dictation App for Mac Apple Silicon | Dictami",
+    description:
+      "Dictami is a dictation app built for Apple Silicon. On-device recognition runs at full speed on M1–M4 Macs, with no cloud, lag, or account required.",
+    url: "https://dictami.com/dictation-app-mac-apple-silicon",
+  },
 };
 
 export default function DictationAppMacAppleSilicon() {

@@ -6,8 +6,14 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Speech to Text for Mac | Dictami",
   description:
-    "Turn speech into text on Mac in any app. On-device recognition, automatic punctuation, 28 languages, global hotkey. No account required.",
+    "Turn speech into text on Mac in any app with on-device recognition, automatic punctuation, 28 languages, and a global hotkey. No account required.",
   alternates: { canonical: "https://dictami.com/speech-to-text-mac" },
+  openGraph: {
+    title: "Speech to Text for Mac | Dictami",
+    description:
+      "Turn speech into text on Mac in any app with on-device recognition, automatic punctuation, 28 languages, and a global hotkey. No account required.",
+    url: "https://dictami.com/speech-to-text-mac",
+  },
 };
 
 export default function SpeechToTextMac() {
