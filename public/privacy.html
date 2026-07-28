@@ -18,13 +18,13 @@
 <body>
 <a class="back" href="/">← Back to Dictami</a>
 <h1>Privacy Policy</h1>
-<p class="date">Last updated: July 17, 2026</p>
+<p class="date">Last updated: July 28, 2026</p>
 
 <h2>Overview</h2>
 <p>Dictami is designed with privacy as a core principle. All audio processing happens entirely on your device — your voice recordings are never sent to any server, stored in any database, or shared with any third party.</p>
 
 <h2>Data We Collect</h2>
-<p>We collect no personal data. Specifically:</p>
+<p>The app collects no personal data. Specifically:</p>
 <ul>
   <li>Audio recordings are processed locally and deleted immediately after transcription</li>
   <li>Transcribed text is not retained by Dictami after insertion into your app</li>
@@ -33,10 +33,23 @@
 </ul>
 
 <h2>License Activation</h2>
-<p>When you activate a license key, the key is stored locally in your macOS Keychain. No activation servers are contacted; validation is performed offline.</p>
+<p>Activating a license key contacts our licence server once. That request contains your key and a device identifier for the Mac you are activating, which is what lets us enforce the device limit and revoke a key after a refund. It contains no personal information and no content from your dictation.</p>
+<p>The server replies with a signed token that is stored in your macOS Keychain. Every launch after that verifies the token offline — the app does not contact the server again, so Dictami keeps working with no network at all.</p>
 
 <h2>Automatic Updates</h2>
 <p>Dictami uses Sparkle for updates. When checking for updates, Sparkle sends a request to dictami.com/appcast.xml that includes your macOS version and Dictami version number. No personally identifiable information is sent.</p>
+
+<h2>Email You Give Us on the Website</h2>
+<p>Downloading Dictami never requires an email address. If you choose to type one into the optional field on dictami.com, this is what happens to it:</p>
+<ul>
+  <li>We store your address, the date, and whether you ticked the news box. Nothing else — no IP address, no tracking identifier.</li>
+  <li>We send you the download link once.</li>
+  <li>If you did not tick the news box, the record is deleted automatically within 24 hours. There is no list of people who merely downloaded Dictami.</li>
+  <li>We send news about Dictami <em>only</em> if you ticked that separate box <em>and then confirmed</em> by clicking the button in the email we send you. The box is never ticked for you, and an unconfirmed request expires on its own after seven days.</li>
+  <li>Every news email carries a one-click unsubscribe link. Using it stops all marketing email immediately.</li>
+  <li>We never sell, rent, or share your address, and we do not add customers who bought Dictami to this list — a purchase is not consent to marketing.</li>
+</ul>
+<p>The address is held on Cloudflare Workers KV and sent through <a href="https://resend.com">Resend</a>, our email provider. To be removed entirely rather than just unsubscribed, email <a href="mailto:support@dictami.com">support@dictami.com</a> and we will delete the record.</p>
 
 <h2>Contact</h2>
 <p>Questions about privacy? Email <a href="mailto:support@dictami.com">support@dictami.com</a></p>

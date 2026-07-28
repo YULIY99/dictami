@@ -6,6 +6,7 @@ import { Reveal } from "./Sections";
 import { GuideLinks } from "./GuideLinks";
 import { PRIMARY_CTA } from "@/lib/links";
 import { AppleMark } from "./AppleMark";
+import { Subscribe } from "./Subscribe";
 
 export function Closing() {
   return (
@@ -33,6 +34,8 @@ export function Closing() {
               <AppleMark />
               Download for Mac
             </a>
+
+            <Subscribe />
           </Reveal>
         </div>
       </section>
