@@ -259,7 +259,6 @@ export function Pricing() {
                 {"href" in plan ? (
                   <a
                     href={plan.href}
-                    data-gumroad-overlay-checkout="true"
                     className={`mt-8 rounded-full px-5 py-3 text-center text-[14.5px] font-medium transition ${
                       plan.featured
                         ? "bg-card text-ink hover:bg-white/90"

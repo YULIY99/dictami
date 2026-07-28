@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -83,7 +84,19 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* Turns the pricing links into a checkout that opens over this page
+            instead of throwing the buyer onto gumroad.com. The card markup was
+            already written for it; the script that reads that markup was
+            simply never loaded, so every purchase left the site.
+
+            It finds the links by itself — any anchor pointing at a Gumroad
+            product, unless marked data-gumroad-ignore. Loaded after the page is
+            interactive, because nothing above the fold depends on it and it is
+            a third party we do not want blocking first paint. */}
+        <Script src="https://gumroad.com/js/gumroad.js" strategy="afterInteractive" />
+      </body>
     </html>
   );
 }

@@ -1,8 +1,16 @@
-/** Gumroad products, kept in one place so a price change is a one-line edit. */
+/**
+ * Gumroad products, kept in one place so a price change is a one-line edit.
+ *
+ * Deliberately without `?wanted=true`. That parameter reads like "the buyer
+ * wants to buy", but in Gumroad's own script it is the switch between the two
+ * behaviours: with it the link navigates away to gumroad.com, and only without
+ * it does the checkout open in an overlay over this page. Sending someone to
+ * another domain to pay is where a paid app stops feeling like one.
+ */
 export const BUY = {
-  monthly: "https://dictami.gumroad.com/l/mjwvomp?wanted=true",
-  yearly: "https://dictami.gumroad.com/l/fhrqme?wanted=true",
-  lifetime: "https://dictami.gumroad.com/l/qrqxml?wanted=true",
+  monthly: "https://dictami.gumroad.com/l/mjwvomp",
+  yearly: "https://dictami.gumroad.com/l/fhrqme",
+  lifetime: "https://dictami.gumroad.com/l/qrqxml",
 } as const;
 
 /**
