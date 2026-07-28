@@ -75,10 +75,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       className={`${geist.variable} ${geistMono.variable}`}
     >
       <head>
-        <link
-          rel="icon"
-          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%230D0F14'/><g stroke='%235B8CFF' stroke-width='2.6' stroke-linecap='round'><line x1='9' y1='13' x2='9' y2='19'/><line x1='16' y1='9' x2='16' y2='23'/><line x1='23' y1='12' x2='23' y2='20'/></g></svg>"
-        />
+        {/* The tab icon is now app/icon.png — the app's own artwork, which Next
+            wires up by filename. The drawn-in-place SVG that used to sit here
+            was three bars on near-black, and next to a row of real app icons it
+            read as a placeholder rather than a product. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
