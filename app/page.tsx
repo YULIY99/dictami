@@ -1,4 +1,3 @@
-import Script from "next/script";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Speed } from "@/components/Speed";
@@ -46,9 +45,6 @@ export default function Page() {
 
       {/* The live chat the owner answers, behind the page's own launcher. */}
       <Support />
-
-      {/* Gumroad's overlay checkout, loaded after the page is interactive. */}
-      <Script src="https://gumroad.com/js/gumroad.js" strategy="lazyOnload" />
     </>
   );
 }

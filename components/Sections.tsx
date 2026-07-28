@@ -73,7 +73,14 @@ export function Demo() {
               loop
               playsInline
               preload="metadata"
-              poster="/mic-hero.png"
+              width={1280}
+              height={720}
+              /* A frame of the demo itself. The poster before it was a stock
+                 glowing microphone, square where the video is 16:9 — so the
+                 hero changed shape the moment the video loaded — and 1.8 MB
+                 for something on screen for a blink. This is 51 KB and is
+                 already what the viewer is about to watch. */
+              poster="/demo-poster.jpg"
               aria-label="Dictami turning speech into text inside another app"
             >
               <source src="/dictami-demo.mp4" type="video/mp4" />

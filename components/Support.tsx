@@ -49,6 +49,21 @@ export function Support() {
     // Closing the panel puts the bubble back unless it is hidden again.
     api.onChatMinimized = () => api.hideWidget?.();
 
+    // Tawk flashes "1 new message" in the browser tab, replacing the page
+    // title. That is a trick for a support desk people are waiting on, and it
+    // reads as spam on a product page: the tab blinks at someone who never
+    // wrote to anyone. Tawk offers no switch for it through the embed API, so
+    // the title is simply put back whenever something rewrites it.
+    const titleEl = document.querySelector("title");
+    let restore: MutationObserver | undefined;
+    if (titleEl) {
+      const own = document.title;
+      restore = new MutationObserver(() => {
+        if (document.title !== own) document.title = own;
+      });
+      restore.observe(titleEl, { childList: true });
+    }
+
     if (!document.querySelector(`script[src="${TAWK_SRC}"]`)) {
       const script = document.createElement("script");
       script.src = TAWK_SRC;
@@ -57,6 +72,8 @@ export function Support() {
       script.setAttribute("crossorigin", "*");
       document.body.appendChild(script);
     }
+
+    return () => restore?.disconnect();
   }, []);
 
   const open = () => {

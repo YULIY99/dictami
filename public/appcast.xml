@@ -6,6 +6,18 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Dictami</title>
         <item>
+            <title>1.2.7</title>
+            <pubDate>Tue, 28 Jul 2026 20:25:26 +0300</pubDate>
+            <sparkle:version>18</sparkle:version>
+            <sparkle:shortVersionString>1.2.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <enclosure url="https://dictami.com/Dictami-1.2.7.zip" length="13626273" type="application/octet-stream" sparkle:edSignature="q3TRlYZh24/KCJ7leJKeD9lhvHM+sbzTGgxop+S7e4afTtAVbb2qm3012QGFL+Yo+BUpAU4zK8Au3/uWv2wXDw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://dictami.com/Dictami18-17.delta" sparkle:deltaFrom="17" length="270666" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="7DxrKXz3n2RRYWYNvWqkMfzRlNKJG9npMKzqTSNZ80cf5ZCEQxsQwo8tHVwNkWywtEK3r5PxU+pwPIk5TbS8Bg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.2.6</title>
             <pubDate>Sat, 25 Jul 2026 12:11:40 +0300</pubDate>
             <sparkle:version>17</sparkle:version>
@@ -26,6 +38,6 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: z1oZCupS9o1mxCeyyqSnlm3oA/P/sus+zJ0TcdZpk7p5HEqbLBBWQLgbQiVmh2Ntlph/pCQYI4UGjU4SmLrLDQ==
-length: 1709
+edSignature: 5s/smYpxeEZFZ2uH2Apg9H5JkshAZczN+6Id94N7gb8mH7Eew/EHDlZ+JCF1CjP4x1c9KzCpGKyX0JNy9TNZBA==
+length: 2766
 -->

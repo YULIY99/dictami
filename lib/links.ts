@@ -1,16 +1,25 @@
 /**
- * Gumroad products, kept in one place so a price change is a one-line edit.
+ * Gumroad checkout, kept in one place so a price change is a one-line edit.
  *
- * Deliberately without `?wanted=true`. That parameter reads like "the buyer
- * wants to buy", but in Gumroad's own script it is the switch between the two
- * behaviours: with it the link navigates away to gumroad.com, and only without
- * it does the checkout open in an overlay over this page. Sending someone to
- * another domain to pay is where a paid app stops feeling like one.
+ * These point straight at the payment form rather than at the product page.
+ * The product page in an overlay looked better, but it cost a step: the buyer
+ * chose a plan here, then read the same plan again over there, then pressed
+ * "Add to cart", and only then saw a card field. The overlay cannot be kept
+ * either way — Gumroad's cart leaves this domain on that button, so the choice
+ * was one hop or two, not overlay or not.
+ *
+ * `option` is the tier id and is not guessable; it comes from the buy button on
+ * the product page (`dictami.gumroad.com/l/<id>`). If a tier is ever recreated
+ * in Gumroad the id changes and these links must be copied again — a stale one
+ * lands the buyer on an error page, so check all three after touching tiers.
+ * Lifetime has no tiers and so needs no `option`.
  */
 export const BUY = {
-  monthly: "https://dictami.gumroad.com/l/mjwvomp",
-  yearly: "https://dictami.gumroad.com/l/fhrqme",
-  lifetime: "https://dictami.gumroad.com/l/qrqxml",
+  monthly:
+    "https://gumroad.com/checkout?product=mjwvomp&option=jehT1xwYbvQf4SG0Dj4vfg%3D%3D&recurrence=monthly&quantity=1",
+  yearly:
+    "https://gumroad.com/checkout?product=fhrqme&option=yy-dP_hOP0IFTGMbRA_BLg%3D%3D&recurrence=yearly&quantity=1",
+  lifetime: "https://gumroad.com/checkout?product=qrqxml&quantity=1",
 } as const;
 
 /**
