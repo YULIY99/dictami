@@ -6,6 +6,19 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Dictami</title>
         <item>
+            <title>1.2.8</title>
+            <pubDate>Wed, 29 Jul 2026 10:06:08 +0300</pubDate>
+            <sparkle:version>19</sparkle:version>
+            <sparkle:shortVersionString>1.2.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <enclosure url="https://dictami.com/Dictami-1.2.8.zip" length="13626141" type="application/octet-stream" sparkle:edSignature="8NyxOw1IqTrg26PvGvK7LGldsjUVHago2qL+KFrTA49LG04w0WS/G9F9W6DVA7bSEz843OJpXhDNEUdjoMjhBQ=="/>
+            <sparkle:deltas>
+                <enclosure url="https://dictami.com/Dictami19-18.delta" sparkle:deltaFrom="18" length="159854" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="MU9hrrDxWTXRjnIYyBLcy/nyHBs/LNpJZEbn8dZFlbUHsSpU2SB2bH8r5/z1mgcw3bX0jVzIYzSSnSIRLef9BA=="/>
+                <enclosure url="https://dictami.com/Dictami19-17.delta" sparkle:deltaFrom="17" length="276170" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="XuUznemBuPbxeSbOIvaz7JpCZCX32UZ/iClCdbrK4hxjrN/HwVoP3ZWLoFQH4AXTwwLB5rQ0xSHap35S+EQFDw=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.2.7</title>
             <pubDate>Tue, 28 Jul 2026 20:25:26 +0300</pubDate>
             <sparkle:version>18</sparkle:version>
@@ -38,6 +51,6 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: 5s/smYpxeEZFZ2uH2Apg9H5JkshAZczN+6Id94N7gb8mH7Eew/EHDlZ+JCF1CjP4x1c9KzCpGKyX0JNy9TNZBA==
-length: 2766
+edSignature: 3ftOqHSAC3Tm1nYk8bo0pmwv4OK5wcBD5/wEKABKO+g3BIsZtXvp6V/X0e2HGlkQKCQAaL2MP0AdzPXCZ3yHCg==
+length: 4182
 -->
