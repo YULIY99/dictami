@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { PillMark } from "./Pill";
 import { Wordmark } from "./Wordmark";
-import { PRIMARY_CTA } from "@/lib/links";
+import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { AppleMark } from "./AppleMark";
 
 const NAV = [
@@ -73,7 +73,7 @@ export function Header() {
           </nav>
 
           <a
-            href={PRIMARY_CTA}
+            href={PRIMARY_CTA} download={DOWNLOAD_FILENAME}
             className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-[15px] font-medium text-on-accent shadow-[0_8px_20px_-10px_rgba(59,143,240,0.8)] transition hover:bg-accent-deep"
           >
             <AppleMark />

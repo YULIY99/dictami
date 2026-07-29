@@ -4,7 +4,7 @@ import { Pill, PillMark } from "./Pill";
 import { Wordmark } from "./Wordmark";
 import { Reveal } from "./Sections";
 import { GuideLinks } from "./GuideLinks";
-import { PRIMARY_CTA } from "@/lib/links";
+import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { AppleMark } from "./AppleMark";
 import { Subscribe } from "./Subscribe";
 
@@ -28,7 +28,7 @@ export function Closing() {
             </p>
 
             <a
-              href={PRIMARY_CTA}
+              href={PRIMARY_CTA} download={DOWNLOAD_FILENAME}
               className="mt-9 inline-flex items-center gap-2.5 rounded-full bg-card px-8 py-3.5 text-[15px] font-medium text-ink transition hover:bg-white/90"
             >
               <AppleMark />

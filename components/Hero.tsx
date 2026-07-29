@@ -1,6 +1,6 @@
 import { HoldDemo } from "./HoldDemo";
 import { WaveField } from "./WaveField";
-import { PRIMARY_CTA } from "@/lib/links";
+import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { AppleMark } from "./AppleMark";
 
 export function Hero() {
@@ -40,7 +40,7 @@ export function Hero() {
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href={PRIMARY_CTA}
+              href={PRIMARY_CTA} download={DOWNLOAD_FILENAME}
               className="inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-accent px-7 py-3.5 text-[15px] font-medium text-on-accent shadow-[0_12px_28px_-14px_rgba(59,143,240,0.75)] transition hover:bg-accent-deep sm:w-auto"
             >
               <AppleMark />

@@ -33,6 +33,15 @@ export const BUY = {
  */
 export const DOWNLOAD = "/Dictami.dmg";
 
+/**
+ * What the file is called once it lands in Downloads. The URL has to stay
+ * `/Dictami.dmg` — the update feed, the watchdog and every link ever posted
+ * point at it — but "Dictami" alone in a save dialog tells the buyer nothing
+ * about what they just got. Same-origin, so the `download` attribute is
+ * honoured; bump it with the version in the release script.
+ */
+export const DOWNLOAD_FILENAME = "Dictami-1.2.9-macOS-arm64.dmg";
+
 /** The button in the header and hero. */
 export const PRIMARY_CTA = DOWNLOAD;
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PRIMARY_CTA } from "@/lib/links";
+import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export default function WhisperDictationMacApp() {
 
         <div className="mt-8 flex flex-wrap gap-4">
           <a
-            href={PRIMARY_CTA}
+            href={PRIMARY_CTA} download={DOWNLOAD_FILENAME}
             className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-[15px] font-medium text-on-accent transition hover:bg-accent-deep"
           >
             Download for Mac
@@ -121,7 +121,7 @@ export default function WhisperDictationMacApp() {
         <div className="mt-14 border-t border-line pt-10">
           <p className="text-[16px] text-muted">7-day trial inside the app. No card, no account.</p>
           <a
-            href={PRIMARY_CTA}
+            href={PRIMARY_CTA} download={DOWNLOAD_FILENAME}
             className="mt-5 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-[15px] font-medium text-on-accent transition hover:bg-accent-deep"
           >
             Download Dictami
