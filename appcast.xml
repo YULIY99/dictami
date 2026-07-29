@@ -6,6 +6,20 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Dictami</title>
         <item>
+            <title>1.2.9</title>
+            <pubDate>Wed, 29 Jul 2026 11:42:45 +0300</pubDate>
+            <sparkle:version>20</sparkle:version>
+            <sparkle:shortVersionString>1.2.9</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <enclosure url="https://dictami.com/Dictami-1.2.9.zip" length="13656664" type="application/octet-stream" sparkle:edSignature="GR0ifqhjSetONyOsWDd67UCIWoLbXkn0DjYfAtB/7ShuasZI1IgXdVMxI+q0rRrmoVkrjWI5YCXFTUW6tViwCg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://dictami.com/Dictami20-19.delta" sparkle:deltaFrom="19" length="283126" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="CMWCd3RssLUxGcYT/N7Bf/C9hGihSSEiMlwr/XxOLKGwbK7ctwtQKyw5iVHZ74xlz5+e/E81sZBAAYgyl8yuCw=="/>
+                <enclosure url="https://dictami.com/Dictami20-18.delta" sparkle:deltaFrom="18" length="312526" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="eJcuzfBxi4/2aswsEQMBfL8jZ+2rjcPDAQfvI+T0yv3Wue2NUQOMpG2IcijVwi779SG6bYc5xMgBcC/ozsw1DQ=="/>
+                <enclosure url="https://dictami.com/Dictami20-17.delta" sparkle:deltaFrom="17" length="322982" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="ewP/9ZWgMukNn7KfBzYeKxXHyFORWDDX22gIeZ9/zyXqbyjvOl1PoEWtvn4QLVEz3OYHQpZQUqo4j6hWppSUCg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.2.8</title>
             <pubDate>Wed, 29 Jul 2026 10:06:08 +0300</pubDate>
             <sparkle:version>19</sparkle:version>
@@ -51,6 +65,6 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: 3ftOqHSAC3Tm1nYk8bo0pmwv4OK5wcBD5/wEKABKO+g3BIsZtXvp6V/X0e2HGlkQKCQAaL2MP0AdzPXCZ3yHCg==
-length: 4182
+edSignature: 8VvMwr/GA2dubl2FIf5GuM6HrhAQyDi0OfyHSRvF7HXrRomFZfyNJMCIBhCNxg8f22rydKLo9/i2Sfxnyp22BA==
+length: 5957
 -->
