@@ -26,15 +26,17 @@
 <h2>Data We Collect</h2>
 <p>The app collects no personal data. Specifically:</p>
 <ul>
-  <li>Audio recordings are processed locally and deleted immediately after transcription</li>
-  <li>Transcribed text is not retained by Dictami after insertion into your app</li>
+  <li>Audio recordings are processed locally on your Mac and are never uploaded anywhere</li>
+  <li>With History switched off, recordings are deleted immediately after transcription and no text is kept</li>
+  <li>With History switched on, your dictations — and, unless you turn that part off, their audio — are saved on your own Mac so you can search and reuse them. Nothing leaves the machine, and clearing the history deletes both</li>
   <li>No analytics, telemetry, or crash reporting is transmitted</li>
   <li>No account or email is required to use the app</li>
 </ul>
 
 <h2>License Activation</h2>
 <p>Activating a license key contacts our licence server once. That request contains your key and a device identifier for the Mac you are activating, which is what lets us enforce the device limit and revoke a key after a refund. It contains no personal information and no content from your dictation.</p>
-<p>The server replies with a signed token that is stored in your macOS Keychain. Every launch after that verifies the token offline — the app does not contact the server again, so Dictami keeps working with no network at all.</p>
+<p>The server replies with a signed token that is stored in your macOS Keychain. Every launch after that verifies the token offline, so Dictami keeps working with no network at all.</p>
+<p>Licences bought by card are the one exception. Those keys belong to Gumroad, our payment processor, so about once a week the app asks Gumroad whether the licence is still active — which is how a cancelled or refunded subscription stops working. That request sends the licence key and nothing else: no dictation, no text, no personal information. If your Mac is offline the check is skipped and nothing changes.</p>
 
 <h2>Automatic Updates</h2>
 <p>Dictami uses Sparkle for updates. When checking for updates, Sparkle sends a request to dictami.com/appcast.xml that includes your macOS version and Dictami version number. No personally identifiable information is sent.</p>
