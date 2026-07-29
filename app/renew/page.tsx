@@ -13,9 +13,12 @@ import { licenceFetch } from "@/lib/links";
  */
 
 const PLANS = [
-  { id: "30d", name: "30 days", price: "$4", note: "13¢ a day" },
-  { id: "90d", name: "90 days", price: "$10", note: "11¢ a day", best: true },
-  { id: "365d", name: "1 year", price: "$31", note: "8¢ a day" },
+  { id: "30d", name: "30 days", price: "$5", note: "17¢ a day" },
+  { id: "90d", name: "90 days", price: "$15", note: "17¢ a day" },
+  { id: "365d", name: "1 year", price: "$49", note: "13¢ a day", best: true },
+  // Buying this against an existing key turns that key perpetual rather than
+  // issuing a second one, so it belongs on the top-up page too.
+  { id: "lifetime", name: "Lifetime", price: "$79", note: "never expires" },
 ];
 
 export default function RenewPage() {
@@ -79,7 +82,7 @@ export default function RenewPage() {
         style={{ boxShadow: "0 0 0 1px rgba(41,44,61,0.12)" }}
       />
 
-      <div className="mt-10 grid gap-4 sm:grid-cols-3">
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {PLANS.map((plan) => (
           <div
             key={plan.id}

@@ -23,7 +23,7 @@ type Rail = "card" | "crypto";
 const CARD_PLANS = [
   {
     name: "Monthly",
-    price: "$5",
+    price: "$5.99",
     note: "per month",
     href: BUY.monthly,
     perks: ["Every language", "Every model", "All updates while subscribed"],
@@ -31,15 +31,15 @@ const CARD_PLANS = [
   },
   {
     name: "Yearly",
-    price: "$39",
-    note: "per year · saves 35%",
+    price: "$59",
+    note: "per year · saves 18%",
     href: BUY.yearly,
     perks: ["Every language", "Every model", "All updates", "Priority support"],
     featured: true,
   },
   {
     name: "Lifetime",
-    price: "$69",
+    price: "$99",
     note: "paid once",
     href: BUY.lifetime,
     perks: ["Every language", "Every model", "All future updates", "No renewal, ever"],
@@ -47,35 +47,52 @@ const CARD_PLANS = [
   },
 ];
 
-/** A fifth off every card price. Crypto costs us no processing fee and cannot
- *  be charged back, so the saving is real rather than a promotion. */
-const CRYPTO_DISCOUNT = "20%";
+/** A sixth off every card price. Crypto costs us no processing fee and cannot
+ *  be charged back, so the saving is real rather than a promotion.
+ *
+ *  90 days is deliberately three times 30 days and no cheaper per day: a
+ *  volume discount on top of the crypto discount put the daily rate low
+ *  enough to read as a clearance sale rather than a tool worth paying for. */
+const CRYPTO_DISCOUNT = "16%";
 const CRYPTO_PLANS = [
   {
     id: "30d",
     name: "30 days",
-    price: "$4",
-    was: "$5",
-    note: "13¢ a day",
+    price: "$5",
+    was: "$5.99",
+    note: "17¢ a day",
     perks: ["Every language", "Every model", "Top up any time"],
     featured: false,
   },
   {
     id: "90d",
     name: "90 days",
-    price: "$10",
-    was: "$13",
-    note: "11¢ a day",
+    price: "$15",
+    was: "$17.97",
+    note: "17¢ a day",
     perks: ["Every language", "Every model", "Top up any time", "Priority support"],
-    featured: true,
+    featured: false,
   },
   {
     id: "365d",
     name: "1 year",
-    price: "$31",
-    was: "$39",
-    note: "8¢ a day · cheapest way to run it",
+    price: "$49",
+    was: "$59",
+    note: "13¢ a day",
     perks: ["Every language", "Every model", "Top up any time", "Priority support"],
+    featured: true,
+  },
+  {
+    id: "lifetime",
+    name: "Lifetime",
+    price: "$79",
+    was: "$99",
+    note: "paid once · never expires",
+    // A fifth off rather than a sixth. Paid once and in crypto, this is the
+    // only plan that can never be refunded or charged back, so the deeper cut
+    // costs less than it looks.
+    badge: "−20%",
+    perks: ["Every language", "Every model", "All future updates", "No renewal, ever"],
     featured: false,
   },
 ];
@@ -217,7 +234,13 @@ export function Pricing() {
           )}
         </Reveal>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+        {/* Four crypto plans against three card ones. Two columns in the
+            middle range keeps the cards from turning into slivers. */}
+        <div
+          className={`mt-12 grid gap-5 sm:grid-cols-2 ${
+            rail === "crypto" ? "lg:grid-cols-4" : "lg:grid-cols-3"
+          }`}
+        >
           {plans.map((plan, i) => (
             <Reveal key={`${rail}-${plan.name}`} delay={i * 0.07}>
               <Card featured={plan.featured}>
@@ -228,6 +251,14 @@ export function Pricing() {
                   {plan.featured && (
                     <span className="rounded-full bg-white/15 px-2.5 py-1 font-mono text-[10.5px] uppercase tracking-widest">
                       Best value
+                    </span>
+                  )}
+                  {/* Deliberately quiet: the same chip as the rail switch, in
+                      the accent's own tint rather than a sale colour. It marks
+                      the one plan whose discount differs from the rail's. */}
+                  {"badge" in plan && !plan.featured && (
+                    <span className="rounded-full bg-accent/12 px-2 py-0.5 font-mono text-[10.5px] tracking-wide text-accent">
+                      {plan.badge}
                     </span>
                   )}
                 </div>
