@@ -6,6 +6,22 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Dictami</title>
         <item>
+            <title>1.2.11</title>
+            <pubDate>Wed, 29 Jul 2026 16:25:05 +0300</pubDate>
+            <sparkle:version>22</sparkle:version>
+            <sparkle:shortVersionString>1.2.11</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <enclosure url="https://dictami.com/Dictami-1.2.11.zip" length="12988193" type="application/octet-stream" sparkle:edSignature="x+8wDP6qHLAyNgUCCRqY+Np6jqmL0RMQ8OLiQVIsTrO3Fr7fiFMOzeB/zoi2PUzJMqcWNOAhk61uoAoz08v7AA=="/>
+            <sparkle:deltas>
+                <enclosure url="https://dictami.com/Dictami22-21.delta" sparkle:deltaFrom="21" length="536162" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="FY/a9pPvXSmdXsOfEwYw3yRE5FyrvwejsFpZ5EYQ1JrIoRvg4AjDOkaiNugH+OYb+JjCI8fQ/1I3cOrGrVuyCg=="/>
+                <enclosure url="https://dictami.com/Dictami22-20.delta" sparkle:deltaFrom="20" length="1111130" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="9qnWOtIvjuQQ094ZllLB7VmjuM1cUNiIGl3UMtTP8mkK8M2WtBb4mJ9cTTxPZJjPo4qpKqL8BRSfJBDip4vXDw=="/>
+                <enclosure url="https://dictami.com/Dictami22-19.delta" sparkle:deltaFrom="19" length="1135130" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="WOurZvoJGlfZeQ3gM55vzaVNJQt9OjGRt0o1NIz9hoF1LUcG661YDxm2qeERPmW239ulhQa5Q8Yep/6VF/fsCw=="/>
+                <enclosure url="https://dictami.com/Dictami22-18.delta" sparkle:deltaFrom="18" length="1140794" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="HUJZVG06dg/RxTpCQBQtdDrq8VI54y9oA3JZKWzm5Rc08zXrItjMdHL6a4ZSbena+SiLvFGvORmV3eRGMFpgBQ=="/>
+                <enclosure url="https://dictami.com/Dictami22-17.delta" sparkle:deltaFrom="17" length="1150642" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="X1Ctke5iCYxiGfIalY38Tg6dUuPHljg1zo0134U1jKZKe0kxfcevZE44d6c/VtAPNV6OET/EoCMq1Z5mS0k3CQ=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.2.10</title>
             <pubDate>Wed, 29 Jul 2026 13:59:02 +0300</pubDate>
             <sparkle:version>21</sparkle:version>
@@ -59,18 +75,9 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
                 <enclosure url="https://dictami.com/Dictami18-17.delta" sparkle:deltaFrom="17" length="270666" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="7DxrKXz3n2RRYWYNvWqkMfzRlNKJG9npMKzqTSNZ80cf5ZCEQxsQwo8tHVwNkWywtEK3r5PxU+pwPIk5TbS8Bg=="/>
             </sparkle:deltas>
         </item>
-        <item>
-            <title>1.2.6</title>
-            <pubDate>Sat, 25 Jul 2026 12:11:40 +0300</pubDate>
-            <sparkle:version>17</sparkle:version>
-            <sparkle:shortVersionString>1.2.6</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <enclosure url="https://dictami.com/Dictami-1.2.6.zip" length="13623359" type="application/octet-stream" sparkle:edSignature="BeIw2Q23YkYaTzAE+QQo4c7ObAc4Rcm9+jjfT1JwFywMxR1kvqLQHlJI+x8bAAzymL6uDBRlRB7kGnXUFOT2CQ=="/>
-        </item>
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: gPeVh18+HStGtIsUjBauTHPmogBvi0cuf9hTaHJYbCbefjWxImJZTyC+GMRqwstDyWipRUS62tTmN5R54rAdBg==
-length: 7455
+edSignature: 2YS+7dkD19wrLAAmzwR2yaF93ecYbUK0yZCPXfGf9uiAcUwLB5MVeF5X5ZguDrKs7GmsCXnYoh28/Gc7VmP2Dw==
+length: 9316
 -->
