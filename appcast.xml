@@ -6,6 +6,22 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
     <channel>
         <title>Dictami</title>
         <item>
+            <title>1.2.17</title>
+            <pubDate>Wed, 29 Jul 2026 21:08:38 +0300</pubDate>
+            <sparkle:version>28</sparkle:version>
+            <sparkle:shortVersionString>1.2.17</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <enclosure url="https://dictami.com/Dictami-1.2.17.zip" length="12989836" type="application/octet-stream" sparkle:edSignature="sqQ5VMPc3z03nIg23ABLi74yik8tqOBUv+EZaCSPldAaYWwvhJBaGwNtH0qwOmkuZVu5g1Zac+tQRcQkrXQRDQ=="/>
+            <sparkle:deltas>
+                <enclosure url="https://dictami.com/Dictami28-27.delta" sparkle:deltaFrom="27" length="278566" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="quSU+2I14MESJ7pJxoMBA40/nElvy4eZNypoBuWzoin8h8OKnJG2lwFrDVrTC5qGEI3YsWoVtXiaI42Enw34BA=="/>
+                <enclosure url="https://dictami.com/Dictami28-26.delta" sparkle:deltaFrom="26" length="322578" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="f/UlYJO8PIT6ynVKJEw20iaK9rq8hr43r7HljpXCPKI+qaE/YZTuqC5m+N3wl5uDqqsmsHtUTTxo8sIi5dh3Bg=="/>
+                <enclosure url="https://dictami.com/Dictami28-25.delta" sparkle:deltaFrom="25" length="335274" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="Zy9/y/TNd9aYO39LHXAk2SF5ZQEBrCIpIG6l7EnAuFOumBFC5cp8y7Ne1GpkjG321Ajo17BsFr0KumHe80hPCQ=="/>
+                <enclosure url="https://dictami.com/Dictami28-24.delta" sparkle:deltaFrom="24" length="348962" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="SClotTbwhlIqeaV27Vagl3YIOSd4No2unC+GKlb+N9CUU2R9Rq8Io37tW+New6+LBmPalvwEEoIESeUHVka+Bw=="/>
+                <enclosure url="https://dictami.com/Dictami28-23.delta" sparkle:deltaFrom="23" length="369738" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="8aEINSO7bF+L84DtcKd0enmw3Ljdwa17PHB+10D1RArLDDal2MeFrciIe8E56GSaYiw0lFZF0lPexgGi5d0jBA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.2.16</title>
             <pubDate>Wed, 29 Jul 2026 20:42:59 +0300</pubDate>
             <sparkle:version>27</sparkle:version>
@@ -69,25 +85,9 @@ IMPORTANT: This file was signed by Sparkle. Any modifications to this file requi
                 <enclosure url="https://dictami.com/Dictami24-19.delta" sparkle:deltaFrom="19" length="1131198" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="umJUr/g8NNQIjNGjdCjKrZJAE5iqoOErV+lSkNWxSaZTZ1Zkrzp13v24CGwarJ4Ouxh6zRFYBOAmEDwYSinkDw=="/>
             </sparkle:deltas>
         </item>
-        <item>
-            <title>1.2.12</title>
-            <pubDate>Wed, 29 Jul 2026 16:41:24 +0300</pubDate>
-            <sparkle:version>23</sparkle:version>
-            <sparkle:shortVersionString>1.2.12</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
-            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
-            <enclosure url="https://dictami.com/Dictami-1.2.12.zip" length="12987593" type="application/octet-stream" sparkle:edSignature="qCi2c0LmZwgYxxQDKslnG6RE+cGWVkJGJp3G8FMVHXifXsY7E/oUer+jqYOCxKujnM5EVkDu0njAU3J4mmAZCw=="/>
-            <sparkle:deltas>
-                <enclosure url="https://dictami.com/Dictami23-22.delta" sparkle:deltaFrom="22" length="206802" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="KQ4/PYLbGqOI5e8V/73M1CceVR4Kpw74nSExv6izM2dmX3WnFE+KRAU6EtC2OFTiW2I9ZoexY/9+qkN0v6fGAg=="/>
-                <enclosure url="https://dictami.com/Dictami23-21.delta" sparkle:deltaFrom="21" length="534626" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="N3yoBCJVz0ai1jyKZpYb8RiiRdjyWqoGk0HHZTk5zhb9sD/3oPIopGu4ZK5PdK2S80C4yEcJmwMdaUA9qkeqCA=="/>
-                <enclosure url="https://dictami.com/Dictami23-20.delta" sparkle:deltaFrom="20" length="1112846" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="H86G4vK19R1bBWmESGTwcQDilr6JABHg8d9ART0uzHOhpV3nW+ta6PyUGO+sbMHqnPMHMgRvcYmyPqfqjs3OAQ=="/>
-                <enclosure url="https://dictami.com/Dictami23-19.delta" sparkle:deltaFrom="19" length="1133314" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="Kqg+VkbKPV16zliyBiS0P5UZA8Lj7SGF4437pPnQpHPetcsrBYzZr07OrALCBG5EkAIvs79/SZQm3gqDTU/tBA=="/>
-                <enclosure url="https://dictami.com/Dictami23-18.delta" sparkle:deltaFrom="18" length="1141502" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977808" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="joh4PLJh+5zBsutTLfHt7hbEkx0x0iTpbnEdlynB0xYVHnqWDytW3BEJUxWKpFO0xTCCNKkHA1ynZSOsfvb/Aw=="/>
-            </sparkle:deltas>
-        </item>
     </channel>
 </rss>
 <!-- sparkle-signatures:
-edSignature: Du0cuEf8MVciLlakSqTGJzi7qL1WnzSgVeFoEOhEaD1sl1GIfUIrFb1a+i31Kk39zARnYP+GpxavhNidqBlvBA==
-length: 12917
+edSignature: GxlQFoHt2ZQ+4m69XE4UF11pcln2gTkX35es3GzZFUVq3U97ZWGhKwMPSPnhvbQQ0o38vx0jRb0SwvleLJJICA==
+length: 12914
 -->
