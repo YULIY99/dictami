@@ -40,7 +40,7 @@ export const DOWNLOAD = "/Dictami.dmg";
  * about what they just got. Same-origin, so the `download` attribute is
  * honoured; bump it with the version in the release script.
  */
-export const DOWNLOAD_FILENAME = "Dictami-1.2.19-macOS-arm64.dmg";
+export const DOWNLOAD_FILENAME = "Dictami-1.2.20-macOS-arm64.dmg";
 
 /** The button in the header and hero. */
 export const PRIMARY_CTA = DOWNLOAD;
