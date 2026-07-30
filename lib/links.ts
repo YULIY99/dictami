@@ -46,6 +46,14 @@ export const DOWNLOAD_FILENAME = "Dictami-1.2.18-macOS-arm64.dmg";
 export const PRIMARY_CTA = DOWNLOAD;
 
 /**
+ * The listing behind the footer badge. Their tracking parameters are kept
+ * verbatim from the embed code they issued: stripping them would make the
+ * click look like ordinary traffic and cost us the referral credit.
+ */
+export const SAASHUB_URL =
+  "https://www.saashub.com/dictami?utm_source=badge&utm_campaign=badge&utm_content=dictami&badge_variant=color&badge_kind=approved";
+
+/**
  * Our own licence server. It opens the crypto invoice, because the NOWPayments
  * API key must never reach a browser — which is exactly why a static site
  * cannot take crypto on its own.

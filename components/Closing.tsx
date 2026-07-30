@@ -4,7 +4,7 @@ import { Pill, PillMark } from "./Pill";
 import { Wordmark } from "./Wordmark";
 import { Reveal } from "./Sections";
 import { GuideLinks } from "./GuideLinks";
-import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
+import { PRIMARY_CTA, DOWNLOAD_FILENAME, SAASHUB_URL } from "@/lib/links";
 import { AppleMark } from "./AppleMark";
 import { Subscribe } from "./Subscribe";
 
@@ -63,6 +63,25 @@ export function Closing() {
               className="transition-colors hover:text-white"
             >
               Support
+            </a>
+            {/* Third-party proof that the app is a real, reviewed listing and
+                not a page that appeared last night. SaaSHub hosts the image;
+                a plain <img> keeps it off our own optimiser and out of the
+                build, so their outage cannot break ours. */}
+            <a
+              href={SAASHUB_URL}
+              target="_blank"
+              rel="noopener"
+              className="transition-opacity hover:opacity-80"
+            >
+              <img
+                src="https://cdn-b.saashub.com/img/badges/approved-color.png?v=1"
+                alt="Dictami is approved on SaaSHub"
+                width={150}
+                height={44}
+                loading="lazy"
+                className="h-9 w-auto"
+              />
             </a>
           </nav>
 
