@@ -55,8 +55,14 @@ export function Closing() {
           </div>
 
           <nav className="flex items-center gap-7 text-[13.5px]">
+            <a href="/about" className="transition-colors hover:text-white">
+              About
+            </a>
             <a href="/privacy.html" className="transition-colors hover:text-white">
               Privacy
+            </a>
+            <a href="/terms" className="transition-colors hover:text-white">
+              Terms
             </a>
             <a
               href="mailto:support@dictami.com"
