@@ -59,7 +59,17 @@ const structuredData = {
   operatingSystem: "macOS 13 or later, Apple Silicon",
   processorRequirements: "Apple Silicon (M1 or newer)",
   applicationCategory: "ProductivityApplication",
-  offers: { "@type": "Offer", price: "5.00", priceCurrency: "USD" },
+  // Four prices are sold, so a single Offer of "5.00" was both wrong and the
+  // cheapest one — Google prints that number in the result and the visitor
+  // arrives expecting it. AggregateOffer states the actual range: $5 for
+  // 30 days through $79 for the licence that never expires.
+  offers: {
+    "@type": "AggregateOffer",
+    lowPrice: "5.00",
+    highPrice: "79.00",
+    priceCurrency: "USD",
+    offerCount: "4",
+  },
   description:
     "Voice dictation for Mac that runs entirely on-device. Hold a key, speak, and punctuated text appears in any app in about half a second.",
   url: "https://dictami.com",
