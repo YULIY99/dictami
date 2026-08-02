@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { PillMark } from "./Pill";
+import { AppIcon } from "./AppIcon";
 import { Wordmark } from "./Wordmark";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { AppleMark } from "./AppleMark";
@@ -54,7 +54,7 @@ export function Header() {
       >
         <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between gap-6 px-5">
           <a href="#top" className="flex items-center gap-2.5">
-            <PillMark />
+            <AppIcon className="ring-1 ring-ink/5" />
             <Wordmark className="text-[21px]" />
           </a>
 

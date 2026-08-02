@@ -21,7 +21,41 @@ export function Hero() {
 
       <div className="relative mx-auto max-w-6xl px-5">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="font-mono text-[11.5px] uppercase tracking-[0.16em] text-muted">
+          {/* The privacy claim is the reason to choose this over the dictation
+              already built into the Mac, and it used to sit at the tail of the
+              paragraph below — the last words of a sentence most visitors never
+              finish reading. As a mark at the very top it is the first thing on
+              the page, and a lock is read before any wording is. */}
+          <p className="inline-flex items-center gap-2 rounded-full bg-card py-1.5 pl-2.5 pr-4 shadow-[0_0_0_1px_rgba(41,44,61,0.09),0_0_0_4px_rgba(255,255,255,0.6),0_4px_14px_-8px_rgba(41,44,61,0.25)]">
+            <span
+              className="flex h-6 w-6 items-center justify-center rounded-full"
+              style={{
+                background:
+                  "radial-gradient(120% 110% at 25% 10%, #7cc0ff, #3b8ff0 60%, #2f7ddd)",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.5)",
+              }}
+              aria-hidden
+            >
+              <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none">
+                <path
+                  d="M7 10V7.5a5 5 0 0 1 10 0V10"
+                  stroke="#fff"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                />
+                <rect x="4.6" y="10" width="14.8" height="9.6" rx="3" fill="#fff" />
+              </svg>
+            </span>
+            {/* The tail is dropped on a phone rather than wrapped: a two-line
+                capsule reads as a paragraph in a box, and the same sentence is
+                spelled out under the headline anyway. */}
+            <span className="text-[13px] font-medium tracking-tight">
+              Private by design
+              <span className="hidden sm:inline"> — your voice never leaves your Mac</span>
+            </span>
+          </p>
+
+          <p className="mt-5 font-mono text-[11.5px] uppercase tracking-[0.16em] text-muted">
             For macOS · Apple Silicon
           </p>
 
@@ -34,8 +68,8 @@ export function Hero() {
 
           <p className="mx-auto mt-6 max-w-xl text-[17px] leading-relaxed text-muted">
             Hold a key, speak, let go. Punctuated text appears in whatever app your
-            cursor is in — in about half a second, in 28 languages, without your
-            voice leaving your Mac.
+            cursor is in — in about half a second, in 28 languages. Recognition
+            runs on your own machine, with no internet needed.
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">

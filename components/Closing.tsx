@@ -1,6 +1,7 @@
 "use client";
 
-import { Pill, PillMark } from "./Pill";
+import { Pill } from "./Pill";
+import { AppIcon } from "./AppIcon";
 import { Wordmark } from "./Wordmark";
 import { Reveal } from "./Sections";
 import { GuideLinks } from "./GuideLinks";
@@ -50,7 +51,7 @@ export function Closing() {
 
         <div className="mx-auto mt-10 flex max-w-6xl flex-col items-center justify-between gap-5 border-t border-white/10 px-5 pt-10 sm:flex-row">
           <div className="flex items-center gap-2.5">
-            <PillMark className="ring-1 ring-white/15" />
+            <AppIcon className="ring-1 ring-white/15" />
             <Wordmark className="text-[17px]" tone="light" />
           </div>
 

@@ -79,6 +79,11 @@ const CRYPTO_PLANS = [
     price: "$49",
     was: "$59",
     note: "13¢ a day",
+    // A point more than the rail's own cut, and the plan most people land on,
+    // so it says its number too. Without it this card was the only one asking
+    // the reader to work the saving out from two prices while the one beside
+    // it stated it outright.
+    badge: "−17%",
     perks: ["Every language", "Every model", "Top up any time", "Priority support"],
     featured: true,
   },
@@ -244,23 +249,33 @@ export function Pricing() {
           {plans.map((plan, i) => (
             <Reveal key={`${rail}-${plan.name}`} delay={i * 0.07}>
               <Card featured={plan.featured}>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-2">
                   <h3 className="font-display text-[15px] font-medium tracking-tight">
                     {plan.name}
                   </h3>
-                  {plan.featured && (
-                    <span className="rounded-full bg-white/15 px-2.5 py-1 font-mono text-[10.5px] uppercase tracking-widest">
-                      Best value
-                    </span>
-                  )}
-                  {/* Deliberately quiet: the same chip as the rail switch, in
-                      the accent's own tint rather than a sale colour. It marks
-                      the one plan whose discount differs from the rail's. */}
-                  {"badge" in plan && !plan.featured && (
-                    <span className="rounded-full bg-accent/12 px-2 py-0.5 font-mono text-[10.5px] tracking-wide text-accent">
-                      {plan.badge}
-                    </span>
-                  )}
+                  <div className="flex shrink-0 items-center gap-1.5">
+                    {plan.featured && (
+                      <span className="rounded-full bg-white/15 px-2.5 py-1 font-mono text-[10.5px] uppercase tracking-widest">
+                        Best value
+                      </span>
+                    )}
+                    {/* Deliberately quiet: the same chip as the rail switch, in
+                        the accent's own tint rather than a sale colour. It marks
+                        the plans whose discount differs from the rail's, and sits
+                        after "Best value" rather than instead of it — the two say
+                        different things. */}
+                    {"badge" in plan && (
+                      <span
+                        className={`rounded-full px-2 py-0.5 font-mono text-[10.5px] tracking-wide ${
+                          plan.featured
+                            ? "bg-white/15 text-white/75"
+                            : "bg-accent/12 text-accent"
+                        }`}
+                      >
+                        {plan.badge}
+                      </span>
+                    )}
+                  </div>
                 </div>
 
                 <p className="mt-6 flex items-baseline gap-3 font-display text-5xl font-normal tabular-nums tracking-tight">
