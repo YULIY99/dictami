@@ -71,6 +71,15 @@ export function Closing() {
             >
               Support
             </a>
+            {/* Referrals run on Gumroad's own affiliate system: a person
+                mails us, gets added with a 50% cut, and Gumroad tracks the
+                link and pays them — nothing of ours to maintain. */}
+            <a
+              href="mailto:support@dictami.com?subject=Dictami%20referral%20link&body=Hi!%20I%27d%20like%20a%20referral%20link%20for%20Dictami.%20My%20Gumroad%20account%20e-mail%20is%3A%20"
+              className="transition-colors hover:text-white"
+            >
+              Refer &amp; earn 50%
+            </a>
             {/* Third-party proof that the app is a real, reviewed listing and
                 not a page that appeared last night. SaaSHub hosts the image;
                 a plain <img> keeps it off our own optimiser and out of the
