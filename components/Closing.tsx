@@ -55,7 +55,7 @@ export function Closing() {
             <Wordmark className="text-[17px]" tone="light" />
           </div>
 
-          <nav className="flex items-center gap-7 text-[13.5px]">
+          <nav className="flex flex-wrap items-center justify-center gap-x-7 gap-y-4 text-[13.5px]">
             <a href="/about" className="transition-colors hover:text-white">
               About
             </a>
@@ -78,7 +78,7 @@ export function Closing() {
               href={AFFILIATE_URL}
               target="_blank"
               rel="noopener"
-              className="transition-colors hover:text-white"
+              className="whitespace-nowrap transition-colors hover:text-white"
             >
               Refer &amp; earn 50%
             </a>

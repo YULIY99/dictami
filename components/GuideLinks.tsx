@@ -27,7 +27,10 @@ export function GuideLinks({
       >
         Guides
       </p>
-      <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2.5">
+      {/* On a phone the wrapped rows broke at different widths and the block
+          read as ragged. A two-column grid there keeps the left edges lined
+          up; from the small breakpoint the free wrap is fine again. */}
+      <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2.5 sm:flex sm:flex-wrap">
         {items.map((guide) => (
           <li key={guide.href}>
             <Link
