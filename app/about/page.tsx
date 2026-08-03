@@ -37,11 +37,33 @@ export default function About() {
         </h1>
 
         <p className="mt-5 text-[17px] leading-relaxed text-muted">
-          Dictami is written, tested, supported and shipped by Julius, an
-          independent macOS developer. There is no company behind it, no
+          Dictami is written, tested, supported and shipped by Yuliy Metelskiy,
+          an independent macOS developer. There is no company behind it, no
           investors, and nobody else to escalate to — the person who answers
           support email is the person who wrote the line of code you are
           asking about.
+        </p>
+
+        {/* A name on a page is a claim like any other. This one can be checked
+            without trusting the page: the app is signed with an Apple Developer
+            ID issued to that person, and Apple verified the identity before
+            issuing it. Anyone can read it back off the downloaded app in one
+            command, which is worth more than a photograph or a profile
+            elsewhere. */}
+        <p className="mt-4 text-[15px] leading-relaxed text-muted">
+          You do not have to take that on trust. Every build is signed with an
+          Apple Developer ID issued to that name, and Apple checks who a person
+          is before issuing one. Read it back off the app you downloaded:
+        </p>
+        <pre className="mt-3 overflow-x-auto rounded-xl bg-card p-4 text-[13px] leading-relaxed shadow-[0_0_0_1px_rgba(41,44,61,0.09)]">
+          <code>codesign -dv --verbose=2 /Applications/Dictami.app</code>
+        </pre>
+        <p className="mt-3 text-[14px] leading-relaxed text-muted">
+          It prints{" "}
+          <span className="text-ink">
+            Authority=Developer ID Application: Yuliy Metelskiy (AQVKLV5HJK)
+          </span>
+          .
         </p>
 
         <div className="mt-16 flex flex-col gap-10">
