@@ -5,7 +5,7 @@ import { AppIcon } from "./AppIcon";
 import { Wordmark } from "./Wordmark";
 import { Reveal } from "./Sections";
 import { GuideLinks } from "./GuideLinks";
-import { PRIMARY_CTA, DOWNLOAD_FILENAME, SAASHUB_URL } from "@/lib/links";
+import { PRIMARY_CTA, DOWNLOAD_FILENAME, SAASHUB_URL, AFFILIATE_URL } from "@/lib/links";
 import { AppleMark } from "./AppleMark";
 import { Subscribe } from "./Subscribe";
 
@@ -71,11 +71,13 @@ export function Closing() {
             >
               Support
             </a>
-            {/* Referrals run on Gumroad's own affiliate system: a person
-                mails us, gets added with a 50% cut, and Gumroad tracks the
-                link and pays them — nothing of ours to maintain. */}
+            {/* Referrals run on Gumroad's own affiliate system: this is their
+                self-serve signup, so nobody has to be added by hand, and
+                Gumroad tracks the link and pays the 50% itself. */}
             <a
-              href="mailto:support@dictami.com?subject=Dictami%20referral%20link&body=Hi!%20I%27d%20like%20a%20referral%20link%20for%20Dictami.%20My%20Gumroad%20account%20e-mail%20is%3A%20"
+              href={AFFILIATE_URL}
+              target="_blank"
+              rel="noopener"
               className="transition-colors hover:text-white"
             >
               Refer &amp; earn 50%

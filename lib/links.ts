@@ -54,6 +54,14 @@ export const SAASHUB_URL =
   "https://www.saashub.com/dictami?utm_source=badge&utm_campaign=badge&utm_content=dictami&badge_variant=color&badge_kind=approved";
 
 /**
+ * Gumroad's own affiliate signup. People enrol themselves, Gumroad tracks the
+ * link for thirty days and pays the 50% out of its own ledger, so referrals
+ * cost us no code and no bookkeeping. It only covers the card checkout —
+ * crypto payments go through NOWPayments and carry no referral.
+ */
+export const AFFILIATE_URL = "https://dictami.gumroad.com/affiliates";
+
+/**
  * Our own licence server. It opens the crypto invoice, because the NOWPayments
  * API key must never reach a browser — which is exactly why a static site
  * cannot take crypto on its own.
