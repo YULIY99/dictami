@@ -68,7 +68,7 @@ export function Hero() {
 
           <p className="mx-auto mt-6 max-w-xl text-[17px] leading-relaxed text-muted">
             Hold a key, speak, let go. Punctuated text appears in whatever app your
-            cursor is in — in about half a second, in 28 languages. Recognition
+            cursor is in — in about half a second, in 30 languages. Recognition
             runs on your own machine, with no internet needed.
           </p>
 

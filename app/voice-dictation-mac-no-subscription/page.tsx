@@ -96,7 +96,7 @@ export default function VoiceDictationMacNoSubscription() {
             <h2 className="text-[20px] font-medium tracking-tight">What you get either way</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
               Hold a key, speak, release. Punctuated text appears in whatever app your
-              cursor is in, in about half a second, in any of 28 languages. Everything runs
+              cursor is in, in about half a second, in any of 30 languages. Everything runs
               on your Mac — no upload, no internet connection required, and no audio leaving
               the machine.
             </p>

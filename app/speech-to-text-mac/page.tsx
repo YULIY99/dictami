@@ -6,12 +6,12 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Speech to Text for Mac | Dictami",
   description:
-    "Turn speech into text on Mac in any app with on-device recognition, automatic punctuation, 28 languages, and a global hotkey. No account required.",
+    "Turn speech into text on Mac in any app with on-device recognition, automatic punctuation, 30 languages, and a global hotkey. No account required.",
   alternates: { canonical: "https://dictami.com/speech-to-text-mac" },
   openGraph: {
     title: "Speech to Text for Mac | Dictami",
     description:
-      "Turn speech into text on Mac in any app with on-device recognition, automatic punctuation, 28 languages, and a global hotkey. No account required.",
+      "Turn speech into text on Mac in any app with on-device recognition, automatic punctuation, 30 languages, and a global hotkey. No account required.",
     url: "https://dictami.com/speech-to-text-mac",
   },
 };
@@ -81,7 +81,7 @@ export default function SpeechToTextMac() {
           </section>
 
           <section>
-            <h2 className="text-[20px] font-medium tracking-tight">28 languages</h2>
+            <h2 className="text-[20px] font-medium tracking-tight">30 languages</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
               English, Spanish, French, German, Italian, Portuguese, Dutch, Polish, Russian,
               Japanese, Korean, Chinese, and 16 more European languages — all handled on-device

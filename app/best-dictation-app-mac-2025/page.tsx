@@ -6,12 +6,12 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Best Dictation App for Mac in 2026 | Dictami",
   description:
-    "Looking for the best dictation app for Mac in 2026? Dictami runs on-device, works offline, supports 28 languages, and types into any Mac app fast.",
+    "Looking for the best dictation app for Mac in 2026? Dictami runs on-device, works offline, supports 30 languages, and types into any Mac app fast.",
   alternates: { canonical: "https://dictami.com/best-dictation-app-mac-2025" },
   openGraph: {
     title: "Best Dictation App for Mac in 2026 | Dictami",
     description:
-      "Looking for the best dictation app for Mac in 2026? Dictami runs on-device, works offline, supports 28 languages, and types into any Mac app fast.",
+      "Looking for the best dictation app for Mac in 2026? Dictami runs on-device, works offline, supports 30 languages, and types into any Mac app fast.",
     url: "https://dictami.com/best-dictation-app-mac-2025",
   },
 };
@@ -98,7 +98,7 @@ export default function BestDictationAppMac2025() {
               and it works with no internet connection.
             </p>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
-              28 languages are supported at full speed: English, Spanish, French, German,
+              30 languages are supported at full speed: English, Spanish, French, German,
               Italian, Portuguese, Dutch, Polish, Russian, Japanese, Korean, Chinese, and more.
               No account required. One license key, checked once, never again.
             </p>

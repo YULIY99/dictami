@@ -6,12 +6,12 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Voice Dictation for Mac | Dictami",
   description:
-    "Fast voice dictation for Mac that runs on-device. Hold a key, speak, and punctuated text appears in any app in about half a second. 28 languages.",
+    "Fast voice dictation for Mac that runs on-device. Hold a key, speak, and punctuated text appears in any app in about half a second. 30 languages.",
   alternates: { canonical: "https://dictami.com/voice-dictation-mac" },
   openGraph: {
     title: "Voice Dictation for Mac | Dictami",
     description:
-      "Fast voice dictation for Mac that runs on-device. Hold a key, speak, and punctuated text appears in any app in about half a second. 28 languages.",
+      "Fast voice dictation for Mac that runs on-device. Hold a key, speak, and punctuated text appears in any app in about half a second. 30 languages.",
     url: "https://dictami.com/voice-dictation-mac",
   },
 };
@@ -30,7 +30,7 @@ export default function VoiceDictationMac() {
 
         <p className="mt-5 text-[17px] leading-relaxed text-muted">
           Hold a key, speak, let go. Punctuated text appears in whatever app your cursor
-          is in — in about half a second, in 28 languages, without your voice leaving your Mac.
+          is in — in about half a second, in 30 languages, without your voice leaving your Mac.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-4">
@@ -89,7 +89,7 @@ export default function VoiceDictationMac() {
           </section>
 
           <section>
-            <h2 className="text-[20px] font-medium tracking-tight">28 languages, one model</h2>
+            <h2 className="text-[20px] font-medium tracking-tight">30 languages, one model</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
               Install once and it handles every supported language. No picking a different
               model each time you switch. English, Spanish, French, German, Japanese, Korean,

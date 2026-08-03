@@ -121,7 +121,7 @@ export default function SpeechToTextMacAnyApp() {
             <h2 className="text-[20px] font-medium tracking-tight">What you need</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
               macOS 13 Ventura or later on an Apple Silicon Mac — an M1 or newer. Intel
-              Macs aren't supported. Recognition runs on your Mac in 28 languages, with
+              Macs aren't supported. Recognition runs on your Mac in 30 languages, with
               punctuation, and needs no internet connection after the first download.
             </p>
           </section>

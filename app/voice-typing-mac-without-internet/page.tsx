@@ -100,7 +100,7 @@ export default function VoiceTypingMacWithoutInternet() {
           </section>
 
           <section>
-            <h2 className="text-[20px] font-medium tracking-tight">28 languages, all offline</h2>
+            <h2 className="text-[20px] font-medium tracking-tight">30 languages, all offline</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
               Every supported language runs on-device: English, Spanish, French, German,
               Italian, Portuguese, Dutch, Polish, Russian, Japanese, Korean, Chinese, and more.

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   // itself sells speed instead; the two jobs are different.
   title: "Dictami — Fast Offline Voice Dictation for Mac",
   description:
-    "Fast offline voice dictation for Mac. Hold a key, speak, and punctuated text appears in any app in about half a second. 28 languages, no account.",
+    "Fast offline voice dictation for Mac. Hold a key, speak, and punctuated text appears in any app in about half a second. 30 languages, no account.",
   keywords: [
     "mac dictation app",
     "voice dictation mac",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Dictami — Speak, and the text is already there",
     description:
-      "Hold a key, speak, and the text lands in any Mac app in about half a second — with punctuation, in 28 languages, without sending a byte anywhere.",
+      "Hold a key, speak, and the text lands in any Mac app in about half a second — with punctuation, in 30 languages, without sending a byte anywhere.",
     // Stating the size lets the card render immediately instead of collapsing
     // to a small thumbnail while the crawler fetches the file.
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Dictami — speak, and the text is already there" }],
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dictami — Speak, and the text is already there",
     description:
-      "Voice dictation for Mac that keeps up with you. About half a second, on-device, 28 languages.",
+      "Voice dictation for Mac that keeps up with you. About half a second, on-device, 30 languages.",
     images: ["/og-image.png"],
   },
   other: { "google-site-verification": "4MFm0bxZWFTg8cYRF78lWRhiiLCajG_PO1S1iB14HXc" },

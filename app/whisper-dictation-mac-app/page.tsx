@@ -87,7 +87,7 @@ export default function WhisperDictationMacApp() {
               Whisper covers everything the fast models don't. Pick a language outside their
               range and Dictami falls back to Whisper automatically — slower, but working,
               rather than an error message. It's the difference between a tool that supports
-              28 languages well and one that supports 28 languages only.
+              30 languages well and one that supports 30 languages only.
             </p>
           </section>
 

@@ -97,7 +97,7 @@ export function Speed() {
             </div>
 
             <p className="mt-6 border-t border-line pt-5 text-[12.5px] leading-relaxed text-muted">
-              The same in every one of the 28 languages: measured on identical
+              The same in every one of the 30 languages: measured on identical
               audio they land within a hundredth of a second of each other.
             </p>
           </div>

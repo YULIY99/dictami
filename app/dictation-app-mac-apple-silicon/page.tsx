@@ -86,7 +86,7 @@ export default function DictationAppMacAppleSilicon() {
           </section>
 
           <section>
-            <h2 className="text-[20px] font-medium tracking-tight">28 languages at full speed</h2>
+            <h2 className="text-[20px] font-medium tracking-tight">30 languages at full speed</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
               Every supported language runs on the same chip at the same speed: English,
               Spanish, French, German, Italian, Portuguese, Dutch, Polish, Russian, Japanese,

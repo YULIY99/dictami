@@ -166,7 +166,7 @@ const FEATURES = [
     body: "Hold to talk like a walkie-talkie, or tap once to start and once to finish. Right ⌘ is captured cleanly, so no other app sees it.",
   },
   {
-    title: "One model, 28 languages",
+    title: "One model, 30 languages",
     body: "Install it once and it handles every supported language. No picking a model each time you change language.",
   },
   {
@@ -231,7 +231,7 @@ export function Languages() {
         <Reveal className="max-w-2xl">
           <Eyebrow>Languages</Eyebrow>
           <h2 className="mt-5 font-display text-[clamp(2.1rem,4.4vw,3.15rem)] font-normal leading-[1.06] tracking-[-0.03em] text-balance">
-            28 languages at full speed.
+            30 languages at full speed.
           </h2>
           <p className="mt-5 text-[16.5px] leading-relaxed text-muted">
             Each of these runs on your Mac at the same speed, with punctuation

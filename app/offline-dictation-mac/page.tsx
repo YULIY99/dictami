@@ -6,12 +6,12 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Offline Dictation for Mac | Dictami",
   description:
-    "Offline voice dictation for Mac with on-device recognition. No internet or account required, no audio sent anywhere, with punctuation in 28 languages.",
+    "Offline voice dictation for Mac with on-device recognition. No internet or account required, no audio sent anywhere, with punctuation in 30 languages.",
   alternates: { canonical: "https://dictami.com/offline-dictation-mac" },
   openGraph: {
     title: "Offline Dictation for Mac | Dictami",
     description:
-      "Offline voice dictation for Mac with on-device recognition. No internet or account required, no audio sent anywhere, with punctuation in 28 languages.",
+      "Offline voice dictation for Mac with on-device recognition. No internet or account required, no audio sent anywhere, with punctuation in 30 languages.",
     url: "https://dictami.com/offline-dictation-mac",
   },
 };
@@ -84,7 +84,7 @@ export default function OfflineDictationMac() {
           </section>
 
           <section>
-            <h2 className="text-[20px] font-medium tracking-tight">28 languages, all offline</h2>
+            <h2 className="text-[20px] font-medium tracking-tight">30 languages, all offline</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
               Every supported language runs on-device at the same speed: English, Spanish,
               French, German, Italian, Portuguese, Dutch, Polish, Russian, Japanese, Korean,
