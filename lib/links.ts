@@ -62,6 +62,15 @@ export const SAASHUB_URL =
 export const AFFILIATE_URL = "https://dictami.gumroad.com/affiliates";
 
 /**
+ * Fazier's free launch is gated on their badge being visible here, so the
+ * footer image is a condition of the listing, not decoration. Their generator
+ * refused to hand out the embed snippet in the browser, so the badge points at
+ * the launch page directly; if Verify Badge rejects it, this is the one line to
+ * replace with whatever URL their code carries.
+ */
+export const FAZIER_URL = "https://fazier.com/launches/dictami";
+
+/**
  * Our own licence server. It opens the crypto invoice, because the NOWPayments
  * API key must never reach a browser — which is exactly why a static site
  * cannot take crypto on its own.

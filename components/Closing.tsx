@@ -5,7 +5,13 @@ import { AppIcon } from "./AppIcon";
 import { Wordmark } from "./Wordmark";
 import { Reveal } from "./Sections";
 import { GuideLinks } from "./GuideLinks";
-import { PRIMARY_CTA, DOWNLOAD_FILENAME, SAASHUB_URL, AFFILIATE_URL } from "@/lib/links";
+import {
+  PRIMARY_CTA,
+  DOWNLOAD_FILENAME,
+  SAASHUB_URL,
+  AFFILIATE_URL,
+  FAZIER_URL,
+} from "@/lib/links";
 import { AppleMark } from "./AppleMark";
 import { Subscribe } from "./Subscribe";
 
@@ -96,6 +102,25 @@ export function Closing() {
                 src="https://cdn-b.saashub.com/img/badges/approved-color.png?v=1"
                 alt="Dictami is approved on SaaSHub"
                 width={150}
+                height={44}
+                loading="lazy"
+                className="h-9 w-auto"
+              />
+            </a>
+            {/* Fazier gives a free launch slot only to sites that carry its
+                badge, and their crawler looks for exactly this image. Same
+                plain <img> treatment as SaaSHub above: their host, not our
+                build. */}
+            <a
+              href={FAZIER_URL}
+              target="_blank"
+              rel="noopener"
+              className="transition-opacity hover:opacity-80"
+            >
+              <img
+                src="https://fazier.com/api/v1/public/badges/launch_badges.svg?badge_type=launched&theme=dark"
+                alt="Dictami launched on Fazier"
+                width={103}
                 height={44}
                 loading="lazy"
                 className="h-9 w-auto"
