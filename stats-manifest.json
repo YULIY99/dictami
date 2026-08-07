@@ -1,0 +1,11 @@
+{
+  "name": "Dictami Stats",
+  "short_name": "Dictami",
+  "start_url": "/stats.html",
+  "display": "standalone",
+  "background_color": "#0b0b14",
+  "theme_color": "#0b0b14",
+  "icons": [
+    { "src": "/stats-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

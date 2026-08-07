@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+# The owner's traffic dashboard. Not secret, but not for customers either.
+Disallow: /stats.html
+
+# Everything below is machinery, not pages.
+#
+# Sparkle keeps every shipped build and every delta between them in the site
+# root, because that is where the update feed points. Google indexes them as
+# documents: a search for the app can return a 13 MB archive of version 1.2.6
+# instead of the page that sells it, and the crawler spends its budget
+# fetching them. Blocked here rather than deleted — the updater still needs
+# every one of these files, and a customer two versions behind has nothing
+# else to upgrade from.
+Disallow: /Dictami-
+Disallow: /Dictami.dmg
+Disallow: /*.zip$
+Disallow: /*.delta$
+Disallow: /appcast.xml
+
+# Next.js writes a text copy of every page beside the HTML one. Indexed, they
+# are duplicates of pages that already rank.
+Disallow: /__next
+Disallow: /index.txt
+
+Sitemap: https://dictami.com/sitemap.xml
