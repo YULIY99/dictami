@@ -10,6 +10,13 @@ cd "$(dirname "$0")/.."
 ROOT="$PWD"
 WORKTREE="$ROOT/.deploy"
 
+cleanup() {
+  cd "$ROOT"
+  git worktree remove --force "$WORKTREE" 2>/dev/null || true
+  rm -rf "$WORKTREE"
+}
+trap cleanup EXIT
+
 echo "==> Сборка"
 npm run build
 
@@ -42,8 +49,5 @@ else
   git push -q origin gh-pages
   echo "Запушено."
 fi
-
-cd "$ROOT"
-git worktree remove --force "$WORKTREE"
 
 echo "==> Готово. GitHub Pages подхватит через 3–7 минут."
