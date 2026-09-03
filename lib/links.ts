@@ -11,14 +11,12 @@
  * `option` is the tier id and is not guessable; it comes from the buy button on
  * the product page (`dictami.gumroad.com/l/<id>`). If a tier is ever recreated
  * in Gumroad the id changes and these links must be copied again — a stale one
- * lands the buyer on an error page, so check all three after touching tiers.
+ * lands the buyer on an error page, so check both after touching tiers.
  * Lifetime has no tiers and so needs no `option`.
  */
 export const BUY = {
   monthly:
     "https://gumroad.com/checkout?product=mjwvomp&option=jehT1xwYbvQf4SG0Dj4vfg%3D%3D&recurrence=monthly&quantity=1",
-  yearly:
-    "https://gumroad.com/checkout?product=fhrqme&option=yy-dP_hOP0IFTGMbRA_BLg%3D%3D&recurrence=yearly&quantity=1",
   lifetime: "https://gumroad.com/checkout?product=qrqxml&quantity=1",
 } as const;
 

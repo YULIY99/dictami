@@ -6,12 +6,12 @@ import { GuideLinks } from "@/components/GuideLinks";
 export const metadata: Metadata = {
   title: "Voice Dictation for Mac Without a Subscription | Dictami",
   description:
-    "Buy a voice dictation app for Mac once and keep it. Dictami offers a lifetime license alongside optional monthly and yearly plans with no account or cloud.",
+    "Buy a voice dictation app for Mac once and keep it. Dictami offers a $29.99 lifetime license or $5.99 monthly access with no account or cloud.",
   alternates: { canonical: "https://dictami.com/voice-dictation-mac-no-subscription" },
   openGraph: {
     title: "Voice Dictation for Mac Without a Subscription | Dictami",
     description:
-      "Buy a voice dictation app for Mac once and keep it. Dictami offers a lifetime license alongside optional monthly and yearly plans with no account or cloud.",
+      "Buy a voice dictation app for Mac once and keep it. Dictami offers a $29.99 lifetime license or $5.99 monthly access with no account or cloud.",
     url: "https://dictami.com/voice-dictation-mac-no-subscription",
   },
 };
@@ -31,7 +31,7 @@ export default function VoiceDictationMacNoSubscription() {
         <p className="mt-5 text-[17px] leading-relaxed text-muted">
           Dictami has a lifetime license. Pay once, and the app is yours — no renewal,
           no account, and nothing that stops working if you forget to pay next month.
-          Monthly and yearly plans exist too, but they're a choice, not the only door.
+          Monthly access is $5.99; the lifetime license is $29.99 with no renewal.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-4">

@@ -59,16 +59,14 @@ const structuredData = {
   operatingSystem: "macOS 13 or later, Apple Silicon",
   processorRequirements: "Apple Silicon (M1 or newer)",
   applicationCategory: "ProductivityApplication",
-  // Four prices are sold, so a single Offer of "5.00" was both wrong and the
-  // cheapest one — Google prints that number in the result and the visitor
-  // arrives expecting it. AggregateOffer states the actual range: $5 for
-  // 30 days through $79 for the licence that never expires.
+  // Two prices are sold. AggregateOffer states the actual range shown on the
+  // pricing section so search results do not promise an obsolete plan.
   offers: {
     "@type": "AggregateOffer",
-    lowPrice: "5.00",
-    highPrice: "79.00",
+    lowPrice: "5.99",
+    highPrice: "29.99",
     priceCurrency: "USD",
-    offerCount: "4",
+    offerCount: "2",
   },
   description:
     "Voice dictation for Mac that runs entirely on-device. Hold a key, speak, and punctuated text appears in any app in about half a second.",

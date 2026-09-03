@@ -45,8 +45,8 @@ export default function Terms() {
               licence cannot be resold or sublicensed.
             </p>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
-              A lifetime licence never expires. A 30-day, 90-day or one-year
-              licence works for that period from the day it is activated; when
+              A lifetime licence never expires. Monthly access works for 30 days
+              from the day it is activated; when
               it runs out the app stops transcribing, and nothing you have
               already dictated is touched or taken away.
             </p>

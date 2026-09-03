@@ -8,11 +8,10 @@ import { BUY, licenceFetch } from "@/lib/links";
  * Two payment rails, two different products — deliberately.
  *
  * Cards can charge again next month, so cards sell a subscription. Crypto
- * cannot: there is nothing to charge, and a "monthly plan" paid in USDT is one
- * payment that quietly dies. So crypto sells TIME, the way Mullvad does — buy
- * days, top up whenever, days add to what is left. Pretending both rails can
- * do the same thing is what leaves crypto buyers switched off a month later
- * with no warning.
+ * cannot renew automatically: there is nothing to charge again. So crypto's
+ * Monthly choice is a 30-day purchase that the buyer renews manually. This is
+ * shown plainly instead of pretending a one-time crypto payment is a recurring
+ * subscription.
  *
  * Crypto is cheaper per day because it costs us less: no card processing, no
  * chargebacks.
@@ -30,75 +29,31 @@ const CARD_PLANS = [
     featured: false,
   },
   {
-    name: "Yearly",
-    price: "$59",
-    note: "per year · saves 18%",
-    href: BUY.yearly,
-    perks: ["Every language", "Every model", "All updates", "Priority support"],
-    featured: true,
-  },
-  {
     name: "Lifetime",
-    price: "$99",
+    price: "$29.99",
     note: "paid once",
     href: BUY.lifetime,
     perks: ["Every language", "Every model", "All future updates", "No renewal, ever"],
-    featured: false,
+    featured: true,
   },
 ];
 
-/** A sixth off every card price. Crypto costs us no processing fee and cannot
- *  be charged back, so the saving is real rather than a promotion.
- *
- *  90 days is deliberately three times 30 days and no cheaper per day: a
- *  volume discount on top of the crypto discount put the daily rate low
- *  enough to read as a clearance sale rather than a tool worth paying for. */
-const CRYPTO_DISCOUNT = "16%";
 const CRYPTO_PLANS = [
   {
     id: "30d",
-    name: "30 days",
-    price: "$5",
-    was: "$5.99",
-    note: "17¢ a day",
+    name: "Monthly",
+    price: "$5.99",
+    note: "30 days · renew manually",
     perks: ["Every language", "Every model", "Top up any time"],
     featured: false,
   },
   {
-    id: "90d",
-    name: "90 days",
-    price: "$15",
-    was: "$17.97",
-    note: "17¢ a day",
-    perks: ["Every language", "Every model", "Top up any time", "Priority support"],
-    featured: false,
-  },
-  {
-    id: "365d",
-    name: "1 year",
-    price: "$49",
-    was: "$59",
-    note: "13¢ a day",
-    // A point more than the rail's own cut, and the plan most people land on,
-    // so it says its number too. Without it this card was the only one asking
-    // the reader to work the saving out from two prices while the one beside
-    // it stated it outright.
-    badge: "−17%",
-    perks: ["Every language", "Every model", "Top up any time", "Priority support"],
-    featured: true,
-  },
-  {
     id: "lifetime",
     name: "Lifetime",
-    price: "$79",
-    was: "$99",
+    price: "$29.99",
     note: "paid once · never expires",
-    // A fifth off rather than a sixth. Paid once and in crypto, this is the
-    // only plan that can never be refunded or charged back, so the deeper cut
-    // costs less than it looks.
-    badge: "−20%",
     perks: ["Every language", "Every model", "All future updates", "No renewal, ever"],
-    featured: false,
+    featured: true,
   },
 ];
 
@@ -210,19 +165,6 @@ export function Pricing() {
                 }`}
               >
                 {label}
-                {/* The saving has to be visible before the tab is opened —
-                    nobody switches payment method out of curiosity. */}
-                {value === "crypto" && (
-                  <span
-                    className={`rounded-full px-2 py-0.5 font-mono text-[10.5px] tracking-wide ${
-                      rail === "crypto"
-                        ? "bg-white/20 text-on-accent"
-                        : "bg-accent/12 text-accent"
-                    }`}
-                  >
-                    −{CRYPTO_DISCOUNT}
-                  </span>
-                )}
               </button>
             ))}
           </div>
@@ -230,7 +172,7 @@ export function Pricing() {
           <p className="mt-4 text-[13px] text-muted">
             {rail === "card"
               ? "Renews automatically. Cancel whenever you like."
-              : `${CRYPTO_DISCOUNT} off every price — card fees are ours, not yours. You buy days, and topping up adds to what’s left.`}
+              : "Crypto payments are one-time purchases. Monthly access lasts 30 days; renew manually whenever you like."}
           </p>
           {rail === "crypto" && (
             <p className="mt-2 text-[12.5px] text-muted">
@@ -239,12 +181,9 @@ export function Pricing() {
           )}
         </Reveal>
 
-        {/* Four crypto plans against three card ones. Two columns in the
-            middle range keeps the cards from turning into slivers. */}
+        {/* Both payment methods show the same two simple choices. */}
         <div
-          className={`mt-12 grid gap-5 sm:grid-cols-2 ${
-            rail === "crypto" ? "lg:grid-cols-4" : "lg:grid-cols-3"
-          }`}
+          className="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-2"
         >
           {plans.map((plan, i) => (
             <Reveal key={`${rail}-${plan.name}`} delay={i * 0.07}>
@@ -259,38 +198,11 @@ export function Pricing() {
                         Best value
                       </span>
                     )}
-                    {/* Deliberately quiet: the same chip as the rail switch, in
-                        the accent's own tint rather than a sale colour. It marks
-                        the plans whose discount differs from the rail's, and sits
-                        after "Best value" rather than instead of it — the two say
-                        different things. */}
-                    {"badge" in plan && (
-                      <span
-                        className={`rounded-full px-2 py-0.5 font-mono text-[10.5px] tracking-wide ${
-                          plan.featured
-                            ? "bg-white/15 text-white/75"
-                            : "bg-accent/12 text-accent"
-                        }`}
-                      >
-                        {plan.badge}
-                      </span>
-                    )}
                   </div>
                 </div>
 
                 <p className="mt-6 flex items-baseline gap-3 font-display text-5xl font-normal tabular-nums tracking-tight">
                   {plan.price}
-                  {/* The card price struck through, so the discount is a
-                      comparison the reader can see rather than a claim. */}
-                  {"was" in plan && (
-                    <span
-                      className={`text-[22px] line-through ${
-                        plan.featured ? "text-white/40" : "text-muted/60"
-                      }`}
-                    >
-                      {plan.was}
-                    </span>
-                  )}
                 </p>
                 <p
                   className={`mt-1.5 text-[13.5px] ${
