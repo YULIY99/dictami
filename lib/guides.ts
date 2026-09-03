@@ -14,14 +14,16 @@
 export type Guide = { href: string; label: string };
 
 export const GUIDES: Guide[] = [
-  { href: "/voice-dictation-mac", label: "Voice dictation for Mac" },
-  { href: "/speech-to-text-mac", label: "Speech to text on Mac" },
-  { href: "/speech-to-text-mac-any-app", label: "Dictating into any app" },
-  { href: "/offline-dictation-mac", label: "Offline dictation" },
-  { href: "/voice-typing-mac-without-internet", label: "Voice typing without internet" },
-  { href: "/dictation-app-mac-apple-silicon", label: "Dictation on Apple Silicon" },
-  { href: "/dictation-mac-without-siri", label: "Dictation without Siri" },
-  { href: "/voice-dictation-mac-no-subscription", label: "Without a subscription" },
-  { href: "/whisper-dictation-mac-app", label: "Whisper on a Mac" },
-  { href: "/best-dictation-app-mac-2025", label: "Choosing a dictation app" },
+  { href: "/hold-to-dictate-mac/", label: "Hold to dictate on Mac" },
+  { href: "/voice-dictation-mac-with-punctuation/", label: "Dictation with punctuation" },
+  { href: "/voice-dictation-mac/", label: "Voice dictation for Mac" },
+  { href: "/speech-to-text-mac/", label: "Speech to text on Mac" },
+  { href: "/speech-to-text-mac-any-app/", label: "Dictating into any app" },
+  { href: "/offline-dictation-mac/", label: "Offline dictation" },
+  { href: "/voice-typing-mac-without-internet/", label: "Voice typing without internet" },
+  { href: "/dictation-app-mac-apple-silicon/", label: "Dictation on Apple Silicon" },
+  { href: "/dictation-mac-without-siri/", label: "Dictation without Siri" },
+  { href: "/voice-dictation-mac-no-subscription/", label: "Without a subscription" },
+  { href: "/whisper-dictation-mac-app/", label: "Whisper on a Mac" },
+  { href: "/best-dictation-app-mac-2025/", label: "Choosing a dictation app" },
 ];

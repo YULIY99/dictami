@@ -17,7 +17,7 @@ export const QUESTIONS = [
   },
   {
     q: "Which languages are fast?",
-    a: "28, listed above, all handled on-device with punctuation and at the same speed. Languages outside that list use Whisper instead, which is slower but covers much more of the world.",
+    a: "30, listed above, all handled on-device with punctuation and at the same speed. Languages outside that list use Whisper instead, which is slower but covers much more of the world.",
   },
   {
     q: "Does it work with no internet?",
