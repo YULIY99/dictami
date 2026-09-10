@@ -77,7 +77,7 @@ function Card({
 
 function Perks({ perks, featured }: { perks: string[]; featured: boolean }) {
   return (
-    <ul className="mt-7 flex flex-col gap-2.5">
+    <ul className="mt-7 flex min-h-[7.25rem] flex-col gap-2.5">
       {perks.map((perk) => (
         <li
           key={perk}
@@ -186,7 +186,7 @@ export function Pricing() {
           className="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-2"
         >
           {plans.map((plan, i) => (
-            <Reveal key={`${rail}-${plan.name}`} delay={i * 0.07}>
+            <Reveal key={`${rail}-${plan.name}`} delay={i * 0.07} className="h-full">
               <Card featured={plan.featured}>
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="font-display text-[15px] font-medium tracking-tight">
@@ -217,7 +217,7 @@ export function Pricing() {
                 {"href" in plan ? (
                   <a
                     href={plan.href}
-                    className={`mt-8 rounded-full px-5 py-3 text-center text-[14.5px] font-medium transition ${
+                    className={`mt-auto rounded-full px-5 py-3 text-center text-[14.5px] font-medium transition ${
                       plan.featured
                         ? "bg-card text-ink hover:bg-white/90"
                         : "border border-line hover:border-ink/25"
@@ -230,7 +230,7 @@ export function Pricing() {
                     type="button"
                     disabled={busy !== null}
                     onClick={() => payWithCrypto(plan.id)}
-                    className={`mt-8 rounded-full px-5 py-3 text-center text-[14.5px] font-medium transition disabled:opacity-60 ${
+                    className={`mt-auto rounded-full px-5 py-3 text-center text-[14.5px] font-medium transition disabled:opacity-60 ${
                       plan.featured
                         ? "bg-card text-ink hover:bg-white/90"
                         : "border border-line hover:border-ink/25"
