@@ -101,6 +101,7 @@ export function Pricing() {
   const [rail, setRail] = useState<Rail>("card");
   const [busy, setBusy] = useState<string | null>(null);
   const [failed, setFailed] = useState(false);
+  const [promoCode, setPromoCode] = useState("");
 
   /** The API key lives on the server, so the invoice is opened there. */
   async function payWithCrypto(plan: string) {
@@ -110,7 +111,7 @@ export function Pricing() {
       const response = await licenceFetch("/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan }),
+        body: JSON.stringify({ plan, promoCode: promoCode.trim() }),
       });
       const data = await response.json();
       if (!response.ok || !data?.url) throw new Error(data?.error || "no url");
@@ -135,6 +136,9 @@ export function Pricing() {
           </h2>
           <p className="mt-5 text-[15px] text-muted">
             The trial starts in the app — no card, no account.
+          </p>
+          <p className="mx-auto mt-4 max-w-lg rounded-full border border-accent/20 bg-accent/8 px-4 py-2 text-[13px] text-ink/75">
+            September offer: <span className="font-semibold">20% off</span> with code <span className="font-mono font-semibold text-accent">SEPTEMBER20</span> through September 30.
           </p>
 
           {/* One switch rather than six buttons: the two rails sell different
@@ -175,9 +179,22 @@ export function Pricing() {
               : "Crypto payments are one-time purchases. Monthly access lasts 30 days; renew manually whenever you like."}
           </p>
           {rail === "crypto" && (
-            <p className="mt-2 text-[12.5px] text-muted">
-              Pay with USDT, USDC, ETH, SOL, TON, DOGE, and many more via NOWPayments.
-            </p>
+            <>
+              <p className="mt-2 text-[12.5px] text-muted">
+                Pay with USDT, USDC, ETH, SOL, TON, DOGE, and many more via NOWPayments.
+              </p>
+              <label className="mx-auto mt-4 flex max-w-xs items-center gap-2 rounded-full border border-line bg-card px-4 py-2 text-left">
+                <span className="sr-only">Promo code</span>
+                <input
+                  value={promoCode}
+                  onChange={(event) => setPromoCode(event.target.value.toUpperCase())}
+                  placeholder="Promo code"
+                  spellCheck={false}
+                  className="min-w-0 flex-1 bg-transparent font-mono text-[13px] uppercase outline-none placeholder:normal-case placeholder:text-muted"
+                />
+                <span className="text-[11px] text-muted">20% off</span>
+              </label>
+            </>
           )}
         </Reveal>
 
