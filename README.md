@@ -1,8 +1,18 @@
 # Dictami
 
-Dictami is a native macOS voice-dictation app for Apple Silicon. Hold a key, speak naturally, and the punctuated text appears in the app where your cursor is. Recognition runs on-device and keeps working offline after the model is installed.
+Offline voice typing for Mac. Built for Apple Silicon.
 
-Website: [dictami.com](https://dictami.com/)
+Hold a key → speak → release. Text appears instantly at your cursor. No cloud, no account, no subscription required.
+
+**[Download the free 7-day trial → dictami.com](https://dictami.com/)**
+
+## Features
+
+- 100% on-device processing via Apple Neural Engine
+- Works in any Mac app
+- Automatic punctuation and capitalization
+- 30 languages
+- macOS 13+ / M1–M4
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
