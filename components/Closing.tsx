@@ -126,6 +126,21 @@ export function Closing() {
                 className="h-9 w-auto"
               />
             </a>
+            <a
+              href="https://kittylaunch.com/p/dictami?utm_source=badge"
+              target="_blank"
+              rel="noopener"
+              className="transition-opacity hover:opacity-80"
+            >
+              <img
+                src="https://kittylaunch.com/api/public/badges/launch_badge.svg?style=pill&theme=light"
+                width={296}
+                alt="Dictami — Verified by KittyLaunch"
+                data-kittylaunch-badge="1"
+                loading="lazy"
+                className="h-9 w-auto"
+              />
+            </a>
           </nav>
 
           <p className="text-[13px]">© 2026 Dictami</p>
