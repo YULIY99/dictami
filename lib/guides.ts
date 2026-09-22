@@ -22,8 +22,10 @@ export const GUIDES: Guide[] = [
   { href: "/offline-dictation-mac/", label: "Offline dictation" },
   { href: "/voice-typing-mac-without-internet/", label: "Voice typing without internet" },
   { href: "/dictation-app-mac-apple-silicon/", label: "Dictation on Apple Silicon" },
+  { href: "/fast-voice-typing-mac-m2-m3/", label: "Fast voice typing on M2/M3" },
   { href: "/dictation-mac-without-siri/", label: "Dictation without Siri" },
   { href: "/voice-dictation-mac-no-subscription/", label: "Without a subscription" },
+  { href: "/voice-dictation-mac-lifetime-license/", label: "Lifetime license" },
   { href: "/whisper-dictation-mac-app/", label: "Whisper on a Mac" },
   { href: "/best-dictation-app-mac-2025/", label: "Choosing a dictation app" },
 ];
