@@ -11,6 +11,7 @@ import {
   SAASHUB_URL,
   AFFILIATE_URL,
   FAZIER_URL,
+  PRODUCTHUNT_URL,
 } from "@/lib/links";
 import { AppleMark } from "./AppleMark";
 import { Subscribe } from "./Subscribe";
@@ -137,6 +138,23 @@ export function Closing() {
                 width={296}
                 alt="Dictami — Verified by KittyLaunch"
                 data-kittylaunch-badge="1"
+                loading="lazy"
+                className="h-9 w-auto"
+              />
+            </a>
+            {/* Product Hunt launch badge, official embed image. Same plain
+                <img> treatment as the others: their host, not our build. */}
+            <a
+              href={PRODUCTHUNT_URL}
+              target="_blank"
+              rel="noopener"
+              className="transition-opacity hover:opacity-80"
+            >
+              <img
+                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1220312&theme=light"
+                alt="Dictami: Offline voice dictation for Mac, in 30 languages | Product Hunt"
+                width={250}
+                height={54}
                 loading="lazy"
                 className="h-9 w-auto"
               />
