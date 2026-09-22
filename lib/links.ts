@@ -69,6 +69,12 @@ export const AFFILIATE_URL = "https://dictami.gumroad.com/affiliates";
 export const FAZIER_URL = "https://fazier.com/launches/dictami";
 
 /**
+ * Product Hunt launch page. post_id 1220312 verified 22.09.2026 against the
+ * official badge endpoint (200 + valid SVG for this launch).
+ */
+export const PRODUCTHUNT_URL = "https://www.producthunt.com/products/dictami";
+
+/**
  * Our own licence server. It opens the crypto invoice, because the NOWPayments
  * API key must never reach a browser — which is exactly why a static site
  * cannot take crypto on its own.
