@@ -56,6 +56,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "Dictami",
+  "image": "https://dictami.com/og-image.png",
   operatingSystem: "macOS 13 or later, Apple Silicon",
   processorRequirements: "Apple Silicon (M1 or newer)",
   applicationCategory: "ProductivityApplication",
@@ -67,6 +68,17 @@ const structuredData = {
     highPrice: "29.99",
     priceCurrency: "USD",
     offerCount: "2",
+    shippingDetails: {
+      "@type": "OfferShippingDetails",
+      shippingRate: { "@type": "MonetaryAmount", value: 0, currency: "USD" },
+    },
+    hasMerchantReturnPolicy: {
+      "@type": "MerchantReturnPolicy",
+      returnPolicyCategory:
+        "https://schema.org/MerchantReturnFiniteWindow",
+      merchantReturnDays: 14,
+      returnFees: "https://schema.org/FreeReturn",
+    },
   },
   description:
     "Voice dictation for Mac that runs entirely on-device. Hold a key, speak, and punctuated text appears in any app in about half a second.",

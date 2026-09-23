@@ -91,6 +91,7 @@ const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   name: "Dictami Lifetime License",
+  "image": "https://dictami.com/og-image.png",
   description:
     "One-time purchase of Dictami voice dictation for Mac: every language, every model, all future updates.",
   brand: { "@type": "Brand", name: "Dictami" },
@@ -100,6 +101,17 @@ const productSchema = {
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
     url: "https://dictami.com/voice-dictation-mac-lifetime-license",
+    shippingDetails: {
+      "@type": "OfferShippingDetails",
+      shippingRate: { "@type": "MonetaryAmount", value: 0, currency: "USD" },
+    },
+    hasMerchantReturnPolicy: {
+      "@type": "MerchantReturnPolicy",
+      returnPolicyCategory:
+        "https://schema.org/MerchantReturnFiniteWindow",
+      merchantReturnDays: 14,
+      returnFees: "https://schema.org/FreeReturn",
+    },
   },
 };
 
