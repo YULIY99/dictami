@@ -168,6 +168,7 @@ export function Closing() {
             >
               Dang.ai
             </a>
+            <a href="https:/submitaitools.org" target="_blank" rel="noopener" className="transition-colors hover:text-white"><Submit AI Tools/a>
           </nav>
 
           <p className="text-[13px]">© 2026 Dictami</p>
