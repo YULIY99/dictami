@@ -137,9 +137,6 @@ export function Pricing() {
           <p className="mt-5 text-[15px] text-muted">
             The trial starts in the app — no card, no account.
           </p>
-          <p className="mx-auto mt-4 max-w-lg rounded-full border border-accent/20 bg-accent/8 px-4 py-2 text-[13px] text-ink/75">
-            September offer: <span className="font-semibold">20% off</span> with code <span className="font-mono font-semibold text-accent">SEPTEMBER20</span> through September 30.
-          </p>
 
           {/* One switch rather than six buttons: the two rails sell different
               things, and showing both at once invites the reader to compare a
