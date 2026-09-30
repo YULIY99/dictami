@@ -159,6 +159,26 @@ export function Closing() {
                 className="h-9 w-auto"
               />
             </a>
+            {/* SaaSCity free listing requires their badge on our homepage;
+                their checker verifies it before turning our link dofollow.
+                Same plain <img> treatment as the other badges: their host,
+                not our build. Link points at saascity.io until our listing
+                page is live, then update it to the listing URL. */}
+            <a
+              href="https://saascity.io"
+              target="_blank"
+              rel="noopener"
+              className="transition-opacity hover:opacity-80"
+            >
+              <img
+                src="https://saascity.io/badges/sc-day-dark.svg"
+                alt="Dictami on SaaSCity"
+                width={270}
+                height={80}
+                loading="lazy"
+                className="h-9 w-auto"
+              />
+            </a>
             {/* Dang.ai free listing requires a crawlable dofollow backlink to dang.ai. */}
             <a
               href="https://dang.ai"
