@@ -7,7 +7,14 @@ export const metadata: Metadata = {
   title: "Private Dictation for Mac, No Cloud | Dictami",
   description:
     "Private voice dictation for Mac: speech is recognized on your machine, audio is never uploaded, and no account is needed. Works with the network switched off.",
-  alternates: { canonical: "https://dictami.com/private-dictation-mac" },
+  alternates: {
+    canonical: "https://dictami.com/private-dictation-mac",
+    languages: {
+      en: "https://dictami.com/private-dictation-mac/",
+      de: "https://dictami.com/de/diktieren-mac-ohne-cloud/",
+      "x-default": "https://dictami.com/private-dictation-mac/",
+    },
+  },
   openGraph: {
     title: "Private Dictation for Mac, No Cloud | Dictami",
     description:

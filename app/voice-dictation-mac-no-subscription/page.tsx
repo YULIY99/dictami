@@ -7,7 +7,14 @@ export const metadata: Metadata = {
   title: "Voice Dictation for Mac Without a Subscription | Dictami",
   description:
     "Buy a voice dictation app for Mac once and keep it. Dictami offers a $29.99 lifetime license or $5.99 monthly access with no account or cloud.",
-  alternates: { canonical: "https://dictami.com/voice-dictation-mac-no-subscription" },
+  alternates: {
+    canonical: "https://dictami.com/voice-dictation-mac-no-subscription",
+    languages: {
+      en: "https://dictami.com/voice-dictation-mac-no-subscription/",
+      de: "https://dictami.com/de/diktier-app-mac-ohne-abo/",
+      "x-default": "https://dictami.com/voice-dictation-mac-no-subscription/",
+    },
+  },
   openGraph: {
     title: "Voice Dictation for Mac Without a Subscription | Dictami",
     description:

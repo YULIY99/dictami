@@ -7,7 +7,14 @@ export const metadata: Metadata = {
   title: "Offline Dictation for Mac | Dictami",
   description:
     "Offline voice dictation for Mac with on-device recognition. No internet or account required, no audio sent anywhere, with punctuation in 30 languages.",
-  alternates: { canonical: "https://dictami.com/offline-dictation-mac" },
+  alternates: {
+    canonical: "https://dictami.com/offline-dictation-mac",
+    languages: {
+      en: "https://dictami.com/offline-dictation-mac/",
+      de: "https://dictami.com/de/offline-diktieren-mac/",
+      "x-default": "https://dictami.com/offline-dictation-mac/",
+    },
+  },
   openGraph: {
     title: "Offline Dictation for Mac | Dictami",
     description:
