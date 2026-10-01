@@ -13,16 +13,20 @@
      a light ground is one of the loudest cheap tells, and it is free to fix. */
   --color-ink: #292c3d;
   --color-ink-strong: #16182a;
-  --color-muted: #6b7085;
+  /* Darkened from #6b7085 so small grey text passes WCAG AA (4.5:1) on the panel. */
+  --color-muted: #5d6276;
   --color-line: rgba(41, 44, 61, 0.11);
   /* A sky blue rather than the near-ultramarine that was here. Pure white on
      a heavily saturated blue vibrates and tires the eye; dropping the
      saturation and lifting the lightness keeps the colour bright without the
      glare, and the label sits at a hair off white for the same reason. */
-  --color-accent: #3b8ff0;
-  --color-accent-deep: #2f7ddd;
+  --color-accent: #1b66c4;
+  --color-accent-deep: #1556a8;
   --color-accent-soft: #e6f1fd;
   --color-on-accent: #fbfdff;
+  /* Accent used as text (numbers, links). The fill blue is too light to read as
+     text on the grey ground; this one passes AA. */
+  --color-accent-ink: #1b66c4;
   /* The blue→violet pair belongs to the pill and the waveform only. Keeping it
      off the page background is what stops the site looking like every other
      gradient-hero landing page. */
@@ -34,6 +38,25 @@
      weight but belongs to the same palette as the accent. */
   --color-deep: #1b2143;
   --color-deep-2: #262e57;
+
+  /* Six type sizes, nothing else. Small print, secondary, body, card title,
+     section heading, hero. */
+  --text-cap: 13px;
+  --text-cap--line-height: 1.5;
+  --text-small: 15px;
+  --text-small--line-height: 1.6;
+  --text-body: 17px;
+  --text-body--line-height: 1.65;
+  --text-title: 20px;
+  --text-title--line-height: 1.35;
+  --text-h2: clamp(2rem, 4.4vw, 3rem);
+  --text-h2--line-height: 1.06;
+  --text-h1: clamp(2.5rem, 6.5vw, 4.5rem);
+  --text-h1--line-height: 1.03;
+
+  /* One corner radius for every card, frame and table. Buttons and chips stay
+     fully round. */
+  --radius-card: 12px;
 
   --font-display: var(--font-geist), system-ui, sans-serif;
   --font-body: var(--font-geist), system-ui, sans-serif;
@@ -69,6 +92,12 @@ body::before {
   opacity: 0.55;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.14'/%3E%3C/svg%3E");
+}
+
+/* Keyboard focus is always visible. */
+:focus-visible {
+  outline: 2px solid var(--color-accent-ink);
+  outline-offset: 2px;
 }
 
 ::selection {

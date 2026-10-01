@@ -20,10 +20,10 @@ export function Reveal({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 18 }}
+      initial={{ opacity: 0, y: 8 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.2, delay: Math.min(delay, 0.1), ease: "easeOut" }}
     >
       {children}
     </motion.div>
@@ -34,16 +34,14 @@ export function Reveal({
    white halo that lifts it off the grey ground. One border alone looks
    stamped on; the pair is what gives the row depth. */
 const CHIP =
-  "flex items-center gap-2.5 whitespace-nowrap rounded-full bg-card px-4 py-2 text-[14px] font-medium";
+  "flex items-center gap-2.5 whitespace-nowrap rounded-full border border-line bg-card px-4 py-2 text-small font-medium";
 
-const CHIP_SHADOW: React.CSSProperties = {
-  boxShadow:
-    "0 0 0 1px rgba(41,44,61,0.09), 0 0 0 4px rgba(255,255,255,0.6), 0 2px 8px -3px rgba(41,44,61,0.16)",
-};
+// Chips are outlined by a 1px border (see CHIP); no shadow.
+const CHIP_SHADOW: React.CSSProperties = {};
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-mono text-[11.5px] uppercase tracking-[0.16em] text-muted">
+    <p className="text-cap font-medium uppercase tracking-[0.08em] text-muted">
       {children}
     </p>
   );
@@ -59,13 +57,13 @@ export function Demo() {
       <div className="mx-auto max-w-5xl px-5">
         <Reveal className="text-center">
           <Eyebrow>See it</Eyebrow>
-          <h2 className="mx-auto mt-5 max-w-2xl font-display text-[clamp(2.1rem,4.4vw,3.15rem)] font-normal leading-[1.06] tracking-[-0.03em] text-balance">
+          <h2 className="mx-auto mt-5 max-w-2xl font-display text-h2 font-normal leading-[1.06] tracking-[-0.03em] text-balance">
             Easier to show than to explain.
           </h2>
         </Reveal>
 
         <Reveal delay={0.1} className="mt-12">
-          <div className="overflow-hidden rounded-3xl border border-line bg-card shadow-[0_50px_100px_-60px_rgba(13,15,20,0.55)]">
+          <div className="overflow-hidden rounded-card border border-line bg-card">
             <video
               className="block h-auto w-full"
               autoPlay
@@ -100,21 +98,19 @@ export function Apps() {
   // Three copies inside one track that shifts by exactly one copy's width.
   // The previous version animated two separate tracks, which left a visible
   // hole on wide screens whenever one copy was narrower than the viewport.
-  const copies = [0, 1, 2];
+  // Static row: motion on this page is limited to hover and a short reveal.
+  const copies = [0];
 
   return (
     <section id="apps" className="overflow-hidden border-y border-line bg-panel py-14">
-      <p className="text-center text-[13px] text-muted">
+      <p className="text-center text-cap text-muted">
         Works anywhere you can type
       </p>
 
-      <div className="relative mt-7 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_10%,#000_90%,transparent)]">
-        <div
-          className="flex w-max items-center"
-          style={{ animation: "marquee 44s linear infinite" }}
-        >
+      <div className="relative mx-auto mt-7 max-w-6xl px-5">
+        <div className="flex justify-center">
           {copies.map((copy) => (
-            <div key={copy} className="flex items-center gap-3 pr-3" aria-hidden={copy > 0}>
+            <div key={copy} className="flex flex-wrap items-center justify-center gap-3" aria-hidden={copy > 0}>
               {BRANDS.map((brand) => (
                 <span key={brand.name} className={CHIP} style={CHIP_SHADOW}>
                   {/* Each mark in its own brand colour. A row of grey glyphs
@@ -185,22 +181,22 @@ export function Features() {
       <div className="mx-auto max-w-6xl px-5">
         <Reveal>
           <Eyebrow>What it does</Eyebrow>
-          <h2 className="mt-5 max-w-2xl font-display text-[clamp(2.1rem,4.4vw,3.15rem)] font-normal leading-[1.06] tracking-[-0.03em] text-balance">
+          <h2 className="mt-5 max-w-2xl font-display text-h2 font-normal leading-[1.06] tracking-[-0.03em] text-balance">
             What you notice on day one.
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((feature, i) => (
             // The cell paints its own background; only the text inside fades
             // in. Animating the cell itself would leave the grid's separator
             // colour showing through as one grey slab until the reveal fires.
             <div key={feature.title} className="bg-card p-7">
               <Reveal delay={(i % 3) * 0.06}>
-                <h3 className="font-display text-[17px] font-medium tracking-tight">
+                <h3 className="font-display text-body font-medium tracking-tight">
                   {feature.title}
                 </h3>
-                <p className="mt-2.5 text-[14.5px] leading-relaxed text-muted">
+                <p className="mt-2.5 text-small leading-relaxed text-muted">
                   {feature.body}
                 </p>
               </Reveal>
@@ -230,10 +226,10 @@ export function Languages() {
       <div className="mx-auto max-w-6xl px-5">
         <Reveal className="max-w-2xl">
           <Eyebrow>Languages</Eyebrow>
-          <h2 className="mt-5 font-display text-[clamp(2.1rem,4.4vw,3.15rem)] font-normal leading-[1.06] tracking-[-0.03em] text-balance">
+          <h2 className="mt-5 font-display text-h2 font-normal leading-[1.06] tracking-[-0.03em] text-balance">
             30 languages at full speed.
           </h2>
-          <p className="mt-5 text-[16.5px] leading-relaxed text-muted">
+          <p className="mt-5 text-body leading-relaxed text-muted">
             Each of these runs on your Mac at the same speed, with punctuation
             and capitalization. Languages outside this list use Whisper
             instead, which is slower but covers much more of the world.
@@ -245,7 +241,7 @@ export function Languages() {
             {LANGUAGES.map((language) => (
               <span
                 key={language}
-                className="rounded-full bg-card px-4 py-2 text-[14px]"
+                className="rounded-full bg-card px-4 py-2 text-small"
                 style={CHIP_SHADOW}
               >
                 {language}
@@ -287,7 +283,7 @@ export function WhyPay() {
           {/* Never name the free alternatives. Raising the comparison here
               hands the objection to every reader who did not already have it. */}
           <Eyebrow>What you get</Eyebrow>
-          <h2 className="mt-5 font-display text-[clamp(2.1rem,4.4vw,3.15rem)] font-normal leading-[1.06] tracking-[-0.03em] text-balance">
+          <h2 className="mt-5 font-display text-h2 font-normal leading-[1.06] tracking-[-0.03em] text-balance">
             Ready the moment you open it.
           </h2>
         </Reveal>
@@ -296,10 +292,10 @@ export function WhyPay() {
           {REASONS.map((reason, i) => (
             <Reveal key={reason.title} delay={i * 0.08}>
               <div className="border-t border-ink pt-5">
-                <h3 className="font-display text-[17px] font-medium tracking-tight">
+                <h3 className="font-display text-body font-medium tracking-tight">
                   {reason.title}
                 </h3>
-                <p className="mt-2.5 text-[14.5px] leading-relaxed text-muted">
+                <p className="mt-2.5 text-small leading-relaxed text-muted">
                   {reason.body}
                 </p>
               </div>

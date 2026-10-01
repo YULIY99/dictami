@@ -55,13 +55,13 @@ export function Guide() {
                 scrolls — the column is long, and a heading that scrolls away
                 leaves the reader without context. */}
             <div className="lg:sticky lg:top-28">
-              <p className="font-mono text-[11.5px] uppercase tracking-[0.16em] text-muted">
+              <p className="text-cap font-medium uppercase tracking-[0.08em] text-muted">
                 Reading
               </p>
-              <h2 className="mt-5 font-display text-[clamp(2.1rem,4.4vw,3.15rem)] font-normal leading-[1.06] tracking-[-0.03em] text-balance">
+              <h2 className="mt-5 font-display text-h2 font-normal leading-[1.06] tracking-[-0.03em] text-balance">
                 Dictation on a Mac, in plain terms.
               </h2>
-              <p className="mt-5 max-w-sm text-[15.5px] leading-relaxed text-muted">
+              <p className="mt-5 max-w-sm text-small leading-relaxed text-muted">
                 What it’s good for, how to get clean results, and what
                 makes it fast. Useful whether or not you buy anything.
               </p>
@@ -72,12 +72,12 @@ export function Guide() {
             {ARTICLES.map((article, i) => (
               <Reveal key={article.heading} delay={i * 0.05}>
                 <article>
-                  <h3 className="font-display text-[21px] font-medium tracking-[-0.015em]">
+                  <h3 className="font-display text-title font-medium tracking-[-0.015em]">
                     {article.heading}
                   </h3>
                   <div className="mt-4 flex flex-col gap-4">
                     {article.paragraphs.map((paragraph, index) => (
-                      <p key={index} className="text-[15.5px] leading-[1.72] text-muted">
+                      <p key={index} className="text-small leading-[1.72] text-muted">
                         {paragraph}
                       </p>
                     ))}

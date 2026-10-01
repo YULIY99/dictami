@@ -29,13 +29,13 @@ export function Speed() {
       <div className="mx-auto max-w-6xl px-5">
         <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-20">
           <div>
-            <p className="font-mono text-[11.5px] uppercase tracking-[0.16em] text-muted">
+            <p className="text-cap font-medium uppercase tracking-[0.08em] text-muted">
               Speed
             </p>
-            <h2 className="mt-5 font-display text-[clamp(2.1rem,4.4vw,3.15rem)] font-normal leading-[1.06] tracking-[-0.03em] text-balance">
+            <h2 className="mt-5 font-display text-h2 font-normal leading-[1.06] tracking-[-0.03em] text-balance">
               Nothing is waiting on a server.
             </h2>
-            <p className="mt-5 max-w-md text-[16.5px] leading-relaxed text-muted">
+            <p className="mt-5 max-w-md text-body leading-relaxed text-muted">
               The model sits in memory on your Mac, so there’s no upload, no
               queue, and no round trip. That’s the whole reason it feels
               instant — and the reason it works the same on a plane as it does
@@ -44,32 +44,32 @@ export function Speed() {
 
             <dl className="mt-9 flex flex-wrap gap-x-10 gap-y-6">
               <div>
-                <dt className="text-[13px] text-muted">A spoken sentence</dt>
-                <dd className="mt-1 font-display text-3xl font-normal tabular-nums tracking-tight">
-                  0.36<span className="text-xl text-muted">s</span>
+                <dt className="text-cap text-muted">A spoken sentence</dt>
+                <dd className="mt-1 font-display text-h2 font-normal tabular-nums tracking-tight">
+                  0.36<span className="text-title text-muted">s</span>
                 </dd>
               </div>
               <div>
-                <dt className="text-[13px] text-muted">Data uploaded per dictation</dt>
-                <dd className="mt-1 font-display text-3xl font-normal tabular-nums tracking-tight">
-                  0<span className="text-xl text-muted"> bytes</span>
+                <dt className="text-cap text-muted">Data uploaded per dictation</dt>
+                <dd className="mt-1 font-display text-h2 font-normal tabular-nums tracking-tight">
+                  0<span className="text-title text-muted"> bytes</span>
                 </dd>
               </div>
             </dl>
           </div>
 
-          <div className="rounded-2xl bg-card p-6 sm:p-8">
-            <p className="text-[13.5px] font-medium">
+          <div className="rounded-card bg-card p-6 sm:p-8">
+            <p className="text-cap font-medium">
               How long you speak → how long you wait
             </p>
-            <p className="mt-1 text-[12.5px] text-muted">
+            <p className="mt-1 text-cap text-muted">
               Mac mini M1, from letting go of the key to the text appearing.
             </p>
 
             <div className="mt-7 flex flex-col gap-4">
               {TIMINGS.map((row, i) => (
                 <div key={row.label} className="flex items-center gap-4">
-                  <span className="w-[132px] shrink-0 text-[13px] text-muted">
+                  <span className="w-[132px] shrink-0 text-cap text-muted">
                     {row.label}
                     {/* A literal space, not a margin: the separator has to read
                         as part of the sentence, and `ml-1` alone rendered it
@@ -79,24 +79,21 @@ export function Speed() {
                   <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-panel">
                     <motion.div
                       className="h-full rounded-full"
-                      style={{
-                        background:
-                          "linear-gradient(90deg, var(--color-wave-a), var(--color-wave-b))",
-                      }}
+                      style={{ background: "var(--color-accent)" }}
                       initial={{ width: 0 }}
                       whileInView={{ width: `${(row.total / MAX) * 100}%` }}
                       viewport={{ once: true, margin: "-80px" }}
-                      transition={{ duration: 0.7, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: 0.2, delay: i * 0.03, ease: "easeOut" }}
                     />
                   </div>
-                  <span className="w-12 shrink-0 text-right font-mono text-[12.5px] tabular-nums">
+                  <span className="w-12 shrink-0 text-right font-mono text-cap tabular-nums">
                     {row.total.toFixed(2)}s
                   </span>
                 </div>
               ))}
             </div>
 
-            <p className="mt-6 border-t border-line pt-5 text-[12.5px] leading-relaxed text-muted">
+            <p className="mt-6 border-t border-line pt-5 text-cap leading-relaxed text-muted">
               The same in every one of the 30 languages: measured on identical
               audio they land within a hundredth of a second of each other.
             </p>
