@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>4.0</MASTER_PAD_VERSION>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used by shareware authors to disseminate information to anyone interested in their software products.</MASTER_PAD_INFO>
+  </MASTER_PAD_VERSION_INFO>
+  <Company_Info>
+    <Company_Name>Dictami</Company_Name>
+    <Address_1></Address_1>
+    <City_Town></City_Town>
+    <Country>Belarus</Country>
+    <Company_WebSite_URL>https://dictami.com</Company_WebSite_URL>
+    <Contact_Info>
+      <Author_First_Name>Yuliy</Author_First_Name>
+      <Author_Last_Name></Author_Last_Name>
+      <Author_Email>support@dictami.com</Author_Email>
+      <Contact_First_Name>Yuliy</Contact_First_Name>
+      <Contact_Last_Name></Contact_Last_Name>
+      <Contact_Email>support@dictami.com</Contact_Email>
+    </Contact_Info>
+    <Support_Info>
+      <Sales_Email>support@dictami.com</Sales_Email>
+      <Support_Email>support@dictami.com</Support_Email>
+      <General_Email>support@dictami.com</General_Email>
+    </Support_Info>
+  </Company_Info>
+  <Program_Info>
+    <Program_Name>Dictami</Program_Name>
+    <Program_Version>1.2.28</Program_Version>
+    <Program_Release_Month>10</Program_Release_Month>
+    <Program_Release_Day>01</Program_Release_Day>
+    <Program_Release_Year>2026</Program_Release_Year>
+    <Program_Cost_Dollars>29.99</Program_Cost_Dollars>
+    <Program_Cost_Other_Code></Program_Cost_Other_Code>
+    <Program_Cost_Other></Program_Cost_Other>
+    <Program_Type>Shareware</Program_Type>
+    <Program_Release_Status>Major Update</Program_Release_Status>
+    <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+    <Program_OS_Support>Mac OS X,Mac Other</Program_OS_Support>
+    <Program_Language>English</Program_Language>
+    <Program_Change_Info>Faster on-device recognition and stability fixes.</Program_Change_Info>
+    <Program_Specific_Category>Utilities</Program_Specific_Category>
+    <Program_Category_Class>Audio &amp; Multimedia::Speech</Program_Category_Class>
+    <Program_System_Requirements>macOS 14 Sonoma or later, Apple Silicon (M1 or newer)</Program_System_Requirements>
+    <File_Info>
+      <File_Size_Bytes>14166065</File_Size_Bytes>
+      <File_Size_K>13834</File_Size_K>
+      <File_Size_MB>13.51</File_Size_MB>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>Y</Has_Expire_Info>
+      <Expire_Count>7</Expire_Count>
+      <Expire_Based_On>Days</Expire_Based_On>
+      <Expire_Other_Info>7-day free trial, no card and no account required.</Expire_Other_Info>
+      <Expire_Month></Expire_Month>
+      <Expire_Day></Expire_Day>
+      <Expire_Year></Expire_Year>
+    </Expire_Info>
+  </Program_Info>
+  <Program_Descriptions>
+    <English>
+      <Keywords>dictation, voice dictation, speech to text, offline dictation, mac, voice typing, whisper, transcription</Keywords>
+      <Char_Desc_45>Fast offline voice dictation for Mac</Char_Desc_45>
+      <Char_Desc_80>Hold a key, speak, and punctuated text appears in any Mac app in about 0.5 s.</Char_Desc_80>
+      <Char_Desc_250>Dictami is offline voice dictation for Mac. Hold a key, speak, and punctuated text appears in any app in about half a second. Runs entirely on-device in 30 languages. No cloud, no account. $29.99 lifetime or $5.99/month.</Char_Desc_250>
+      <Char_Desc_450>Dictami turns speech into punctuated text in any Mac app. Hold a key, speak, release: text appears where your cursor is in about half a second. Recognition runs entirely on your Mac's Apple Silicon chip, so audio is never uploaded and it works with the network off. 30 languages at full speed, automatic punctuation, dictation history with playback. No account needed. 7-day free trial; $29.99 lifetime or $5.99/month.</Char_Desc_450>
+      <Char_Desc_2000>Dictami is fast, private voice dictation for Mac. Hold a key, speak, and release: punctuated text appears in whatever app has the cursor, in about half a second. Email, chat, documents, code editors - anywhere you can type.
+
+Everything runs on your Mac. The recognition model runs on the Apple Silicon chip, audio is never uploaded, and the app works with Wi-Fi switched off. There is no sign-up and no account.
+
+Features: on-device transcription in 30 languages at full speed; automatic punctuation and capitalization; hold-to-talk or tap-to-toggle global hotkey; dictation history with audio playback, stored only on your Mac.
+
+Pricing: 7-day free trial inside the app with no card and no account. Then $29.99 one-time lifetime license or $5.99 per month. Full refund within 14 days for card payments.
+
+Requirements: macOS 14 Sonoma or later on an Apple Silicon Mac (M1 or newer).</Char_Desc_2000>
+    </English>
+  </Program_Descriptions>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>https://dictami.com</Application_Info_URL>
+      <Application_Order_URL>https://dictami.com/#pricing</Application_Order_URL>
+      <Application_Screenshot_URL>https://dictami.com/og-image.png</Application_Screenshot_URL>
+      <Application_Icon_URL>https://dictami.com/icon.png</Application_Icon_URL>
+      <Application_XML_File_URL>https://dictami.com/dictami.pad.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>https://dictami.com/Dictami.dmg</Primary_Download_URL>
+      <Secondary_Download_URL>https://dictami.com/Dictami-1.2.28-macOS-arm64.dmg</Secondary_Download_URL>
+    </Download_URLs>
+  </Web_Info>
+  <Permissions>
+    <Distribution_Permissions>Software directories may list and link to Dictami. Please link to the official download URL.</Distribution_Permissions>
+    <EULA>See https://dictami.com/terms</EULA>
+  </Permissions>
+</XML_DIZ_INFO>
