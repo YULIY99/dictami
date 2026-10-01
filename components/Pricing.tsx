@@ -77,7 +77,7 @@ function Card({
 
 function Perks({ perks, featured }: { perks: string[]; featured: boolean }) {
   return (
-    <ul className="mt-7 flex min-h-[7.25rem] flex-col gap-2.5">
+    <ul className="mb-8 mt-7 flex min-h-[7.25rem] flex-col gap-2.5">
       {perks.map((perk) => (
         <li
           key={perk}
@@ -171,26 +171,30 @@ export function Pricing() {
             ))}
           </div>
 
-          <p className="mt-4 text-[13px] text-muted">
-            {rail === "card"
-              ? "Renews automatically. Cancel whenever you like."
-              : "Crypto payments are one-time purchases. Monthly access lasts 30 days; renew manually whenever you like."}
-          </p>
-          {rail === "crypto" && (
-            <>
+          {/* Fixed-height note area: both rails reserve the same space, so
+              switching never pushes the cards up or down. */}
+          <div className="mx-auto max-w-2xl min-h-[6rem] sm:min-h-[3.25rem]">
+            <p className="mt-4 text-[13px] text-muted">
+              {rail === "card"
+                ? "Renews automatically. Cancel whenever you like."
+                : "Crypto payments are one-time purchases. Monthly access lasts 30 days; renew manually whenever you like."}
+            </p>
+            {rail === "crypto" && (
               <p className="mt-2 text-[12.5px] text-muted">
                 Pay with USDT, USDC, ETH, SOL, TON, DOGE, and many more via NOWPayments.
               </p>
-            </>
-          )}
+            )}
+          </div>
         </Reveal>
 
-        {/* Both payment methods show the same two simple choices. */}
+        {/* Both payment methods show the same two simple choices. Cards are
+            keyed by plan name only, so switching rails swaps the content in
+            place instead of re-mounting and replaying the entrance. */}
         <div
-          className="mx-auto mt-12 grid max-w-4xl gap-5 sm:grid-cols-2"
+          className="mx-auto mt-8 grid max-w-4xl gap-5 sm:grid-cols-2"
         >
           {plans.map((plan, i) => (
-            <Reveal key={`${rail}-${plan.name}`} delay={i * 0.07} className="h-full">
+            <Reveal key={plan.name} delay={i * 0.07} className="h-full">
               <Card featured={plan.featured}>
                 <div className="flex items-center justify-between gap-2">
                   <h3 className="font-display text-[15px] font-medium tracking-tight">
