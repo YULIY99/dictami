@@ -65,22 +65,15 @@ export function HoldDemo() {
     <div className="mx-auto w-full max-w-lg">
       {/* Stand-in for whatever app the cursor happens to be in. */}
       <div
-        className="rounded-2xl bg-card"
-        style={{
-          // Layered rather than one soft blur: a hairline edge, a close
-          // contact shadow and a wide ambient one. A single large shadow is
-          // what makes a card look like a sticker.
-          boxShadow:
-            "0 0 0 1px rgba(41,44,61,0.08), 0 2px 6px -2px rgba(41,44,61,0.10), 0 30px 60px -30px rgba(41,44,61,0.35)",
-        }}
+        className="rounded-card border border-line bg-card"
       >
         <div className="flex items-center gap-1.5 border-b border-line px-4 py-3">
           <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
           <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-          <span className="ml-2 text-[11px] font-medium text-muted">Messages</span>
+          <span className="ml-2 text-cap font-medium text-muted">Messages</span>
         </div>
-        <div className="min-h-[104px] px-5 py-4 text-left text-[15px] leading-relaxed">
+        <div className="min-h-[104px] px-5 py-4 text-left text-small leading-relaxed">
           {typed ? (
             <span>{typed}</span>
           ) : (
@@ -115,7 +108,7 @@ export function HoldDemo() {
               stop();
             }
           }}
-          className="select-none rounded-full bg-card px-5 py-2.5 text-[14px] font-medium text-ink transition active:scale-[0.98] hover:-translate-y-px shadow-[0_0_0_1px_rgba(41,44,61,0.09),0_0_0_4px_rgba(255,255,255,0.6),0_4px_14px_-6px_rgba(41,44,61,0.22)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          className="select-none rounded-full bg-card px-5 py-2.5 text-small font-medium text-ink transition active:scale-[0.98] border border-line focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           {state === "listening"
             ? "Listening — let go when you’re done"
@@ -128,7 +121,7 @@ export function HoldDemo() {
             priced in the seconds it would have cost to type. Only shown once
             there is a real sentence to measure. */}
         {typed ? (
-          <p className="text-[12.5px] text-muted">
+          <p className="text-cap text-muted">
             <span className="tabular-nums text-ink">{WORD_COUNT} words</span> ·
             transcribed in{" "}
             <span className="tabular-nums text-ink">
@@ -138,7 +131,7 @@ export function HoldDemo() {
             <span className="tabular-nums text-ink">{TYPING_SECONDS}s</span>
           </p>
         ) : (
-          <p className="text-[12.5px] text-muted">
+          <p className="text-cap text-muted">
             In the app this is a key you hold. Here, hold the button.
           </p>
         )}

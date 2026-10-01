@@ -21,7 +21,7 @@ export function GuideLinks({
   return (
     <nav aria-label="Guides">
       <p
-        className={`font-mono text-[11px] uppercase tracking-[0.16em] ${
+        className={`text-cap font-medium uppercase tracking-[0.08em] ${
           onDark ? "text-white/40" : "text-muted"
         }`}
       >
@@ -35,7 +35,7 @@ export function GuideLinks({
           <li key={guide.href}>
             <Link
               href={guide.href}
-              className={`text-[13.5px] transition-colors ${
+              className={`text-cap transition-colors ${
                 onDark ? "hover:text-white" : "text-muted hover:text-ink"
               }`}
             >

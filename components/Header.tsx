@@ -33,29 +33,26 @@ export function Header() {
           the app and links to the measurements. */}
       <a
         href="#speed"
-        className="flex items-center justify-center gap-2 px-5 py-2.5 text-center text-[13.5px] text-on-accent transition hover:brightness-105"
-        style={{
-          background: "linear-gradient(90deg, var(--color-accent), var(--color-wave-a))",
-        }}
+        className="flex items-center justify-center gap-2 border-b border-line bg-panel px-5 py-2.5 text-center text-cap text-ink transition-colors duration-200 hover:bg-card"
       >
         <span className="font-medium">New engine</span>
-        <span className="text-on-accent/80">
+        <span className="text-muted">
           dictation is about three times faster
         </span>
-        <span aria-hidden className="text-on-accent/70">
+        <span aria-hidden className="text-muted">
           →
         </span>
       </a>
 
       <div
-        className={`transition-colors duration-300 ${
+        className={`transition-colors duration-200 ${
           scrolled ? "bg-ground/80 backdrop-blur-xl" : ""
         }`}
       >
         <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between gap-6 px-5">
           <a href="#top" className="flex items-center gap-2.5">
             <AppIcon className="ring-1 ring-ink/5" />
-            <Wordmark className="text-[21px]" />
+            <Wordmark className="text-title" />
           </a>
 
           {/* Links sit in their own soft panel. As bare grey text they read as
@@ -65,7 +62,7 @@ export function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-4 py-1.5 text-[15px] text-ink/80 transition-colors hover:bg-panel hover:text-ink"
+                className="rounded-full px-4 py-1.5 text-small text-ink/80 transition-colors hover:bg-panel hover:text-ink"
               >
                 {item.label}
               </a>

@@ -121,40 +121,36 @@ export function Savings() {
     <section id="savings" className="border-y border-line bg-panel py-24 sm:py-32">
       <div className="mx-auto max-w-4xl px-5">
         <Reveal className="text-center">
-          <p className="font-mono text-[11.5px] uppercase tracking-[0.16em] text-muted">
+          <p className="text-cap font-medium uppercase tracking-[0.08em] text-muted">
             The math
           </p>
-          <h2 className="mx-auto mt-5 max-w-2xl font-display text-[clamp(2.1rem,4.4vw,3.15rem)] font-normal leading-[1.06] tracking-[-0.03em] text-balance">
+          <h2 className="mx-auto mt-5 max-w-2xl font-display text-h2 font-normal leading-[1.06] tracking-[-0.03em] text-balance">
             You speak about three times faster than you type.
           </h2>
-          <p className="mx-auto mt-5 max-w-lg text-[15.5px] leading-relaxed text-muted">
+          <p className="mx-auto mt-5 max-w-lg text-small leading-relaxed text-muted">
             Set the slider to roughly what you write on a normal working day.
           </p>
         </Reveal>
 
         <Reveal delay={0.1} className="mt-14">
           <div
-            className="rounded-3xl bg-card p-8 sm:p-12"
-            style={{
-              boxShadow:
-                "0 0 0 1px rgba(41,44,61,0.08), 0 2px 6px -2px rgba(41,44,61,0.10), 0 40px 80px -50px rgba(41,44,61,0.4)",
-            }}
+            className="rounded-card border border-line bg-card p-8 sm:p-12"
           >
             <div className="flex flex-wrap items-end justify-between gap-3">
-              <label htmlFor="words" className="text-[14.5px] text-muted">
+              <label htmlFor="words" className="text-small text-muted">
                 What you write in a day
               </label>
               <div className="text-right">
                 <output
                   htmlFor="words"
-                  className="block font-display text-[30px] font-medium leading-none tabular-nums tracking-tight"
+                  className="block font-display text-h2 font-medium leading-none tabular-nums tracking-tight"
                 >
                   {Math.round(shownWords).toLocaleString("en-US")} words
                 </output>
                 {/* A word count means nothing on its own — nobody counts their
                     words. Pages move with the slider and make the top number
                     answerable at all. */}
-                <span className="mt-2 block text-[13px] text-muted">
+                <span className="mt-2 block text-cap text-muted">
                   about {pages < 2 ? pages.toFixed(1) : Math.round(pages)}{" "}
                   {Math.round(pages) === 1 && pages < 2 ? "page" : "pages"} of text
                 </span>
@@ -183,7 +179,7 @@ export function Savings() {
                   key={preset.label}
                   type="button"
                   onClick={() => setWords(preset.words)}
-                  className={`rounded-full px-3.5 py-1.5 text-[13px] transition ${
+                  className={`rounded-full px-3.5 py-1.5 text-cap transition-colors duration-200 ${
                     words === preset.words
                       ? "bg-accent text-on-accent"
                       : "bg-panel text-muted hover:text-ink"
@@ -217,15 +213,15 @@ export function Savings() {
                 <div key={row.label}>
                   <div className="flex items-baseline justify-between">
                     <span
-                      className={`text-[14.5px] ${
+                      className={`text-small ${
                         row.strong ? "font-medium text-ink" : "text-muted"
                       }`}
                     >
                       {row.label}
                     </span>
                     <span
-                      className={`font-display text-[19px] tabular-nums tracking-tight ${
-                        row.strong ? "text-accent" : "text-muted"
+                      className={`font-display text-title tabular-nums tracking-tight ${
+                        row.strong ? "text-accent-ink" : "text-muted"
                       }`}
                     >
                       {row.time}
@@ -237,7 +233,7 @@ export function Savings() {
                       style={{ background: row.fill }}
                       initial={false}
                       animate={{ width: `${row.width}%` }}
-                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
                     />
                   </div>
                 </div>
@@ -247,18 +243,18 @@ export function Savings() {
             {/* One figure, not three. A day's saving sounds like rounding
                 error; a year is where it becomes a reason to buy. */}
             <div className="mt-10 border-t border-line pt-10">
-              <p className="text-[14.5px] text-muted">
+              <p className="text-small text-muted">
                 {clock(savedPerDay)} back every working day — that is
               </p>
               <p className="mt-3 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                <span className="font-display text-[clamp(2.8rem,6.5vw,4.2rem)] font-normal leading-none tabular-nums tracking-[-0.035em] text-accent">
+                <span className="font-display text-h1 font-normal leading-none tabular-nums tracking-[-0.035em] text-accent-ink">
                   {wholeHours(year)} hours
                 </span>
-                <span className="text-[16px] text-muted">a year</span>
+                <span className="text-body text-muted">a year</span>
               </p>
             </div>
 
-            <p className="mt-9 text-[12.5px] leading-relaxed text-muted">
+            <p className="mt-9 text-cap leading-relaxed text-muted">
               Counted at {TYPING_WPM} words a minute typed against{" "}
               {SPEAKING_WPM} spoken, over {WORKING_DAYS} working days, at{" "}
               {WORDS_PER_PAGE} words to a page. {TYPING_WPM} WPM is the reported
@@ -287,9 +283,7 @@ export function Savings() {
           border-radius: 999px;
           background: #fff;
           cursor: grab;
-          box-shadow:
-            0 0 0 1px rgba(41, 44, 61, 0.12),
-            0 4px 10px -2px rgba(41, 44, 61, 0.35);
+          box-shadow: 0 0 0 1px rgba(41, 44, 61, 0.2);
         }
         input[type="range"]::-webkit-slider-thumb:active {
           cursor: grabbing;
@@ -301,12 +295,10 @@ export function Savings() {
           border-radius: 999px;
           background: #fff;
           cursor: grab;
-          box-shadow:
-            0 0 0 1px rgba(41, 44, 61, 0.12),
-            0 4px 10px -2px rgba(41, 44, 61, 0.35);
+          box-shadow: 0 0 0 1px rgba(41, 44, 61, 0.2);
         }
         input[type="range"]:focus-visible::-webkit-slider-thumb {
-          outline: 2px solid var(--color-accent);
+          outline: 2px solid var(--color-accent-ink);
           outline-offset: 2px;
         }
       `}</style>
