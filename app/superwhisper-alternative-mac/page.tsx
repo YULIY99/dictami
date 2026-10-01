@@ -229,7 +229,7 @@ export default function SuperwhisperAlternativeMac() {
               </div>
               <p className="mt-3 text-[13px] text-muted">
                 Superwhisper pricing per superwhisper.com (Pro $8.49/mo, $84.99/yr,
-                $249.99 lifetime), confirmed September 2026. Dictami pricing per
+                $249.99 lifetime), confirmed October 1, 2026. Dictami pricing per
                 dictami.com.
               </p>
             </section>

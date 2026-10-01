@@ -218,14 +218,14 @@ export default function VoiceDictationMacLifetimeLicense() {
                     </tr>
                     <tr>
                       <td className="py-2 pr-4 font-medium text-ink">Voibe</td>
-                      <td className="py-2 pr-4">$198 (limited-time)</td>
-                      <td className="py-2">$9.90/month</td>
+                      <td className="py-2 pr-4">$149 (limited-time)</td>
+                      <td className="py-2">$7.50/month</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <p className="mt-3 text-[13px] leading-relaxed text-muted">
-                Prices taken from each vendor's own site in September 2026.
+                Prices taken from each vendor's own site on October 1, 2026.
               </p>
               <p className="mt-3 text-[16px] leading-relaxed text-muted">
                 Superwhisper's lifetime costs more than eight times Dictami's because one
