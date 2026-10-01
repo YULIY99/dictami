@@ -1,0 +1,38 @@
+# Dictami
+
+> Offline voice dictation for Mac (Apple Silicon). Hold a key, speak, and punctuated text appears at the cursor in any app. Recognition runs on the device; no account is needed.
+
+## Facts
+
+- Platform: macOS 14 Sonoma or later, Apple Silicon (M1 or newer). Intel Macs are not supported.
+- Current version: 1.2.28
+- Languages: 30 fast on-device languages with punctuation; other languages via Whisper (slower).
+- Works without internet after a one-time model download.
+- Pricing (USD): 7-day free trial in the app, no card. Card: $5.99/month or $29.99 lifetime. Crypto: one-time payments ($5.99 for 30 days or $29.99 lifetime).
+- Refunds: within 14 days.
+- Download: https://dictami.com/Dictami.dmg
+
+## Main pages
+
+- [Home](https://dictami.com/)
+- [About](https://dictami.com/about/)
+- [Terms](https://dictami.com/terms/)
+- [Privacy](https://dictami.com/privacy.html)
+
+## Guides
+
+- [Hold to dictate on Mac](https://dictami.com/hold-to-dictate-mac/)
+- [Dictation with punctuation](https://dictami.com/voice-dictation-mac-with-punctuation/)
+- [Voice dictation for Mac](https://dictami.com/voice-dictation-mac/)
+- [Speech to text on Mac](https://dictami.com/speech-to-text-mac/)
+- [Dictating into any app](https://dictami.com/speech-to-text-mac-any-app/)
+- [Offline dictation](https://dictami.com/offline-dictation-mac/)
+- [Voice typing without internet](https://dictami.com/voice-typing-mac-without-internet/)
+- [Dictation on Apple Silicon](https://dictami.com/dictation-app-mac-apple-silicon/)
+- [Fast voice typing on M2/M3](https://dictami.com/fast-voice-typing-mac-m2-m3/)
+- [Dictation without Siri](https://dictami.com/dictation-mac-without-siri/)
+- [Without a subscription](https://dictami.com/voice-dictation-mac-no-subscription/)
+- [Lifetime license](https://dictami.com/voice-dictation-mac-lifetime-license/)
+- [Superwhisper alternative](https://dictami.com/superwhisper-alternative-mac/)
+- [Whisper on a Mac](https://dictami.com/whisper-dictation-mac-app/)
+- [Choosing a dictation app](https://dictami.com/best-dictation-app-mac-2025/)
