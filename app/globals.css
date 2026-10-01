@@ -20,8 +20,8 @@
      a heavily saturated blue vibrates and tires the eye; dropping the
      saturation and lifting the lightness keeps the colour bright without the
      glare, and the label sits at a hair off white for the same reason. */
-  --color-accent: #3b8ff0;
-  --color-accent-deep: #2f7ddd;
+  --color-accent: #1b66c4;
+  --color-accent-deep: #1556a8;
   --color-accent-soft: #e6f1fd;
   --color-on-accent: #fbfdff;
   /* Accent used as text (numbers, links). The fill blue is too light to read as
