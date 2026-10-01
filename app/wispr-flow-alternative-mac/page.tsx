@@ -7,7 +7,14 @@ export const metadata: Metadata = {
   title: "Wispr Flow Alternative for Mac | Dictami",
   description:
     "Looking for a Wispr Flow alternative on Mac? Dictami runs dictation on your Mac instead of the cloud, needs no account, and costs $29.99 once instead of $15 a month.",
-  alternates: { canonical: "https://dictami.com/wispr-flow-alternative-mac" },
+  alternates: {
+    canonical: "https://dictami.com/wispr-flow-alternative-mac",
+    languages: {
+      en: "https://dictami.com/wispr-flow-alternative-mac/",
+      de: "https://dictami.com/de/wispr-flow-alternative-mac/",
+      "x-default": "https://dictami.com/wispr-flow-alternative-mac/",
+    },
+  },
   openGraph: {
     title: "Wispr Flow Alternative for Mac | Dictami",
     description:
