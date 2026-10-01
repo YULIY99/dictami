@@ -12,7 +12,7 @@ Hold a key → speak → release. Text appears instantly at your cursor. No clou
 - Works in any Mac app
 - Automatic punctuation and capitalization
 - 30 languages
-- macOS 13+ / M1–M4
+- macOS 14+ / M1–M4
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 

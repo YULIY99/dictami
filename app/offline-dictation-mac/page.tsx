@@ -95,7 +95,7 @@ export default function OfflineDictationMac() {
           <section>
             <h2 className="text-[20px] font-medium tracking-tight">What you need</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
-              macOS 13 Ventura or later on an Apple Silicon Mac — an M1 or newer.
+              macOS 14 Sonoma or later on an Apple Silicon Mac — an M1 or newer.
               The model downloads once from Settings. After that, no internet connection
               is ever needed again.
             </p>

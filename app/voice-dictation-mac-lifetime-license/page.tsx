@@ -265,7 +265,7 @@ export default function VoiceDictationMacLifetimeLicense() {
             <section>
               <h2 className="text-[20px] font-medium tracking-tight">What you need</h2>
               <p className="mt-3 text-[16px] leading-relaxed text-muted">
-                macOS 13 Ventura or later on an Apple Silicon Mac - an M1 or newer. Intel Macs
+                macOS 14 Sonoma or later on an Apple Silicon Mac - an M1 or newer. Intel Macs
                 aren't supported. The recognition model downloads once from Settings; after
                 that the app never needs the internet again.
               </p>

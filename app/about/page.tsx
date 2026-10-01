@@ -103,7 +103,7 @@ export default function About() {
             <h2 className="text-[20px] font-medium tracking-tight">What it is built on</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
               Native macOS, written in Swift, with speech recognition based on
-              Whisper compiled for Apple Silicon. It requires macOS 13 Ventura
+              Whisper compiled for Apple Silicon. It requires macOS 14 Sonoma
               or later on an M1 or newer — the on-device speed the app is
               built around comes from that hardware, and pretending otherwise
               on an Intel Mac would only disappoint.

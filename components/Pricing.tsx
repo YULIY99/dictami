@@ -101,7 +101,6 @@ export function Pricing() {
   const [rail, setRail] = useState<Rail>("card");
   const [busy, setBusy] = useState<string | null>(null);
   const [failed, setFailed] = useState(false);
-  const [promoCode, setPromoCode] = useState("");
 
   /** The API key lives on the server, so the invoice is opened there. */
   async function payWithCrypto(plan: string) {
@@ -111,7 +110,9 @@ export function Pricing() {
       const response = await licenceFetch("/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan, promoCode: promoCode.trim() }),
+        // The promo field is gone; the payload stays exactly what an empty field
+        // used to send, so the checkout server sees no change.
+        body: JSON.stringify({ plan, promoCode: "" }),
       });
       const data = await response.json();
       if (!response.ok || !data?.url) throw new Error(data?.error || "no url");
@@ -180,17 +181,6 @@ export function Pricing() {
               <p className="mt-2 text-[12.5px] text-muted">
                 Pay with USDT, USDC, ETH, SOL, TON, DOGE, and many more via NOWPayments.
               </p>
-              <label className="mx-auto mt-4 flex max-w-xs items-center gap-2 rounded-full border border-line bg-card px-4 py-2 text-left">
-                <span className="sr-only">Promo code</span>
-                <input
-                  value={promoCode}
-                  onChange={(event) => setPromoCode(event.target.value.toUpperCase())}
-                  placeholder="Promo code"
-                  spellCheck={false}
-                  className="min-w-0 flex-1 bg-transparent font-mono text-[13px] uppercase outline-none placeholder:normal-case placeholder:text-muted"
-                />
-                <span className="text-[11px] text-muted">20% off</span>
-              </label>
             </>
           )}
         </Reveal>

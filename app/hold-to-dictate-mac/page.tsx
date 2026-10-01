@@ -86,7 +86,7 @@ export default function HoldToDictateMac() {
           <section>
             <h2 className="text-[20px] font-medium tracking-tight">What you need</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
-              Dictami runs on macOS 13 Ventura or later with an M1 or newer Apple Silicon Mac.
+              Dictami runs on macOS 14 Sonoma or later with an M1 or newer Apple Silicon Mac.
               It supports 30 languages, automatic punctuation, and capitalization. There is no
               account or subscription required to try the seven-day trial.
             </p>

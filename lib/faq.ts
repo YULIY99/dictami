@@ -13,7 +13,7 @@ export const QUESTIONS = [
   },
   {
     q: "What Mac do I need?",
-    a: "macOS 13 Ventura or later, on an Apple Silicon Mac — an M1 or newer. Intel Macs aren’t supported: the recognition engine ships as an Apple Silicon build, so the app won’t start on them.",
+    a: "macOS 14 Sonoma or later, on an Apple Silicon Mac — an M1 or newer. Intel Macs aren’t supported: the recognition engine ships as an Apple Silicon build, so the app won’t start on them.",
   },
   {
     q: "Which languages are fast?",

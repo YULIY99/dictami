@@ -97,7 +97,7 @@ export default function DictationAppMacAppleSilicon() {
           <section>
             <h2 className="text-[20px] font-medium tracking-tight">M1, M2, M3, M4 — all supported</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
-              Dictami requires macOS 13 Ventura or later and any Apple Silicon Mac. Intel Macs
+              Dictami requires macOS 14 Sonoma or later and any Apple Silicon Mac. Intel Macs
               aren't supported — the runtime is built specifically for the Neural Engine and
               won't run on Intel. Any M-series chip works: MacBook Air, MacBook Pro, Mac mini,
               Mac Studio, or Mac Pro.

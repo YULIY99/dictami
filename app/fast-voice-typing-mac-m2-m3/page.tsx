@@ -34,7 +34,7 @@ const softwareApplicationJsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "Dictami",
-  operatingSystem: "macOS 13 or later, Apple Silicon",
+  operatingSystem: "macOS 14 or later, Apple Silicon",
   processorRequirements: "Apple Silicon (M1 or newer)",
   applicationCategory: "ProductivityApplication",
   offers: {
@@ -159,7 +159,7 @@ export default function FastVoiceTypingMacM2M3() {
                 What you need
               </h2>
               <p className="mt-3 text-[16px] leading-relaxed text-muted">
-                Dictami requires macOS 13 Ventura or later on an Apple Silicon Mac. M1, M2, M3, and M4 machines are supported, with 30 languages available in the current app. The seven-day trial runs inside the app with no card and no account required.
+                Dictami requires macOS 14 Sonoma or later on an Apple Silicon Mac. M1, M2, M3, and M4 machines are supported, with 30 languages available in the current app. The seven-day trial runs inside the app with no card and no account required.
               </p>
             </section>
 
@@ -173,7 +173,7 @@ export default function FastVoiceTypingMacM2M3() {
                     Does Dictami work on M2 and M3 Macs?
                   </h3>
                   <p className="mt-2 text-[16px] leading-relaxed text-muted">
-                    Yes. Dictami supports Apple Silicon Macs with M1, M2, M3, and M4 chips, running macOS 13 Ventura or later.
+                    Yes. Dictami supports Apple Silicon Macs with M1, M2, M3, and M4 chips, running macOS 14 Sonoma or later.
                   </p>
                 </div>
                 <div>

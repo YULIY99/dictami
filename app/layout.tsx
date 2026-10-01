@@ -57,7 +57,7 @@ const structuredData = {
   "@type": "SoftwareApplication",
   name: "Dictami",
   "image": "https://dictami.com/og-image.png",
-  operatingSystem: "macOS 13 or later, Apple Silicon",
+  operatingSystem: "macOS 14 or later, Apple Silicon",
   processorRequirements: "Apple Silicon (M1 or newer)",
   applicationCategory: "ProductivityApplication",
   // Two prices are sold. AggregateOffer states the actual range shown on the

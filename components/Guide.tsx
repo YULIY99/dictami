@@ -38,7 +38,7 @@ const ARTICLES = [
   {
     heading: "Setting it up",
     paragraphs: [
-      "Dictami requires macOS 13 Ventura or later on an Apple Silicon Mac — an M1 or newer. Intel Macs aren’t supported: the recognition engine is built for Apple Silicon, and the speed the app is built around comes from that hardware.",
+      "Dictami requires macOS 14 Sonoma or later on an Apple Silicon Mac — an M1 or newer. Intel Macs aren’t supported: the recognition engine is built for Apple Silicon, and the speed the app is built around comes from that hardware.",
       "On first launch, you pick a language and download its model with one click in Settings. On a normal connection, that takes a few minutes. After that the app never needs the internet again. macOS will ask for permission to use the microphone, and for Accessibility access, which is what lets the finished text be typed into whichever app your cursor is in rather than only into Dictami's own window.",
       "Then choose your key. Hold it down like a walkie-talkie and release when you’re done, or tap once to start and once to stop — whichever suits the way you work. The right Command key on its own is the default, and it’s captured cleanly, so no other app reacts to it while you dictate.",
     ],

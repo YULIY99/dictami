@@ -89,7 +89,7 @@ export function Hero() {
           </div>
 
           <p className="mt-4 text-[13px] text-muted">
-            7-day trial inside the app · no account · macOS 13+
+            7-day trial inside the app · no account · macOS 14+
           </p>
         </div>
 

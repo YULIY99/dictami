@@ -107,7 +107,7 @@ export default function BestDictationAppMac2025() {
           <section>
             <h2 className="text-[20px] font-medium tracking-tight">What you need</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
-              macOS 13 Ventura or later on an Apple Silicon Mac — any M1, M2, M3, or M4
+              macOS 14 Sonoma or later on an Apple Silicon Mac — any M1, M2, M3, or M4
               chip. Intel Macs aren't supported. The recognition model downloads once from
               Settings and never needs updating manually.
             </p>

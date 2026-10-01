@@ -91,7 +91,7 @@ export default function VoiceDictationMacWithPunctuation() {
           <section>
             <h2 className="text-[20px] font-medium tracking-tight">What you need</h2>
             <p className="mt-3 text-[16px] leading-relaxed text-muted">
-              Dictami requires macOS 13 Ventura or later on an Apple Silicon Mac — an M1 or
+              Dictami requires macOS 14 Sonoma or later on an Apple Silicon Mac — an M1 or
               newer. It includes a seven-day trial inside the app, with no card required.
             </p>
           </section>
