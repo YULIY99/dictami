@@ -19,6 +19,9 @@ export const GUIDES: Guide[] = [
   { href: "/voice-dictation-mac/", label: "Voice dictation for Mac" },
   { href: "/speech-to-text-mac/", label: "Speech to text on Mac" },
   { href: "/speech-to-text-mac-any-app/", label: "Dictating into any app" },
+  { href: "/dictation-mac-email-slack/", label: "Email and Slack by voice" },
+  { href: "/voice-typing-mac-for-developers/", label: "Voice typing for developers" },
+  { href: "/private-dictation-mac/", label: "Private dictation" },
   { href: "/offline-dictation-mac/", label: "Offline dictation" },
   { href: "/voice-typing-mac-without-internet/", label: "Voice typing without internet" },
   { href: "/dictation-app-mac-apple-silicon/", label: "Dictation on Apple Silicon" },
@@ -27,6 +30,7 @@ export const GUIDES: Guide[] = [
   { href: "/voice-dictation-mac-no-subscription/", label: "Without a subscription" },
   { href: "/voice-dictation-mac-lifetime-license/", label: "Lifetime license" },
   { href: "/superwhisper-alternative-mac/", label: "Superwhisper alternative" },
+  { href: "/wispr-flow-alternative-mac/", label: "Wispr Flow alternative" },
   { href: "/whisper-dictation-mac-app/", label: "Whisper on a Mac" },
   { href: "/best-dictation-app-mac-2025/", label: "Choosing a dictation app" },
 ];
