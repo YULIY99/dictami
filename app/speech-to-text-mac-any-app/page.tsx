@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Speech to Text in Any Mac App | Dictami",
   description:
     "Use speech to text in any Mac app, including Mail, Chrome, Slack, VS Code, Notes, and Terminal. Dictami types wherever your cursor is — no copy and paste.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Use speech to text in any Mac app, including Mail, Chrome, Slack, VS Code, Notes, and Terminal. Dictami types wherever your cursor is — no copy and paste.",
     url: "https://dictami.com/speech-to-text-mac-any-app",
   },
-};
+});
 
 export default function SpeechToTextMacAnyApp() {
   return (

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Terms of Use — Dictami",
   description:
     "What you get when you buy Dictami: the licence, the number of Macs, the 14-day refund, what updates are promised, and the limits of the guarantee.",
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
       "The licence, the number of Macs, the 14-day refund, and what is promised about updates.",
     url: "https://dictami.com/terms",
   },
-};
+});
 
 /**
  * Short on purpose.

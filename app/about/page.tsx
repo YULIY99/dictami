@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "About Dictami | Who makes it",
   description:
     "Dictami is made by one developer, sold once rather than rented, and built to run with no server behind it. Who wrote it, why it works this way, and how to get hold of him.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Made by one developer, sold once rather than rented, built to run with no server behind it.",
     url: "https://dictami.com/about",
   },
-};
+});
 
 /**
  * The page that says a person is behind this.

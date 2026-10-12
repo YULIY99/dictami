@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Speech to Text for Mac | Dictami",
   description:
     "Turn speech into text on Mac in any app with on-device recognition, automatic punctuation, 30 languages, and a global hotkey. No account required.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Turn speech into text on Mac in any app with on-device recognition, automatic punctuation, 30 languages, and a global hotkey. No account required.",
     url: "https://dictami.com/speech-to-text-mac",
   },
-};
+});
 
 export default function SpeechToTextMac() {
   return (

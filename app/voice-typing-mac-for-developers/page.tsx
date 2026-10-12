@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Voice Typing for Developers on Mac | Dictami",
   description:
     "Voice typing for developers on Mac: dictate prompts, commit messages, PR descriptions and docs into any editor or terminal. Runs locally, so code context never leaves your machine.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Dictate prompts, commit messages, PR descriptions and docs into any editor. Runs locally.",
     url: "https://dictami.com/voice-typing-mac-for-developers",
   },
-};
+});
 
 export default function VoiceTypingMacForDevelopers() {
   return (

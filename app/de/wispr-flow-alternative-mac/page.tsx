@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinksDe } from "@/components/GuideLinksDe";
+import { withShare } from "@/lib/seo";
 
 const URL_DE = "https://dictami.com/de/wispr-flow-alternative-mac/";
 const URL_EN = "https://dictami.com/wispr-flow-alternative-mac/";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Wispr-Flow-Alternative für Mac | Dictami",
   description:
     "Eine Wispr-Flow-Alternative für Mac: Spracherkennung auf dem Gerät statt in der Cloud, kein Konto, 29,99 $ einmalig statt 15 $ im Monat.",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     url: URL_DE,
     locale: "de_DE",
   },
-};
+});
 
 export default function WisprFlowAlternativeMacDe() {
   return (

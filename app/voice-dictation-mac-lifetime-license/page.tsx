@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME, BUY } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Lifetime License for Voice Dictation on Mac | Dictami",
   description:
     "Dictami offers a $29.99 lifetime license for voice dictation on Mac. Pay once, get every language, every model, and all future updates. No subscription, no account.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Dictami offers a $29.99 lifetime license for voice dictation on Mac. Pay once, get every language, every model, and all future updates. No subscription, no account.",
     url: "https://dictami.com/voice-dictation-mac-lifetime-license",
   },
-};
+});
 
 const faqSchema = {
   "@context": "https://schema.org",

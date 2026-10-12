@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Best Dictation App for Mac Apple Silicon | Dictami",
   description:
     "Dictami is a dictation app built for Apple Silicon. On-device recognition runs at full speed on M1–M4 Macs, with no cloud, lag, or account required.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Dictami is a dictation app built for Apple Silicon. On-device recognition runs at full speed on M1–M4 Macs, with no cloud, lag, or account required.",
     url: "https://dictami.com/dictation-app-mac-apple-silicon",
   },
-};
+});
 
 export default function DictationAppMacAppleSilicon() {
   return (
