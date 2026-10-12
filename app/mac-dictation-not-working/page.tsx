@@ -11,7 +11,14 @@ const DESCRIPTION =
 export const metadata: Metadata = withShare({
   title: TITLE,
   description: DESCRIPTION,
-  alternates: { canonical: URL },
+  alternates: {
+    canonical: URL,
+    languages: {
+      en: URL,
+      de: "https://dictami.com/de/diktieren-mac-funktioniert-nicht/",
+      "x-default": URL,
+    },
+  },
   openGraph: { title: TITLE, description: DESCRIPTION, url: URL, type: "article" },
 });
 
