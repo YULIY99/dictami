@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { GuideLinksDe } from "@/components/GuideLinksDe";
 
 /**
  * Shared shell for long-form guides: the same back link, headline, calls to
@@ -11,19 +12,27 @@ import { GuideLinks } from "@/components/GuideLinks";
  */
 export type Faq = { q: string; a: string };
 
+const STRINGS = {
+  en: { questions: "Questions", trial: "7-day trial inside the app. No card, no account.", download: "Download Dictami" },
+  de: { questions: "Häufige Fragen", trial: "7 Tage kostenlos testen in der App. Keine Karte, kein Konto.", download: "Dictami laden" },
+};
+
 export function Article({
   path,
   title,
   intro,
   faq,
+  locale = "en",
   children,
 }: {
+  locale?: "en" | "de";
   path: string;
   title: string;
   intro: React.ReactNode;
   faq?: Faq[];
   children: React.ReactNode;
 }) {
+  const t = STRINGS[locale];
   const faqJsonLd = faq?.length
     ? {
         "@context": "https://schema.org",
@@ -37,7 +46,7 @@ export function Article({
     : null;
 
   return (
-    <div className="min-h-screen bg-ground text-ink">
+    <div lang={locale === "en" ? undefined : locale} className="min-h-screen bg-ground text-ink">
       {faqJsonLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       )}
@@ -56,7 +65,7 @@ export function Article({
 
         {faq?.length ? (
           <section className="mt-12">
-            <h2 className="text-title font-medium tracking-tight">Questions</h2>
+            <h2 className="text-title font-medium tracking-tight">{t.questions}</h2>
             <dl className="mt-4 flex flex-col gap-5">
               {faq.map((f) => (
                 <div key={f.q}>
@@ -69,17 +78,17 @@ export function Article({
         ) : null}
 
         <div className="mt-16 border-t border-line pt-10">
-          <GuideLinks current={path} />
+          {locale === "de" ? <GuideLinksDe current={path} /> : <GuideLinks current={path} />}
         </div>
 
         <div className="mt-14 border-t border-line pt-10">
-          <p className="text-body text-muted">7-day trial inside the app. No card, no account.</p>
+          <p className="text-body text-muted">{t.trial}</p>
           <a
             href={PRIMARY_CTA}
             download={DOWNLOAD_FILENAME}
             className="mt-5 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-[15px] font-medium text-on-accent transition hover:bg-accent-deep"
           >
-            Download Dictami
+            {t.download}
           </a>
         </div>
       </div>

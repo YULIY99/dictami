@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postbuild": "node scripts/set-html-lang.mjs"
   },
   "dependencies": {
     "@lobehub/icons-static-svg": "^1.94.0",

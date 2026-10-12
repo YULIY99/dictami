@@ -13,6 +13,7 @@ export const GUIDES_DE = [
   { href: "/de/offline-diktieren-mac/", label: "Offline diktieren" },
   { href: "/de/diktier-app-mac-ohne-abo/", label: "Ohne Abo" },
   { href: "/de/wispr-flow-alternative-mac/", label: "Wispr-Flow-Alternative" },
+  { href: "/de/diktieren-mac-funktioniert-nicht/", label: "Diktat funktioniert nicht" },
 ];
 
 export function GuideLinksDe({ current }: { current?: string }) {

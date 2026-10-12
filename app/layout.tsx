@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { HtmlLang } from "@/components/HtmlLang";
 
 // Aqua Voice runs on PP Neue Montreal, which is licensed and cannot be used
 // here. Geist is the closest free relative: the same neo-grotesque family of
@@ -123,6 +124,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html
       lang="en"
+      // Rewritten to "de" for /de/ pages after the build; see
+      // scripts/set-html-lang.mjs.
+      suppressHydrationWarning
       className={`${geist.variable} ${geistMono.variable}`}
     >
       <head>
@@ -136,6 +140,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
       </head>
       <body>
+        <HtmlLang />
         {children}
       </body>
     </html>
