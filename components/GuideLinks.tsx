@@ -16,7 +16,10 @@ export function GuideLinks({
   current?: string;
   onDark?: boolean;
 }) {
-  const items = GUIDES.filter((guide) => guide.href !== current);
+  // Pages pass `current` with or without the trailing slash; compare both
+  // forms, or the page ends up linking to itself.
+  const norm = (href?: string) => (href ? href.replace(/\/?$/, "/") : href);
+  const items = GUIDES.filter((guide) => norm(guide.href) !== norm(current));
 
   return (
     <nav aria-label="Guides">
