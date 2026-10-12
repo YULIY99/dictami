@@ -27,6 +27,8 @@ export const GUIDES: Guide[] = [
   { href: "/dictation-app-mac-apple-silicon/", label: "Dictation on Apple Silicon" },
   { href: "/fast-voice-typing-mac-m2-m3/", label: "Fast voice typing on M2/M3" },
   { href: "/dictation-mac-without-siri/", label: "Dictation without Siri" },
+  { href: "/mac-dictation-not-working/", label: "Mac dictation not working" },
+  { href: "/change-dictation-language-mac/", label: "Change the dictation language" },
   { href: "/voice-dictation-mac-no-subscription/", label: "Without a subscription" },
   { href: "/voice-dictation-mac-lifetime-license/", label: "Lifetime license" },
   { href: "/superwhisper-alternative-mac/", label: "Superwhisper alternative" },
