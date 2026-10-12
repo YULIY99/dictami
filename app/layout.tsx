@@ -51,9 +51,13 @@ export const metadata: Metadata = {
   other: { "google-site-verification": "4MFm0bxZWFTg8cYRF78lWRhiiLCajG_PO1S1iB14HXc" },
 };
 
-const structuredData = {
-  "@context": "https://schema.org",
+// One graph, linked by @id: search engines and AI answer engines read the
+// maker, the site and the product as three facts about one entity instead of
+// unrelated blobs.
+const softwareApplication = {
   "@type": "SoftwareApplication",
+  "@id": "https://dictami.com/#software",
+  publisher: { "@id": "https://dictami.com/#organization" },
   name: "Dictami",
   "image": "https://dictami.com/og-image.png",
   operatingSystem: "macOS 14 or later, Apple Silicon",
@@ -84,6 +88,35 @@ const structuredData = {
   url: "https://dictami.com",
   featureList:
     "On-device transcription, 28 fast languages, automatic punctuation, global hotkey, dictation history with playback",
+};
+
+const organization = {
+  "@type": "Organization",
+  "@id": "https://dictami.com/#organization",
+  name: "Dictami",
+  url: "https://dictami.com/",
+  logo: { "@type": "ImageObject", url: "https://dictami.com/mark.png", width: 256, height: 256 },
+  email: "support@dictami.com",
+  contactPoint: { "@type": "ContactPoint", contactType: "customer support", email: "support@dictami.com" },
+  sameAs: [
+    "https://www.producthunt.com/products/dictami",
+    "https://fazier.com/launches/dictami",
+    "https://www.saashub.com/dictami",
+  ],
+};
+
+const website = {
+  "@type": "WebSite",
+  "@id": "https://dictami.com/#website",
+  name: "Dictami",
+  url: "https://dictami.com/",
+  inLanguage: ["en", "de"],
+  publisher: { "@id": "https://dictami.com/#organization" },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [organization, website, softwareApplication],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
