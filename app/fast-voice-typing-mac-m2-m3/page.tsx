@@ -24,51 +24,9 @@ export const metadata: Metadata = withShare({
   },
 });
 
-const softwareApplicationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Dictami",
-  operatingSystem: "macOS 14 or later, Apple Silicon",
-  processorRequirements: "Apple Silicon (M1 or newer)",
-  applicationCategory: "ProductivityApplication",
-  offers: {
-    "@type": "AggregateOffer",
-    lowPrice: "5.99",
-    highPrice: "29.99",
-    priceCurrency: "USD",
-    offerCount: "2",
-  },
-  description:
-    "Voice dictation for Mac that runs entirely on-device. Hold a key, speak, and punctuated text appears in any app in about half a second.",
-  url: "https://dictami.com",
-  featureList:
-    "On-device transcription, 30 fast languages, automatic punctuation, global hotkey, dictation history with playback",
-};
-
-const aggregateOfferJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "AggregateOffer",
-  lowPrice: "5.99",
-  highPrice: "29.99",
-  priceCurrency: "USD",
-  offerCount: "2",
-};
-
 export default function FastVoiceTypingMacM2M3() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(softwareApplicationJsonLd),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(aggregateOfferJsonLd),
-        }}
-      />
 
       <div className="min-h-screen bg-ground text-ink">
         <div className="mx-auto max-w-2xl px-5 py-24 sm:py-32">
