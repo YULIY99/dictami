@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Offline Dictation for Mac | Dictami",
   description:
     "Offline voice dictation for Mac with on-device recognition. No internet or account required, no audio sent anywhere, with punctuation in 30 languages.",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
       "Offline voice dictation for Mac with on-device recognition. No internet or account required, no audio sent anywhere, with punctuation in 30 languages.",
     url: "https://dictami.com/offline-dictation-mac",
   },
-};
+});
 
 export default function OfflineDictationMac() {
   return (

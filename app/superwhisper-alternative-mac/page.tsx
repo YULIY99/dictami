@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME, BUY } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Superwhisper Alternative for Mac: Dictami vs Superwhisper (2026)",
   description:
     "Looking for a cheaper Superwhisper alternative for Mac? Compare Dictami vs Superwhisper on price, offline dictation, and features. Dictami lifetime is $29.99 vs Superwhisper's $249.99.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Dictami vs Superwhisper compared: price, offline dictation, and features. Dictami lifetime $29.99 vs Superwhisper $249.99.",
     url: "https://dictami.com/superwhisper-alternative-mac",
   },
-};
+});
 
 const faqSchema = {
   "@context": "https://schema.org",

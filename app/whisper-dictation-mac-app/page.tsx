@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Whisper Dictation App for Mac | Dictami",
   description:
     "Whisper dictation for Mac that runs locally. Dictami uses faster specialist models when available and falls back to Whisper for other languages.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Whisper dictation for Mac that runs locally. Dictami uses faster specialist models when available and falls back to Whisper for other languages.",
     url: "https://dictami.com/whisper-dictation-mac-app",
   },
-};
+});
 
 export default function WhisperDictationMacApp() {
   return (

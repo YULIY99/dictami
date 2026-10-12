@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Voice Dictation for Mac | Dictami",
   description:
     "Fast voice dictation for Mac that runs on-device. Hold a key, speak, and punctuated text appears in any app in about half a second. 30 languages.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Fast voice dictation for Mac that runs on-device. Hold a key, speak, and punctuated text appears in any app in about half a second. 30 languages.",
     url: "https://dictami.com/voice-dictation-mac",
   },
-};
+});
 
 export default function VoiceDictationMac() {
   return (

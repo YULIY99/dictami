@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Dictate Email and Slack Messages on Mac | Dictami",
   description:
     "Dictate email and Slack messages on Mac with punctuation already in place. Hold a key, speak, release: text appears in Mail, Gmail, Outlook or Slack. Runs locally.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Hold a key, speak, release: punctuated text in Mail, Gmail, Outlook or Slack. Runs locally.",
     url: "https://dictami.com/dictation-mac-email-slack",
   },
-};
+});
 
 export default function DictationMacEmailSlack() {
   return (

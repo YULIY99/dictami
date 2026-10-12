@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinksDe } from "@/components/GuideLinksDe";
+import { withShare } from "@/lib/seo";
 
 const URL_DE = "https://dictami.com/de/diktier-app-mac-ohne-abo/";
 const URL_EN = "https://dictami.com/voice-dictation-mac-no-subscription/";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Diktier-App für Mac ohne Abo | Dictami",
   description:
     "Diktier-App für Mac ohne Abo: 29,99 $ einmalig, alle Sprachen und künftigen Updates inklusive. Kein Konto, 7 Tage kostenlos testen, 14 Tage Erstattung.",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     url: URL_DE,
     locale: "de_DE",
   },
-};
+});
 
 export default function DiktierAppMacOhneAbo() {
   return (

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Best Dictation App for Mac in 2026 | Dictami",
   description:
     "Looking for the best dictation app for Mac in 2026? Dictami runs on-device, works offline, supports 30 languages, and types into any Mac app fast.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Looking for the best dictation app for Mac in 2026? Dictami runs on-device, works offline, supports 30 languages, and types into any Mac app fast.",
     url: "https://dictami.com/best-dictation-app-mac-2025",
   },
-};
+});
 
 export default function BestDictationAppMac2025() {
   return (

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Voice Typing on Mac Without Internet | Dictami",
   description:
     "Voice typing on Mac without internet. Dictami runs fully offline, recognizes speech on your device, and works on planes, in hotels, or anywhere.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Voice typing on Mac without internet. Dictami runs fully offline, recognizes speech on your device, and works on planes, in hotels, or anywhere.",
     url: "https://dictami.com/voice-typing-mac-without-internet",
   },
-};
+});
 
 export default function VoiceTypingMacWithoutInternet() {
   return (

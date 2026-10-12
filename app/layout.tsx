@@ -29,7 +29,6 @@ export const metadata: Metadata = {
     "fast dictation mac",
     "voice typing mac",
   ],
-  alternates: { canonical: "https://dictami.com/" },
   openGraph: {
     type: "website",
     url: "https://dictami.com/",

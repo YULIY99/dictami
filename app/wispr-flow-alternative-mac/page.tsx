@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Wispr Flow Alternative for Mac | Dictami",
   description:
     "Looking for a Wispr Flow alternative on Mac? Dictami runs dictation on your Mac instead of the cloud, needs no account, and costs $29.99 once instead of $15 a month.",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
       "Dictation that runs on your Mac instead of the cloud. No account, $29.99 once instead of $15 a month.",
     url: "https://dictami.com/wispr-flow-alternative-mac",
   },
-};
+});
 
 export default function WisprFlowAlternativeMac() {
   return (

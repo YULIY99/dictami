@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinksDe } from "@/components/GuideLinksDe";
+import { withShare } from "@/lib/seo";
 
 const URL_DE = "https://dictami.com/de/diktieren-mac-ohne-cloud/";
 const URL_EN = "https://dictami.com/private-dictation-mac/";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Diktieren am Mac ohne Cloud | Dictami",
   description:
     "Spracherkennung direkt auf dem Mac: Ihre Stimme verlässt nie das Gerät, kein Konto, funktioniert auch ohne Internet. Diktieren in jeder App.",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     url: URL_DE,
     locale: "de_DE",
   },
-};
+});
 
 export default function DiktierenMacOhneCloud() {
   return (

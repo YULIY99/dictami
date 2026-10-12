@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Private Dictation for Mac, No Cloud | Dictami",
   description:
     "Private voice dictation for Mac: speech is recognized on your machine, audio is never uploaded, and no account is needed. Works with the network switched off.",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
       "Speech recognized on your Mac, audio never uploaded, no account. Works with the network off.",
     url: "https://dictami.com/private-dictation-mac",
   },
-};
+});
 
 export default function PrivateDictationMac() {
   return (

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Fast Offline Voice Typing for Mac M2 & M3 | Dictami",
   description:
     "Fast offline voice typing for Mac M2 and M3, designed around Apple Silicon and the Neural Engine. Automatic punctuation, any Mac app, no cloud or account.",
@@ -21,14 +22,7 @@ export const metadata: Metadata = {
       "Fast offline voice typing for Mac M2 and M3, designed around Apple Silicon and the Neural Engine. Automatic punctuation, any Mac app, no cloud or account.",
     url: "https://dictami.com/fast-voice-typing-mac-m2-m3",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dictami — Speak, and the text is already there",
-    description:
-      "Voice dictation for Mac that keeps up with you. About half a second, on-device, 30 languages.",
-    images: ["https://dictami.com/og-image.png"],
-  },
-};
+});
 
 const softwareApplicationJsonLd = {
   "@context": "https://schema.org",

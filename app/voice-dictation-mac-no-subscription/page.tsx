@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Voice Dictation for Mac Without a Subscription | Dictami",
   description:
     "Buy a voice dictation app for Mac once and keep it. Dictami offers a $29.99 lifetime license or $5.99 monthly access with no account or cloud.",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
       "Buy a voice dictation app for Mac once and keep it. Dictami offers a $29.99 lifetime license or $5.99 monthly access with no account or cloud.",
     url: "https://dictami.com/voice-dictation-mac-no-subscription",
   },
-};
+});
 
 export default function VoiceDictationMacNoSubscription() {
   return (

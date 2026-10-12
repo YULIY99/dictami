@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinksDe } from "@/components/GuideLinksDe";
+import { withShare } from "@/lib/seo";
 
 const URL_DE = "https://dictami.com/de/offline-diktieren-mac/";
 const URL_EN = "https://dictami.com/offline-dictation-mac/";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Offline diktieren am Mac – ohne Internet | Dictami",
   description:
     "Diktieren am Mac ohne Internetverbindung: Die Spracherkennung läuft auf dem Gerät, mit Satzzeichen, in 30 Sprachen. Im Zug, im Flugzeug, überall.",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     url: URL_DE,
     locale: "de_DE",
   },
-};
+});
 
 export default function OfflineDiktierenMac() {
   return (

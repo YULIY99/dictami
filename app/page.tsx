@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Speed } from "@/components/Speed";
@@ -9,6 +10,13 @@ import { Faq } from "@/components/Faq";
 import { Closing } from "@/components/Closing";
 import { Support } from "@/components/Support";
 import { QUESTIONS } from "@/lib/faq";
+
+// The canonical lives here rather than in the root layout: set there, it was
+// inherited by the 404 page, which then declared the home page as its
+// canonical URL.
+export const metadata: Metadata = {
+  alternates: { canonical: "https://dictami.com/" },
+};
 
 const faqSchema = {
   "@context": "https://schema.org",

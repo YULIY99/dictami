@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Dictation on Mac Without Siri | Dictami",
   description:
     "Dictate on Mac without Siri or Apple’s built-in dictation. Dictami works on-device in every app, adds punctuation automatically, and needs no account.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Dictate on Mac without Siri or Apple’s built-in dictation. Dictami works on-device in every app, adds punctuation automatically, and needs no account.",
     url: "https://dictami.com/dictation-mac-without-siri",
   },
-};
+});
 
 export default function DictationMacWithoutSiri() {
   return (

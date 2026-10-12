@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PRIMARY_CTA, DOWNLOAD_FILENAME } from "@/lib/links";
 import { GuideLinks } from "@/components/GuideLinks";
+import { withShare } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withShare({
   title: "Voice Dictation with Punctuation for Mac | Dictami",
   description:
     "Dictate on your Mac and get readable text with commas, periods, question marks, and capitalization added automatically.",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
       "Speak naturally. Dictami adds punctuation and capitalization as it turns your voice into text in any Mac app.",
     url: "https://dictami.com/voice-dictation-mac-with-punctuation",
   },
-};
+});
 
 export default function VoiceDictationMacWithPunctuation() {
   return (
